@@ -56,7 +56,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Ouroboros Game.sln",
+    "dotnet.defaultSolution": "Game_Ouroboros.sln",
     "github.copilot.enable": {
         "*": false,
         "plaintext": false,
