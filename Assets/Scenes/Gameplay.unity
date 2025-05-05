@@ -2529,8 +2529,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebac3743a75d1e64988d39b5b891aae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabImages: []
-  pages: []
+  tabImages:
+  - {fileID: 1318657796}
+  - {fileID: 119762146}
+  - {fileID: 146701210}
+  - {fileID: 1094242145}
+  pages:
+  - {fileID: 413208238}
+  - {fileID: 1126969209}
+  - {fileID: 2128335542}
+  - {fileID: 1593875233}
 --- !u!1 &2128335542
 GameObject:
   m_ObjectHideFlags: 0
