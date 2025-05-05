@@ -80,6 +80,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)&& _canDash)
         {
+            _dashDirection = movedirection.normalized;
             StartCoroutine(Dash());
         }
 
