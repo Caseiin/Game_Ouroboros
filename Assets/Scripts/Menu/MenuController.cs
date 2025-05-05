@@ -5,7 +5,7 @@ public class MenuController : MonoBehaviour
     public GameObject menuCanvas;
     void Start()
     {
-        menuCanvas.SetActive(false);
+        menuCanvas.SetActive(false); //during start up menu object is disabled
     }
 
     // Update is called once per frame

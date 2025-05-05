@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 119762145}
   - component: {fileID: 119762147}
   - component: {fileID: 119762146}
+  - component: {fileID: 119762148}
   m_Layer: 5
   m_Name: Inventory Tab
   m_TagString: Untagged
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.89433956, g: 0.8555829, b: 0.2075542, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -440,6 +441,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119762144}
   m_CullTransparentMesh: 1
+--- !u!114 &119762148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119762144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2122520047}
+          m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+          m_MethodName: ActiveTabs
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &146701208
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +481,7 @@ GameObject:
   - component: {fileID: 146701209}
   - component: {fileID: 146701211}
   - component: {fileID: 146701210}
+  - component: {fileID: 146701212}
   m_Layer: 5
   m_Name: Map Tab
   m_TagString: Untagged
@@ -491,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7660377, g: 0.13946429, b: 0.09683871, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -516,6 +547,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146701208}
   m_CullTransparentMesh: 1
+--- !u!114 &146701212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146701208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2122520047}
+          m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+          m_MethodName: ActiveTabs
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &265540818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1298,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PARTY
+  m_text: 'PLAYER
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1412,6 +1474,7 @@ GameObject:
   - component: {fileID: 1094242144}
   - component: {fileID: 1094242146}
   - component: {fileID: 1094242145}
+  - component: {fileID: 1094242147}
   m_Layer: 5
   m_Name: Setting Tab
   m_TagString: Untagged
@@ -1452,7 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.018262615, g: 0.46284822, b: 0.645283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1477,6 +1540,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094242143}
   m_CullTransparentMesh: 1
+--- !u!114 &1094242147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094242143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2122520047}
+          m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+          m_MethodName: ActiveTabs
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1126385416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1726,7 @@ GameObject:
   - component: {fileID: 1318657795}
   - component: {fileID: 1318657797}
   - component: {fileID: 1318657796}
+  - component: {fileID: 1318657798}
   m_Layer: 5
   m_Name: Player Tab
   m_TagString: Untagged
@@ -1699,6 +1792,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318657794}
   m_CullTransparentMesh: 1
+--- !u!114 &1318657798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318657794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2122520047}
+          m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+          m_MethodName: ActiveTabs
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1332460645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2405,7 @@ Canvas:
   m_GameObject: {fileID: 1735239927}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2340,6 +2462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122520045}
   - component: {fileID: 2122520046}
+  - component: {fileID: 2122520047}
   m_Layer: 5
   m_Name: Tabs
   m_TagString: Untagged
@@ -2394,6 +2517,28 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &2122520047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122520044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebac3743a75d1e64988d39b5b891aae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabImages:
+  - {fileID: 1318657796}
+  - {fileID: 119762146}
+  - {fileID: 146701210}
+  - {fileID: 1094242145}
+  pages:
+  - {fileID: 413208238}
+  - {fileID: 1126969209}
+  - {fileID: 2128335542}
+  - {fileID: 1593875233}
 --- !u!1 &2128335542
 GameObject:
   m_ObjectHideFlags: 0
