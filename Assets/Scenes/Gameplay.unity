@@ -828,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &413208239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1522,6 +1522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 989401296}
   - component: {fileID: 989401295}
+  - component: {fileID: 989401297}
   m_Layer: 0
   m_Name: Gamecontroller
   m_TagString: Untagged
@@ -1556,6 +1557,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989401297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989401294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29aa3a4db03cf645bd085ae6bdfa6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 1126969209}
+  slotPrefab: {fileID: 9167588116212545119, guid: d9537a85012305642af854d2be6486b9, type: 3}
+  slotCounter: 21
+  itemPrefabs:
+  - {fileID: 1099580867941818854, guid: a513d4a98d31c08449bb531a37a97cfe, type: 3}
+  - {fileID: 4262889541840999168, guid: 3345e72f576c16f44ab1504b45eb9b4c, type: 3}
 --- !u!4 &995885238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3929968044475933857, guid: 9fadf713558699b44bd58ed3216ec5dc, type: 3}
@@ -1796,6 +1815,7 @@ GameObject:
   - component: {fileID: 1126969210}
   - component: {fileID: 1126969212}
   - component: {fileID: 1126969211}
+  - component: {fileID: 1126969213}
   m_Layer: 5
   m_Name: Inventory Page
   m_TagString: Untagged
@@ -1860,6 +1880,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126969209}
   m_CullTransparentMesh: 1
+--- !u!114 &1126969213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126969209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 200
+    m_Right: 200
+    m_Top: 200
+    m_Bottom: 200
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 100, y: 100}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1286113347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,7 +2284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1593875234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2872,7 +2916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2128335543
 RectTransform:
   m_ObjectHideFlags: 0
