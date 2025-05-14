@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f428d3ab4b54d8a48b95e426686fb345
+guid: 71434a9385530fc4db0391ddda579023
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8439324438923585821
-    second: CaveTutorial_0
+      213: -2897843308510383139
+    second: Protag Ranged Attack Right_0
+  - first:
+      213: 7714100829574504583
+    second: Protag Ranged Attack Right_1
+  - first:
+      213: -3763506696006397782
+    second: Protag Ranged Attack Right_2
+  - first:
+      213: -2862400441203860684
+    second: Protag Ranged Attack Right_3
+  - first:
+      213: -1899757941460999050
+    second: Protag Ranged Attack Right_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CaveTutorial_0
+      name: Protag Ranged Attack Right_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 717
+        x: 12
+        y: 2
+        width: 16
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e6dfa1e22f71ea80800000000000000
-      internalID: -8439324438923585821
+      spriteID: dd3fe754ddac8c7d0800000000000000
+      internalID: -2897843308510383139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag Ranged Attack Right_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780a55c55ddfd0b60800000000000000
+      internalID: 7714100829574504583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag Ranged Attack Right_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa01cb2999655cbc0800000000000000
+      internalID: -3763506696006397782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag Ranged Attack Right_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 2
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b5f11e6f5b648d0800000000000000
+      internalID: -2862400441203860684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag Ranged Attack Right_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6746df3b734b2a5e0800000000000000
+      internalID: -1899757941460999050
       vertices: []
       indices: 
       edges: []
@@ -147,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CaveTutorial_0: -8439324438923585821
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
