@@ -31,9 +31,17 @@ public class New_Movement : MonoBehaviour
     bool isDashing = false;
     Vector2 lastNonZeroDirection = Vector2.right;
 
+    [SerializeField] TrailRenderer dashTrail;
+    [SerializeField] float trailFadeTime = 0.2f;
+
     void Start()
     {
         currentspeed = players.playermovespeed;
+        // Initialize trail renderer
+        if (dashTrail != null)
+        {
+            dashTrail.emitting = false;
+        }
     }
 
     // Update is called once per frame
@@ -100,17 +108,28 @@ public class New_Movement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        Vector2 dashDirection = lastNonZeroDirection;
+        // Activate trail renderer
+        if (dashTrail != null)
+        {
+            dashTrail.emitting = true;
+        }
 
+        Vector2 dashDirection = lastNonZeroDirection;
         player_rb.linearVelocity = dashDirection * dashSpeed;
 
-        //wait for dash duration
         yield return new WaitForSeconds(dashDuration);
 
         player_rb.linearVelocity = Vector2.zero;
         isDashing = false;
 
-        //wait for cooldown
+        // Fade out trail renderer
+        if (dashTrail != null)
+        {
+            dashTrail.emitting = false;
+            yield return new WaitForSeconds(trailFadeTime);
+            dashTrail.Clear();
+        }
+
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
