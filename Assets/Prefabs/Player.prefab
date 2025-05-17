@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6835198509297278710}
   - component: {fileID: 6926362045866419538}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1181882983
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 6544666650195324150, guid: f0deb0c73dd814d4f937467b75ad3dea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -300,6 +300,8 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
+  dashTrail: {fileID: 0}
+  trailFadeTime: 0.2
 --- !u!114 &6835198509297278710
 MonoBehaviour:
   m_ObjectHideFlags: 0
