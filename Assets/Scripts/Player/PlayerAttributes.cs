@@ -8,6 +8,7 @@ public class PlayerAttributes : MonoBehaviour
     {
         playerhealth = 4;
         playermovespeed = 4f;
+        playerheight = 4;
     }
 
     public event Action <int> OnPlayerHealthChange;
@@ -43,10 +44,10 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    private event Action <float> OnPlayerHeightChange;
+    public event Action <int> OnPlayerHeightChange;
 
-    private float _playerheight;
-    public float playerheight
+    private int _playerheight;
+    public int playerheight
     {
         get{return _playerheight;}
         set
