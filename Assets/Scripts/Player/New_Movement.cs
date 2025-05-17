@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+//using System.Numerics;
 using NUnit.Framework.Internal;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class New_Movement : MonoBehaviour
     PlayerAttributes players;
     Rigidbody2D player_rb;
     private Animator animator;
-
     Vector2 movedirection;
     void Awake()
     {
@@ -23,20 +23,28 @@ public class New_Movement : MonoBehaviour
     bool isWalking;
     float currentspeed;
 
+    //Dash variables
+    [SerializeField] float dashSpeed = 15f;
+    [SerializeField] float dashDuration = 0.2f;
+    [SerializeField] float dashCooldown = 1f;
+    bool canDash = true;
+    bool isDashing = false;
+    Vector2 lastNonZeroDirection = Vector2.right;
 
     void Start()
     {
         currentspeed = players.playermovespeed;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-  
-        
         moveBasic();
         OnCrouch();
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     void UpdateSpeed(float speed)
@@ -66,19 +74,46 @@ public class New_Movement : MonoBehaviour
             movedirection.y -= 1;
         }
 
-        if (movedirection.magnitude > 1)
+        if (movedirection != Vector2.zero)
         {
-            movedirection.Normalize();
+            lastNonZeroDirection = movedirection.normalized;
         }
-        //move the player
 
-        player_rb.linearVelocity = movedirection * currentspeed;
+        if (!isDashing)
+            {
+                if (movedirection.magnitude > 1)
+                {
+                    movedirection.Normalize();
+                }
+                //move the player
+                player_rb.linearVelocity = movedirection * currentspeed;
+            }
+
         isWalking = (movedirection != Vector2.zero);
 
         //Update animations based on walkDireection array 
         UpdateWalkDirection();
     }
 
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        Vector2 dashDirection = lastNonZeroDirection;
+
+        player_rb.linearVelocity = dashDirection * dashSpeed;
+
+        //wait for dash duration
+        yield return new WaitForSeconds(dashDuration);
+
+        player_rb.linearVelocity = Vector2.zero;
+        isDashing = false;
+
+        //wait for cooldown
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
     void UpdateWalkDirection()
     {
         //Determine walk direction and therefore right animation to use
