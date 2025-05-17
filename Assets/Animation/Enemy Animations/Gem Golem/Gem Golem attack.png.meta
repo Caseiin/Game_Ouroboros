@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gem Golem attack_0: 1046778677250966927
+      Gem Golem attack_1: 6178830985928975616
+      Gem Golem attack_2: -5333028165096903772
+      Gem Golem attack_3: 4558986920184285354
+      Gem Golem attack_4: 593673554923091922
+      Gem Golem attack_5: 9113767672148884693
+      Gem Golem attack_6: -7271625099090855878
+      Gem Golem attack_7: -7075372078935307216
+      Gem Golem attack_8: 2666840520960410986
+      Gem Golem attack_9: -4498620566463763752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

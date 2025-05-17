@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag range draw north_0: 321739097730869353
+      Protag range draw north_1: 4222437942221373017
+      Protag range draw north_2: -6704830061536276115
+      Protag range draw north_3: -7703112944487631989
+      Protag range draw north_4: -6979799448383535377
+      Protag range draw north_5: 486378598991992081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

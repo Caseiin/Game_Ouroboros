@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Range attack south_0: -7204183520832002699
+      Protag Range attack south_1: 4193393658902999618
+      Protag Range attack south_2: 1671282911096755025
+      Protag Range attack south_3: -8045301684831885516
+      Protag Range attack south_4: -9091286864900256139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

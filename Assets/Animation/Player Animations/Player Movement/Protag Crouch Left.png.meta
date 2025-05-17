@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Crouch Left_0: 8507939650013101096
+      Protag Crouch Left_1: -1288554506025725422
+      Protag Crouch Left_2: 1590610883491110138
+      Protag Crouch Left_3: -1717525691131108630
+      Protag Crouch Left_4: -2015329187817873206
+      Protag Crouch Left_5: 806377389395085763
+      Protag Crouch Left_6: -5491069382088734141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

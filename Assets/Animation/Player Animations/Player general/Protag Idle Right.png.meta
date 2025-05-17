@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Idle Right_0: 4808004600136418468
+      Protag Idle Right_1: 8692605032126158862
+      Protag Idle Right_10: -6546009507828421849
+      Protag Idle Right_2: -2047015047523996558
+      Protag Idle Right_3: -2450001700557831366
+      Protag Idle Right_4: 706093813126459501
+      Protag Idle Right_5: -5948424647748029369
+      Protag Idle Right_6: 7375649469909438413
+      Protag Idle Right_7: -4172931612297727900
+      Protag Idle Right_8: 5674455368990244096
+      Protag Idle Right_9: -938388152008125686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

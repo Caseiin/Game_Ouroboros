@@ -459,7 +459,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Dash Right_0: 6009350376397555039
+      Protag Dash Right_1: -5798920227198129766
+      Protag Dash Right_10: 5819192288954840409
+      Protag Dash Right_11: 1069469434365585871
+      Protag Dash Right_12: -2878858440117292668
+      Protag Dash Right_13: -4073237621668028792
+      Protag Dash Right_2: 7850917433326268728
+      Protag Dash Right_3: -9159850438437213184
+      Protag Dash Right_4: -1835050013586386429
+      Protag Dash Right_5: 393358300879293788
+      Protag Dash Right_6: 901080547512527221
+      Protag Dash Right_7: -4551226525943798600
+      Protag Dash Right_8: 6347774906857064579
+      Protag Dash Right_9: 3405803902945170482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

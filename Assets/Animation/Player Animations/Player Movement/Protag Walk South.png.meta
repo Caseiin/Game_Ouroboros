@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Walk South_0: -1159922347266980721
+      Protag Walk South_1: -8629801037654628973
+      Protag Walk South_2: 5217002855085963489
+      Protag Walk South_3: 319898029233487790
+      Protag Walk South_4: -7142743613307228262
+      Protag Walk South_5: 718619537577946551
+      Protag Walk South_6: -6559206443095022369
+      Protag Walk South_7: 7298551423922392205
+      Protag Walk South_8: 4210516146912686743
+      Protag Walk South_9: 6154283398301405497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

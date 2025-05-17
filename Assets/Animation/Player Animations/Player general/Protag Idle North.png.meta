@@ -384,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Idle North_0: 4347631883138187918
+      Protag Idle North_1: -7619499913306565058
+      Protag Idle North_10: 6944814911878422817
+      Protag Idle North_2: -8418437165517916472
+      Protag Idle North_3: 3596664070446589275
+      Protag Idle North_4: -9040030595430388546
+      Protag Idle North_5: -1156948298340361735
+      Protag Idle North_6: -3202245612222294016
+      Protag Idle North_7: -31820782955696354
+      Protag Idle North_8: -2759623164849844370
+      Protag Idle North_9: -7450243878989539323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
