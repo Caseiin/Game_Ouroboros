@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Combat : MonoBehaviour
 {
@@ -16,17 +17,23 @@ public class Combat : MonoBehaviour
     float shootCoolDown=0.25f;
     float shootTimer=0.5f;
 
-    // Update is called once per frame
+    private bool IsPointerOnUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+        // checks if the mouse cursor is over a UI element
+    }
+
+
     void Update()
     {
         CheckMeleeTimer();  
         shootTimer +=Time.deltaTime;
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0)&&(!IsPointerOnUI()))
         {
             //left mouse click triggers an attack from player
             OnCloseCombat();
         }
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1)&&(!IsPointerOnUI()))
         {
             //right click to shoot an enemy
             OnRangedCombat();

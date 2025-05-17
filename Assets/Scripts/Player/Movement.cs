@@ -81,7 +81,18 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)&& _canDash)
         {
-            StartCoroutine(Dash());
+            //Determines the dash direction
+            Vector2 desiredDirection = movedirection;
+            if (desiredDirection == Vector2.zero)
+            {
+                desiredDirection = lastmovedirection;
+            }
+            
+            if (desiredDirection != Vector2.zero)
+            {
+                _dashDirection = movedirection.normalized;
+                StartCoroutine(Dash());
+            }
         }
 
     }
@@ -112,7 +123,7 @@ public class Movement : MonoBehaviour
             if (DidCrounch==false)
             {
                 transform.localScale = new Vector3(0.5f,0.5f,1f);
-                UpdateSpeed(0.5f);
+                UpdateSpeed(currentspeed*0.5f);
             }
             else 
             {
@@ -144,10 +155,7 @@ public class Movement : MonoBehaviour
             movedirection.y -=2;
         }
 
-        if (movedirection.magnitude >1)
-        {
-            movedirection.Normalize();
-        }
+        movedirection.Normalize();
         //move the player
         //transform.position+= movedirection.normalized*currentspeed*Time.deltaTime;
         rb.linearVelocity = movedirection*currentspeed;
