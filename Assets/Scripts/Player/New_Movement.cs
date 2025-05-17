@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class New_Movement : MonoBehaviour
@@ -20,16 +21,18 @@ public class New_Movement : MonoBehaviour
     bool didCrounch;
     bool isWalking;
     float currentspeed;
-
+    bool[] walkDirection; //Up,Down,Left,Right
 
     void Start()
     {
         currentspeed = players.playermovespeed;
+        walkDirection=new bool[] { false, false,false,false};
     }
 
     // Update is called once per frame
     void Update()
     {
+        walkDirection=new bool[] { false, false,false,false};
         movedirection = Vector2.zero;
         moveBasic();
         OnCrouch();
@@ -42,32 +45,48 @@ public class New_Movement : MonoBehaviour
 
     void moveBasic()
     {
+        //Reset all directions at the start of frame
+        walkDirection = new bool[4]; //[Up,Down,Left,Right]
+
         if (Input.GetKey(KeyCode.A))
         {
-            movedirection.x -=2;
+            movedirection.x -= 2;
+            walkDirection[2] = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            movedirection.x +=2;
+            walkDirection[1] = true;
+            movedirection.x += 2;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            animator.SetBool("Walk Forward", isWalking);
-            movedirection.y +=2;
+            walkDirection[0] = true;
+            movedirection.y += 2;
+
         }
         if (Input.GetKey(KeyCode.S))
         {
-            movedirection.y -=2;
+            walkDirection[3] = true;
+            movedirection.y -= 2;
         }
 
-        if (movedirection.magnitude >1)
+        if (movedirection.magnitude > 1)
         {
             movedirection.Normalize();
         }
         //move the player
-       
-        player_rb.linearVelocity = movedirection*currentspeed;
-        isWalking = (movedirection != Vector2.zero); 
+
+        player_rb.linearVelocity = movedirection * currentspeed;
+        isWalking = (movedirection != Vector2.zero);
+
+        //Update animations based on walkDireection array 
+        UpdateAnimations();
+    }
+
+    void UpdateAnimations()
+    {
+        //First rest all animation parameters;
+        
     }
 
     void OnCrouch()
