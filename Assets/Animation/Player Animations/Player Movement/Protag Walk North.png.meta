@@ -149,10 +149,10 @@ TextureImporter:
       name: Protag Walk North_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 3
-        width: 13
-        height: 25
+        x: 12
+        y: 4
+        width: 11
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: Protag Walk North_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 3
-        width: 14
-        height: 25
+        x: 47
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Protag Walk North_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 3
-        width: 15
-        height: 25
+        x: 81
+        y: 4
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Protag Walk North_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 3
-        width: 17
-        height: 25
+        x: 115
+        y: 4
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: Protag Walk North_4
       rect:
         serializedVersion: 2
-        x: 150
-        y: 3
-        width: 17
-        height: 25
+        x: 151
+        y: 4
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +259,10 @@ TextureImporter:
       name: Protag Walk North_5
       rect:
         serializedVersion: 2
-        x: 189
-        y: 3
-        width: 14
-        height: 25
+        x: 190
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Protag Walk North_6
       rect:
         serializedVersion: 2
-        x: 227
-        y: 3
-        width: 13
-        height: 25
+        x: 228
+        y: 4
+        width: 11
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: Protag Walk North_7
       rect:
         serializedVersion: 2
-        x: 263
-        y: 3
-        width: 14
-        height: 25
+        x: 264
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,10 +325,10 @@ TextureImporter:
       name: Protag Walk North_8
       rect:
         serializedVersion: 2
-        x: 300
-        y: 3
-        width: 15
-        height: 25
+        x: 301
+        y: 4
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,10 +347,10 @@ TextureImporter:
       name: Protag Walk North_9
       rect:
         serializedVersion: 2
-        x: 335
-        y: 3
-        width: 17
-        height: 25
+        x: 336
+        y: 4
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,10 +369,10 @@ TextureImporter:
       name: Protag Walk North_10
       rect:
         serializedVersion: 2
-        x: 371
-        y: 3
-        width: 17
-        height: 25
+        x: 372
+        y: 4
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,10 +391,10 @@ TextureImporter:
       name: Protag Walk North_11
       rect:
         serializedVersion: 2
-        x: 407
-        y: 3
-        width: 14
-        height: 25
+        x: 408
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 202bcfbc47a1e314fa81c72c1318ea1e
     internalID: 0
     vertices: []
     indices: 

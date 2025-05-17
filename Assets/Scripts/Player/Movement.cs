@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     bool isWalking;
     Rigidbody2D rb;
     TrailRenderer _trailRenderer;
-    
+    private Animator animator;
      
     //dash variables
     float _dashSpeed;
@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentspeed = players.playermovespeed;
         Debug.Log("Player speed: "+currentspeed);
         _trailRenderer = GetComponent<TrailRenderer>();
@@ -149,6 +150,7 @@ public class Movement : MonoBehaviour
         //move the player
         //transform.position+= movedirection.normalized*currentspeed*Time.deltaTime;
         rb.linearVelocity = movedirection*currentspeed;
+        animator.SetBool("Walk Forward", isWalking);
         isWalking = (movedirection != Vector2.zero);
 
     }
