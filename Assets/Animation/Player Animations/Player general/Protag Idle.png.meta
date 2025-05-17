@@ -146,10 +146,10 @@ TextureImporter:
       name: Protag Idle_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 3
-        width: 13
-        height: 22
+        x: 12
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Protag Idle_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 3
-        width: 13
-        height: 22
+        x: 47
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: Protag Idle_2
       rect:
         serializedVersion: 2
-        x: 83
-        y: 3
-        width: 13
-        height: 22
+        x: 84
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Protag Idle_3
       rect:
         serializedVersion: 2
-        x: 119
-        y: 3
-        width: 13
-        height: 22
+        x: 120
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Protag Idle_4
       rect:
         serializedVersion: 2
-        x: 155
-        y: 3
-        width: 13
-        height: 22
+        x: 156
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Protag Idle_5
       rect:
         serializedVersion: 2
-        x: 191
-        y: 3
-        width: 13
-        height: 23
+        x: 192
+        y: 4
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: Protag Idle_6
       rect:
         serializedVersion: 2
-        x: 227
-        y: 3
-        width: 13
-        height: 23
+        x: 228
+        y: 4
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: Protag Idle_7
       rect:
         serializedVersion: 2
-        x: 261
-        y: 3
-        width: 14
-        height: 23
+        x: 262
+        y: 4
+        width: 12
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +322,10 @@ TextureImporter:
       name: Protag Idle_8
       rect:
         serializedVersion: 2
-        x: 299
-        y: 3
-        width: 13
-        height: 23
+        x: 300
+        y: 4
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Protag Idle_9
       rect:
         serializedVersion: 2
-        x: 335
-        y: 3
-        width: 13
-        height: 23
+        x: 336
+        y: 4
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,10 +366,10 @@ TextureImporter:
       name: Protag Idle_10
       rect:
         serializedVersion: 2
-        x: 371
-        y: 3
-        width: 13
-        height: 23
+        x: 372
+        y: 4
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3a4508db70d04ea4fbd5b8fb47e3812f
     internalID: 0
     vertices: []
     indices: 
