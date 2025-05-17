@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        isWalking =false;
+        //isWalking =false;
         movedirection = Vector3.zero;
         
         MoveBasic();
@@ -136,6 +136,7 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
+            animator.SetBool("Walk Forward", isWalking);
             movedirection.y +=2;
         }
         if (Input.GetKey(KeyCode.S))
@@ -150,7 +151,6 @@ public class Movement : MonoBehaviour
         //move the player
         //transform.position+= movedirection.normalized*currentspeed*Time.deltaTime;
         rb.linearVelocity = movedirection*currentspeed;
-        animator.SetBool("Walk Forward", isWalking);
         isWalking = (movedirection != Vector2.zero);
 
     }
