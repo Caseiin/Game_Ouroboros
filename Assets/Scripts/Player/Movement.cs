@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        isWalking =false;
+        //isWalking =false;
         movedirection = Vector3.zero;
         
         MoveBasic();
@@ -136,6 +136,7 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
+            animator.SetBool("Walk Forward", isWalking);
             movedirection.y +=2;
         }
         if (Input.GetKey(KeyCode.S))
