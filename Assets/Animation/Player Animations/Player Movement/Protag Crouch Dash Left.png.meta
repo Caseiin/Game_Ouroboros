@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Crouch Dash Left_0: -700522534919801780
+      Protag Crouch Dash Left_1: -4749192748199259385
+      Protag Crouch Dash Left_10: -8829612326772411783
+      Protag Crouch Dash Left_11: -4872771479333131245
+      Protag Crouch Dash Left_12: -9222993605664060217
+      Protag Crouch Dash Left_13: -3791314927580648568
+      Protag Crouch Dash Left_2: -2116330837440239136
+      Protag Crouch Dash Left_3: 8107143951482394990
+      Protag Crouch Dash Left_4: 5628571886922512397
+      Protag Crouch Dash Left_5: 9054818671192965269
+      Protag Crouch Dash Left_6: -4774485884528427424
+      Protag Crouch Dash Left_7: -6864787352709751725
+      Protag Crouch Dash Left_8: -8839486233562905752
+      Protag Crouch Dash Left_9: -8444690036078171851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

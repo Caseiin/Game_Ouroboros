@@ -117,6 +117,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -309,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Snake enemy dies_0: 4336787793219897636
+      Snake enemy dies_1: -3000475088151310469
+      Snake enemy dies_2: 1208659191862999224
+      Snake enemy dies_3: 4291710635706050571
+      Snake enemy dies_4: 2169461573279122688
+      Snake enemy dies_5: 2231668643816372934
+      Snake enemy dies_6: 6161757350400321164
+      Snake enemy dies_7: 3818828289744429794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
