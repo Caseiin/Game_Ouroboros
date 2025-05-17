@@ -1,37 +1,22 @@
 fileFormatVersion: 2
-guid: acc182b3ebe1885459f37897512fc2e6
+guid: 751e737871a653847907577ee0b92593
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2640362977740595552
-    second: Protag walk left_0
+      213: 729494765080526934
+    second: Gem 1_0
   - first:
-      213: -2016983553963827827
-    second: Protag walk left_1
+      213: 548289961101095031
+    second: Gem 1_1
   - first:
-      213: 8741654539216017237
-    second: Protag walk left_2
+      213: 8160411620576964671
+    second: Gem 1_2
   - first:
-      213: 599059504716252153
-    second: Protag walk left_3
+      213: 7535538971429229511
+    second: Gem 1_3
   - first:
-      213: 5418123795398584280
-    second: Protag walk left_4
-  - first:
-      213: -6270565488081710628
-    second: Protag walk left_5
-  - first:
-      213: -3231444577683717517
-    second: Protag walk left_6
-  - first:
-      213: -3042615379866628075
-    second: Protag walk left_7
-  - first:
-      213: 4214498786488077693
-    second: Protag walk left_8
-  - first:
-      213: 4152048225430551498
-    second: Protag walk left_9
+      213: -2685059880040589269
+    second: Gem 1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -140,57 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Protag walk left_0
+      name: Gem 1_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 3
-        width: 10
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0612256932474a420800000000000000
-      internalID: 2640362977740595552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag walk left_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 3
-        width: 12
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8d5e24e42c3204e0800000000000000
-      internalID: -2016983553963827827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag walk left_2
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 3
+        x: 9
+        y: 2
         width: 14
-        height: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 557d627fc78905970800000000000000
-      internalID: 8741654539216017237
+      spriteID: 650c122bf9faf1a00800000000000000
+      internalID: 729494765080526934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag walk left_3
+      name: Gem 1_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 3
+        x: 41
+        y: 2
         width: 14
-        height: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f30fe11279405800800000000000000
-      internalID: 599059504716252153
+      spriteID: 770f75d80daeb9700800000000000000
+      internalID: 548289961101095031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag walk left_4
+      name: Gem 1_2
       rect:
         serializedVersion: 2
-        x: 157
-        y: 5
-        width: 10
-        height: 21
+        x: 73
+        y: 2
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d7e2dda2ea013b40800000000000000
-      internalID: 5418123795398584280
+      spriteID: f30b579122b9f3170800000000000000
+      internalID: 8160411620576964671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag walk left_5
+      name: Gem 1_3
       rect:
         serializedVersion: 2
-        x: 193
-        y: 5
-        width: 11
-        height: 21
+        x: 105
+        y: 2
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd1d01659e97af8a0800000000000000
-      internalID: -6270565488081710628
+      spriteID: 7c3d62ff4cc939860800000000000000
+      internalID: 7535538971429229511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag walk left_6
+      name: Gem 1_4
       rect:
         serializedVersion: 2
-        x: 229
-        y: 5
-        width: 13
-        height: 21
+        x: 137
+        y: 2
+        width: 14
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,74 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 372cccb074a9723d0800000000000000
-      internalID: -3231444577683717517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag walk left_7
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 5
-        width: 11
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 510d8e6be6576c5d0800000000000000
-      internalID: -3042615379866628075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag walk left_8
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 5
-        width: 13
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7dcfe22158ec7a30800000000000000
-      internalID: 4214498786488077693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag walk left_9
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 5
-        width: 13
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: acb341fccd90f9930800000000000000
-      internalID: 4152048225430551498
+      spriteID: b281781e340ccbad0800000000000000
+      internalID: -2685059880040589269
       vertices: []
       indices: 
       edges: []
@@ -363,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 38456209a16782f4aa583337422a9285
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -373,16 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Protag walk left_0: 2640362977740595552
-      Protag walk left_1: -2016983553963827827
-      Protag walk left_2: 8741654539216017237
-      Protag walk left_3: 599059504716252153
-      Protag walk left_4: 5418123795398584280
-      Protag walk left_5: -6270565488081710628
-      Protag walk left_6: -3231444577683717517
-      Protag walk left_7: -3042615379866628075
-      Protag walk left_8: 4214498786488077693
-      Protag walk left_9: 4152048225430551498
+      Gem 1_0: 729494765080526934
+      Gem 1_1: 548289961101095031
+      Gem 1_2: 8160411620576964671
+      Gem 1_3: 7535538971429229511
+      Gem 1_4: -2685059880040589269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

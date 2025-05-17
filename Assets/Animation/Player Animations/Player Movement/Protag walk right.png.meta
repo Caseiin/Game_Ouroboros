@@ -143,10 +143,10 @@ TextureImporter:
       name: Protag walk right_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 2
-        width: 12
-        height: 25
+        x: 13
+        y: 3
+        width: 10
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Protag walk right_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 2
-        width: 14
-        height: 25
+        x: 48
+        y: 3
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: Protag walk right_2
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2
-        width: 16
-        height: 25
+        x: 83
+        y: 3
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: Protag walk right_3
       rect:
         serializedVersion: 2
-        x: 118
-        y: 2
-        width: 16
-        height: 25
+        x: 119
+        y: 3
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Protag walk right_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 4
-        width: 12
-        height: 23
+        x: 157
+        y: 5
+        width: 10
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Protag walk right_5
       rect:
         serializedVersion: 2
-        x: 191
-        y: 4
-        width: 13
-        height: 23
+        x: 192
+        y: 5
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: Protag walk right_6
       rect:
         serializedVersion: 2
-        x: 225
-        y: 4
-        width: 15
-        height: 23
+        x: 226
+        y: 5
+        width: 13
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +297,10 @@ TextureImporter:
       name: Protag walk right_7
       rect:
         serializedVersion: 2
-        x: 263
-        y: 4
-        width: 13
-        height: 23
+        x: 264
+        y: 5
+        width: 11
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: Protag walk right_8
       rect:
         serializedVersion: 2
-        x: 297
-        y: 4
-        width: 15
-        height: 23
+        x: 298
+        y: 5
+        width: 13
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,10 +341,10 @@ TextureImporter:
       name: Protag walk right_9
       rect:
         serializedVersion: 2
-        x: 333
-        y: 4
-        width: 15
-        height: 23
+        x: 334
+        y: 5
+        width: 13
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9cf15772c3b88f140a5d00d98a7ae9e0
     internalID: 0
     vertices: []
     indices: 
