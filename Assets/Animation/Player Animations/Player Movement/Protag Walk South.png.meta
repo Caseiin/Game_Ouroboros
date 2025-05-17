@@ -130,10 +130,10 @@ TextureImporter:
       name: Protag Walk South_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 3
-        width: 13
-        height: 22
+        x: 12
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Protag Walk South_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 3
-        width: 14
-        height: 22
+        x: 46
+        y: 4
+        width: 12
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: Protag Walk South_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 3
-        width: 15
-        height: 22
+        x: 81
+        y: 4
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: Protag Walk South_3
       rect:
         serializedVersion: 2
-        x: 116
-        y: 3
-        width: 15
-        height: 22
+        x: 117
+        y: 4
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: Protag Walk South_4
       rect:
         serializedVersion: 2
-        x: 154
-        y: 3
-        width: 14
-        height: 22
+        x: 155
+        y: 4
+        width: 12
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: Protag Walk South_5
       rect:
         serializedVersion: 2
-        x: 191
-        y: 3
-        width: 13
-        height: 22
+        x: 192
+        y: 4
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: Protag Walk South_6
       rect:
         serializedVersion: 2
-        x: 228
-        y: 3
-        width: 14
-        height: 22
+        x: 229
+        y: 4
+        width: 12
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +284,10 @@ TextureImporter:
       name: Protag Walk South_7
       rect:
         serializedVersion: 2
-        x: 263
-        y: 3
-        width: 15
-        height: 22
+        x: 264
+        y: 4
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: Protag Walk South_8
       rect:
         serializedVersion: 2
-        x: 299
-        y: 3
-        width: 15
-        height: 22
+        x: 300
+        y: 4
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: Protag Walk South_9
       rect:
         serializedVersion: 2
-        x: 334
-        y: 3
-        width: 14
-        height: 22
+        x: 335
+        y: 4
+        width: 12
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b09aa59863b3fe944a623f988bacc83c
     internalID: 0
     vertices: []
     indices: 

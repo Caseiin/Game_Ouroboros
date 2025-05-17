@@ -150,7 +150,6 @@ public class Movement : MonoBehaviour
         //move the player
         //transform.position+= movedirection.normalized*currentspeed*Time.deltaTime;
         rb.linearVelocity = movedirection*currentspeed;
-        animator.SetBool("Walk Forward", isWalking);
         isWalking = (movedirection != Vector2.zero);
 
     }
