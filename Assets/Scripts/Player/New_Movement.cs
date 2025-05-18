@@ -34,7 +34,7 @@ public class New_Movement : MonoBehaviour
     bool isDashing = false;
     Vector2 lastNonZeroDirection = Vector2.right;
 
-    [SerializeField] TrailRenderer dashTrail;
+    TrailRenderer dashTrail;
     [SerializeField] float trailFadeTime = 0.2f;
 
     void Start()
@@ -42,10 +42,15 @@ public class New_Movement : MonoBehaviour
         currentspeed = players.playermovespeed;
         currentHeight = players.playerheight;
         DefaultHeight = players.playerheight;
+        dashTrail = GetComponent<TrailRenderer>();
         // Initialize trail renderer
         if (dashTrail != null)
         {
             dashTrail.emitting = false;
+        }
+        else
+        {
+            Debug.Log("Trailrender not connected");
         }
     }
 
@@ -118,10 +123,6 @@ public class New_Movement : MonoBehaviour
         isDashing = true;
 
         // Activate trail renderer
-        if (dashTrail != null)
-        {
-            dashTrail.emitting = true;
-        }
 
         Vector2 dashDirection = lastNonZeroDirection;
 
@@ -129,9 +130,16 @@ public class New_Movement : MonoBehaviour
         {
             animator.SetInteger("Dash Direction", 1);
         }
-        else
+        else if (dashDirection.x >0)
         {
             animator.SetInteger("Dash Direction", 2);
+        }
+        else
+        {
+            if (dashTrail != null)
+            {
+                dashTrail.emitting = true; //sets trailrenderer in y direction
+            }
         }
 
         player_rb.linearVelocity = dashDirection * dashSpeed;
