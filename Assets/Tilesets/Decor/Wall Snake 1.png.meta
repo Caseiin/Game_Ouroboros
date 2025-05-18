@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6d258f80df6528c47bad3102e39dfc0f
+guid: 18de8b93c9a699046940aa066253f9ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4040733395770150372
-    second: Trees 1_0
+      213: 6230885277962698777
+    second: Wall Snake 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,11 +113,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trees 1_0
+      name: Wall Snake 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -128,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c12ff01a26e6ce7c0800000000000000
-      internalID: -4040733395770150372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Trees 1_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76d4ee501a18d344b828e2b56211e1a1
-      internalID: -198413661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Trees 1_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca5d6669f9e85504ab6e103eb1ae1b3f
-      internalID: -649912510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Trees 1_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bcca8c1406d9b245ae5dab2290ffa93
-      internalID: -1794080665
+      spriteID: 9108d2dc52d887650800000000000000
+      internalID: 6230885277962698777
       vertices: []
       indices: 
       edges: []
@@ -214,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Trees 1_0: -4040733395770150372
-      Trees 1_1: -198413661
-      Trees 1_2: -649912510
-      Trees 1_3: -1794080665
+      Wall Snake 1_0: 6230885277962698777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
