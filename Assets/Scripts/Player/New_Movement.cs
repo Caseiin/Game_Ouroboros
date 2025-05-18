@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class New_Movement : MonoBehaviour
 {
+    // Audio variables
+    public AudioClip[] audioClips;
+    private AudioSource audioSource;
+    private Coroutine footstepCoroutine;
+
     PlayerAttributes players;
     Rigidbody2D player_rb;
     private Animator animator;
@@ -17,6 +22,7 @@ public class New_Movement : MonoBehaviour
         animator = GetComponent<Animator>();
         players.OnPlayerMovespeedChange += UpdateSpeed;
         players.OnPlayerHeightChange += UpdateHeight;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Declaration of basic movement variables
@@ -89,7 +95,6 @@ public class New_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             movedirection.y += 1;
-
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -102,19 +107,38 @@ public class New_Movement : MonoBehaviour
         }
 
         if (!isDashing)
+        {
+            if (movedirection.magnitude > 1)
             {
-                if (movedirection.magnitude > 1)
-                {
-                    movedirection.Normalize();
-                }
-                //move the player
-                player_rb.linearVelocity = movedirection * currentspeed;
+                movedirection.Normalize();
             }
+            //move the player
+            player_rb.linearVelocity = movedirection * currentspeed;
+
+        }
 
         isWalking = (movedirection != Vector2.zero);
 
-        //Update animations based on walkDireection array 
+        //Update animations 
         UpdateWalkDirection();
+
+        // handle footsteps sounds
+        if (isWalking)
+        {
+            if (footstepCoroutine == null)
+            {
+                footstepCoroutine = StartCoroutine(PlayFootstepSounds());
+            }
+        }
+        else
+        {
+            if (footstepCoroutine != null)
+            {
+                StopCoroutine(footstepCoroutine);
+                footstepCoroutine = null;
+                audioSource.Stop(); //stop any ongoing sound
+            }
+        }
     }
 
     private IEnumerator Dash()
@@ -130,7 +154,7 @@ public class New_Movement : MonoBehaviour
         {
             animator.SetInteger("Dash Direction", 1);
         }
-        else if (dashDirection.x >0)
+        else if (dashDirection.x > 0)
         {
             animator.SetInteger("Dash Direction", 2);
         }
@@ -143,7 +167,7 @@ public class New_Movement : MonoBehaviour
         }
 
         player_rb.linearVelocity = dashDirection * dashSpeed;
-
+        audioSource.PlayOneShot(audioClips[1]);
         yield return new WaitForSeconds(dashDuration);
 
         player_rb.linearVelocity = Vector2.zero;
@@ -180,7 +204,7 @@ public class New_Movement : MonoBehaviour
         }
 
         animator.SetInteger("Walk Direction", directionKey);
-        
+
     }
 
     void OnCrouch()
@@ -211,5 +235,14 @@ public class New_Movement : MonoBehaviour
     {
         players.OnPlayerMovespeedChange -= UpdateSpeed;
         players.OnPlayerHeightChange -= UpdateHeight;
+    }
+
+    private IEnumerator PlayFootstepSounds()
+    {
+        while (true)
+        {
+            audioSource.PlayOneShot(audioClips[0]);
+            yield return new WaitForSeconds(0.6f); //Adjust interval to movement and sound
+        }
     }
 }
