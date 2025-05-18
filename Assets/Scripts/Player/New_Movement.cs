@@ -16,12 +16,15 @@ public class New_Movement : MonoBehaviour
         players = GetComponent<PlayerAttributes>();
         animator = GetComponent<Animator>();
         players.OnPlayerMovespeedChange += UpdateSpeed;
+        players.OnPlayerHeightChange += UpdateHeight;
     }
 
     // Declaration of basic movement variables
     bool didCrounch;
     bool isWalking;
     float currentspeed;
+    int currentHeight;
+    int DefaultHeight;
 
     //Dash variables
     [SerializeField] float dashSpeed = 15f;
@@ -31,16 +34,23 @@ public class New_Movement : MonoBehaviour
     bool isDashing = false;
     Vector2 lastNonZeroDirection = Vector2.right;
 
-    [SerializeField] TrailRenderer dashTrail;
+    TrailRenderer dashTrail;
     [SerializeField] float trailFadeTime = 0.2f;
 
     void Start()
     {
         currentspeed = players.playermovespeed;
+        currentHeight = players.playerheight;
+        DefaultHeight = players.playerheight;
+        dashTrail = GetComponent<TrailRenderer>();
         // Initialize trail renderer
         if (dashTrail != null)
         {
             dashTrail.emitting = false;
+        }
+        else
+        {
+            Debug.Log("Trailrender not connected");
         }
     }
 
@@ -60,6 +70,10 @@ public class New_Movement : MonoBehaviour
         currentspeed = speed;
     }
 
+    void UpdateHeight(int newHeight)
+    {
+        currentHeight = newHeight;
+    }
     void moveBasic()
     {
         movedirection = Vector2.zero;
@@ -109,12 +123,25 @@ public class New_Movement : MonoBehaviour
         isDashing = true;
 
         // Activate trail renderer
-        if (dashTrail != null)
-        {
-            dashTrail.emitting = true;
-        }
 
         Vector2 dashDirection = lastNonZeroDirection;
+
+        if (dashDirection.x < 0)
+        {
+            animator.SetInteger("Dash Direction", 1);
+        }
+        else if (dashDirection.x >0)
+        {
+            animator.SetInteger("Dash Direction", 2);
+        }
+        else
+        {
+            if (dashTrail != null)
+            {
+                dashTrail.emitting = true; //sets trailrenderer in y direction
+            }
+        }
+
         player_rb.linearVelocity = dashDirection * dashSpeed;
 
         yield return new WaitForSeconds(dashDuration);
@@ -132,6 +159,7 @@ public class New_Movement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        animator.SetInteger("Dash Direction", 0);
     }
     void UpdateWalkDirection()
     {
@@ -159,23 +187,29 @@ public class New_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (didCrounch==false)
+            if (didCrounch)
             {
-                transform.localScale = new Vector3(0.5f,0.5f,1f);
-                UpdateSpeed(0.5f*players.playermovespeed);
+                animator.SetBool("Crouch", true);
+                UpdateSpeed(0.5f * players.playermovespeed);
+                UpdateHeight(2); // go to crounching height
+                canDash = false;
             }
-            else 
+            else
             {
-                transform.localScale = new Vector3(1f,1f,1f);
+                animator.SetBool("Crouch", false);
                 UpdateSpeed(players.playermovespeed);
+                UpdateHeight(DefaultHeight); // return to standing height
+                canDash = true;
+
             }
 
-            didCrounch = !didCrounch;
+            didCrounch = !didCrounch; //toggle crouch
         }
     }
 
     void OnDisable()
     {
         players.OnPlayerMovespeedChange -= UpdateSpeed;
+        players.OnPlayerHeightChange -= UpdateHeight;
     }
 }

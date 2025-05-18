@@ -22,7 +22,7 @@ public class InitialValues : MonoBehaviour
 
         player.playerhealth = 4;
         player.playermovespeed = 50f;
-        player.playerheight = 4f;
+        player.playerheight = 4;
     }
 
 
