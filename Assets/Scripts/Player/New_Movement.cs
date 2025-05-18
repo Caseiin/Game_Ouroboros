@@ -65,7 +65,7 @@ public class New_Movement : MonoBehaviour
     {
         moveBasic();
         OnCrouch();
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
