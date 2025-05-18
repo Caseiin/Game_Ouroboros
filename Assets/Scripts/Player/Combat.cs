@@ -21,11 +21,14 @@ public class Combat : MonoBehaviour
     // Added direction storage
     private Vector2 currentAimDirection;
 
-    //mouse click variable
-    private bool isMeleeing;
+    //Combat sound effects
+    public AudioClip[] clips;
+    private AudioSource audioSource;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -64,6 +67,7 @@ public class Combat : MonoBehaviour
         {
             Melee.SetActive(true);
             isAttacking = true;
+            audioSource.PlayOneShot(clips[0]);
         }
     }
 
@@ -88,6 +92,7 @@ public class Combat : MonoBehaviour
             GameObject intBullet = Instantiate(bullet, aim.position, bulletRotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(currentAimDirection * firepower, ForceMode2D.Impulse);
             Destroy(intBullet, 2f);
+            audioSource.PlayOneShot(clips[1]);
         }
     }
 
