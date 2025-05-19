@@ -7,14 +7,11 @@ public class weapon : MonoBehaviour
     public weapontype Weapontype;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //EnemyCombat enemyCombat = collision.GetComponent<EnemyCombat>();
-       //if (enemyCombat != null)
+        EnemyCombat1 enemyCombat = collision.GetComponent<EnemyCombat1>();
+       if (enemyCombat != null)
         {
-           // enemyCombat.TakeDamage(damage);
-           // if (Weapontype == weapontype.bullet)
-            {
-           //     Destroy(gameObject);
-            }
+            bool hit = true;
+            enemyCombat.TakeDamage(hit, damage);
         }
     }
 }
