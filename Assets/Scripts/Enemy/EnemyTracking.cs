@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyTracking : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     private NavMeshAgent agent;
     private SpriteRenderer spriteRenderer;
 
@@ -19,6 +19,7 @@ public class EnemyTracking : MonoBehaviour
 
     void Start()
     {
+        target = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         meleeLocalScale = GetComponentInChildren<Transform>();
