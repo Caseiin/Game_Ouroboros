@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598bfb28d09acdf45b85dcbc950399d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParticlePrefab: {fileID: 5776090727201001771, guid: 0ae4234896ac94342864356c3c81e9b1, type: 3}
   enemyhealth: 0
 --- !u!114 &7006732466650088520
 MonoBehaviour:
@@ -362,6 +363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melee: {fileID: 8313457862411125910}
+  attackCooldown: 2
+  attackDuration: 0.5
+  isAttacking: 0
 --- !u!1 &8313457862411125910
 GameObject:
   m_ObjectHideFlags: 0

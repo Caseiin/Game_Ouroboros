@@ -91,5 +91,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e117ee5cff810e344b19de80b4846c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 480314889169973026, guid: f30f6de66ffb5f94897a8978ffc32747, type: 3}
-  Archer: {fileID: 8760225881310413381, guid: c1952a1cf02058c42a51396001c8d3a2, type: 3}
+  enemy: {fileID: 1503336353651088658, guid: 514111b13bcd34a46ac9fc197b219722, type: 3}
