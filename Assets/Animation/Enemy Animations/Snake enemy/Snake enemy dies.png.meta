@@ -137,10 +137,10 @@ TextureImporter:
       name: Snake enemy dies_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 32
-        height: 29
+        x: 3
+        y: 2
+        width: 30
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: Snake enemy dies_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1
-        width: 32
-        height: 29
+        x: 39
+        y: 2
+        width: 30
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Snake enemy dies_2
       rect:
         serializedVersion: 2
-        x: 75
-        y: 0
-        width: 31
-        height: 30
+        x: 76
+        y: 1
+        width: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: Snake enemy dies_3
       rect:
         serializedVersion: 2
-        x: 107
-        y: 0
-        width: 35
-        height: 28
+        x: 108
+        y: 1
+        width: 33
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Snake enemy dies_4
       rect:
         serializedVersion: 2
-        x: 143
-        y: 0
-        width: 37
-        height: 27
+        x: 144
+        y: 1
+        width: 35
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Snake enemy dies_5
       rect:
         serializedVersion: 2
-        x: 179
-        y: 0
-        width: 37
-        height: 23
+        x: 180
+        y: 1
+        width: 35
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: Snake enemy dies_6
       rect:
         serializedVersion: 2
-        x: 215
+        x: 216
         y: 0
-        width: 37
-        height: 18
+        width: 35
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: Snake enemy dies_7
       rect:
         serializedVersion: 2
-        x: 251
+        x: 252
         y: 0
-        width: 37
-        height: 12
+        width: 35
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6c782f772a6232242852a5d696d87f21
     internalID: 0
     vertices: []
     indices: 
