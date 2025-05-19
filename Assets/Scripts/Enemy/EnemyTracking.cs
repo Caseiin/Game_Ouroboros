@@ -11,10 +11,19 @@ public class EnemyTracking : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        if (target == null)
+        {
+            Debug.Log("Player is not set as target for the enemy in inspector");
+            return;
+        }
     }
 
     void Update()
     {
-        agent.SetDestination(target.position);
+        if (target != null)
+        {
+            agent.SetDestination(target.position);  
+        }
+        
     }
 }
