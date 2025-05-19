@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Combat : MonoBehaviour
 {
@@ -112,9 +113,10 @@ public class Combat : MonoBehaviour
             dead = true;
             animator.SetBool("Dead", dead);
             StartCoroutine(DestroyAfterAnimation());
+           
         }
     }
-
+   
     private IEnumerator DestroyAfterAnimation()
     {
 
@@ -128,7 +130,9 @@ public class Combat : MonoBehaviour
         float animationLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         Debug.Log("player death animation:" + animationLength);
         yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject); 
+        Destroy(gameObject);
+        
+
     }
 
 
