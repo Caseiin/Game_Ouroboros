@@ -58242,6 +58242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224236499858645148, guid: 514111b13bcd34a46ac9fc197b219722, type: 3}
+      propertyPath: ParticlePrefab
+      value: 
+      objectReference: {fileID: 5776090727201001771, guid: 0ae4234896ac94342864356c3c81e9b1, type: 3}
     - target: {fileID: 1503336353651088658, guid: 514111b13bcd34a46ac9fc197b219722, type: 3}
       propertyPath: m_Name
       value: Snake_enemy

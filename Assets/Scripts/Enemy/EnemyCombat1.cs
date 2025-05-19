@@ -6,7 +6,8 @@ public class EnemyCombat1 : MonoBehaviour
 {
     private EnemyAttributes enemyAttributes;
     private EnemyInitialValues enemyInitialValues;
-
+    public GameObject ParticlePrefab;
+    private GameObject Currentparticles;
     private Animator animator;
     [SerializeField] int enemyhealth;
     GameObject melee;
@@ -84,7 +85,10 @@ public class EnemyCombat1 : MonoBehaviour
         // Get exact length of the death animation clip
         float animationLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         yield return new WaitForSeconds(0.5f);
+        Vector3 particleposition = transform.position;
+        Currentparticles = Instantiate(ParticlePrefab, particleposition, Quaternion.identity);
         Destroy(gameObject);
+       
     }
 
     void OnDisable()
