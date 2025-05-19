@@ -127,8 +127,8 @@ public class Combat : MonoBehaviour
         // Get exact length of the death animation clip
         float animationLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         Debug.Log("player death animation:" + animationLength);
-        yield return new WaitForSeconds(0.5f);
-        //Destroy(gameObject); 
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject); 
     }
 
 
