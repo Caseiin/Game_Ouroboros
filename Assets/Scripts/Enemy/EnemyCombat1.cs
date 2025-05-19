@@ -9,7 +9,7 @@ public class EnemyCombat1 : MonoBehaviour
 
     private Animator animator;
     [SerializeField] int enemyhealth;
-
+    GameObject melee;
 
     bool isDead;
     int maxhealth;
@@ -20,12 +20,15 @@ public class EnemyCombat1 : MonoBehaviour
         enemyAttributes = GetComponent<EnemyAttributes>();
         enemyAttributes.OnEnemyHealthChange += CurrentHealth;
         enemyhealth = enemyAttributes.EnemyHealth;
+        Transform childTransform = transform.Find("Melee");
+        melee = childTransform.gameObject;
     }
 
     void Start()
     {
         maxhealth = enemyhealth;
         isDead = false;
+        melee.SetActive(false);
     }
 
     public void TakeDamage(bool hit,int damage)
@@ -53,6 +56,22 @@ public class EnemyCombat1 : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            melee.SetActive(true);
+        }
+    }
+
+    void OTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            melee.SetActive(false);
+        }
+    }
+
     private IEnumerator DestroyAfterAnimation()
     {
 
@@ -64,9 +83,8 @@ public class EnemyCombat1 : MonoBehaviour
 
         // Get exact length of the death animation clip
         float animationLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
-        Debug.Log("Snake death animation:" + animationLength);
         yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 
     void OnDisable()
