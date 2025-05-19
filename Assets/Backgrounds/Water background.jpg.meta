@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: cea357cf11fbb514596fc632b7cafa48
+guid: 19282026edd25b64dbccdade53802cea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4604858779746428154
-    second: Snake enemy_0
-  - first:
-      213: -6501841600615390552
-    second: Snake enemy_1
-  - first:
-      213: -5527912328256327685
-    second: Snake enemy_2
-  - first:
-      213: 5311473111955348751
-    second: Snake enemy_3
-  - first:
-      213: 267876118047318581
-    second: Snake enemy_4
+      213: -8928875000679442743
+    second: Water background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Snake enemy_0
+      name: Water background_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 30
-        height: 27
+        x: 0
+        y: 0
+        width: 1280
+        height: 716
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,96 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af4ef9f99aeb7ef30800000000000000
-      internalID: 4604858779746428154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Snake enemy_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 3
-        width: 31
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a266713381d4c5a0800000000000000
-      internalID: -6501841600615390552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Snake enemy_2
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 3
-        width: 30
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bff67cc8609e843b0800000000000000
-      internalID: -5527912328256327685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Snake enemy_3
-      rect:
-        serializedVersion: 2
-        x: 109
-        y: 1
-        width: 33
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0d132867a426b940800000000000000
-      internalID: 5311473111955348751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Snake enemy_4
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 3
-        width: 33
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 532650cf8efa7b300800000000000000
-      internalID: 267876118047318581
+      spriteID: 9c6d2ac7e73461480800000000000000
+      internalID: -8928875000679442743
       vertices: []
       indices: 
       edges: []
@@ -238,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 178f004e4df59244da3d30dcb378c5c8
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Snake enemy_0: 4604858779746428154
-      Snake enemy_1: -6501841600615390552
-      Snake enemy_2: -5527912328256327685
-      Snake enemy_3: 5311473111955348751
-      Snake enemy_4: 267876118047318581
+      Water background_0: -8928875000679442743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
