@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class Combat : MonoBehaviour
 {
@@ -21,16 +23,33 @@ public class Combat : MonoBehaviour
     // Added direction storage
     private Vector2 currentAimDirection;
 
+
+    //Enemy variables
+    private EnemyCombat1 enemyCombat;
+
     //Combat sound effects
     public AudioClip[] clips;
     private AudioSource audioSource;
 
+    //Player stats variables
+    private PlayerAttributes playerAttributes;
+    int MaxHealth;
+    public int currentHealth;
+    bool dead;
     void Awake()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        playerAttributes = GetComponent<PlayerAttributes>();
+        playerAttributes.OnPlayerHealthChange += UpdateHealth;
+        currentHealth = playerAttributes.playerhealth;
+        MaxHealth = currentHealth;
     }
 
+    void Start()
+    {
+        dead = false;
+    }
     void Update()
     {
         UpdateAim();
@@ -70,6 +89,48 @@ public class Combat : MonoBehaviour
             audioSource.PlayOneShot(clips[0]);
         }
     }
+
+    void UpdateHealth(int health)
+    {
+        currentHealth = health;
+    }
+    public void TakeDamage(bool hit, int damage)
+    {
+        if (hit)
+        {
+            int newHealth = currentHealth - damage;
+            UpdateHealth(newHealth);
+            Death();
+        }
+    }
+
+
+    void Death()
+    {
+        if (currentHealth <= 0)
+        {
+            dead = true;
+            animator.SetBool("Dead", dead);
+            StartCoroutine(DestroyAfterAnimation());
+        }
+    }
+
+    private IEnumerator DestroyAfterAnimation()
+    {
+
+        // Wait until the animator enters the death state
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player death"))
+        {
+            yield return null;
+        }
+
+        // Get exact length of the death animation clip
+        float animationLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        Debug.Log("player death animation:" + animationLength);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject); 
+    }
+
 
     void OnRangedCombat()
     {
@@ -117,32 +178,38 @@ public class Combat : MonoBehaviour
 
     void UpdateMeleeAnimation()
     {
-    // Determine primary direction (prioritize larger axis)
-    bool isHorizontalDominant = Mathf.Abs(currentAimDirection.x) > Mathf.Abs(currentAimDirection.y);
+        // Determine primary direction (prioritize larger axis)
+        bool isHorizontalDominant = Mathf.Abs(currentAimDirection.x) > Mathf.Abs(currentAimDirection.y);
 
-    if (isHorizontalDominant)
-    {
-        // Left/Right
-        if (currentAimDirection.x < 0)
+        if (isHorizontalDominant)
         {
-            animator.SetInteger("Attack Direction", 3); // Left
+            // Left/Right
+            if (currentAimDirection.x < 0)
+            {
+                animator.SetInteger("Attack Direction", 3); // Left
+            }
+            else
+            {
+                animator.SetInteger("Attack Direction", 4); // Right
+            }
         }
         else
         {
-            animator.SetInteger("Attack Direction", 4); // Right
+            // Up/Down
+            if (currentAimDirection.y < 0)
+            {
+                animator.SetInteger("Attack Direction", 1); // up
+            }
+            else
+            {
+                animator.SetInteger("Attack Direction", 2); // dowm
+            }
         }
-    }
-    else
+
+    }   
+    void OnDisable()
     {
-        // Up/Down
-        if (currentAimDirection.y < 0)
-        {
-            animator.SetInteger("Attack Direction", 1); // up
-        }
-        else
-        {
-            animator.SetInteger("Attack Direction", 2); // dowm
-        }
+        playerAttributes.OnPlayerHealthChange -= UpdateHealth;
     }
-    }
+    
 }
