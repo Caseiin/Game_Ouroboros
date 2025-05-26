@@ -19,12 +19,17 @@ public class p_MovingState : PlayerBaseState
     const string player_forward = "Player_Move_forward";
     const string player_back = "Player_Move_Back";
     const string player_idle = "Player_idle_forward";
+    const string Crouch_left = "Crouch_left";
+    const string Crouch_right = "Crouch_right";
 
     //movement variables
     float currentspeed;
     public Vector2 movedirection;
 
-
+    //Crouch variables
+    bool didCrouch = false;
+    Vector2 crouchDirection;
+    float preCrouchSpeed; // stores speed before crouching
     //Dash variables
     [SerializeField] float dashSpeed = 15f;
     [SerializeField] float dashDuration = 0.2f;
@@ -59,6 +64,7 @@ public class p_MovingState : PlayerBaseState
         if (!isDashing)
         {
             MoveBasic();
+            Oncrouch();
         }
         
         // Check for attack
@@ -71,7 +77,15 @@ public class p_MovingState : PlayerBaseState
         // Delay idle transition using time since last movement
         if (movedirection.sqrMagnitude < 0.01f && canDash)
         {
-            ChangeAnimation(player_idle);
+            if (didCrouch)
+            {
+                string crouchIdle = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
+                ChangeAnimation(crouchIdle);
+            }
+            else
+            {
+                ChangeAnimation(player_idle);
+            }
         }
 
     }
@@ -87,6 +101,38 @@ public class p_MovingState : PlayerBaseState
     {
         currentspeed = newSpeed;
     }
+
+#region CrouchMechanic
+    void Oncrouch()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (!didCrouch) // Entering crouch
+            {
+                preCrouchSpeed = currentspeed;
+                currentspeed *= 0.5f;
+                canDash = false;
+
+                // Determine crouch animation direction
+                string crouchAnim = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
+                ChangeAnimation(crouchAnim); // <-- HERE (when entering crouch)
+            }
+            else // Exiting crouch
+            {
+                currentspeed = preCrouchSpeed;
+                canDash = true;
+
+                // Revert to movement/idle animation
+                if (movedirection != Vector2.zero)
+                    UpdateMoveAnimation();
+                else
+                    ChangeAnimation(player_idle);
+            }
+
+            didCrouch = !didCrouch;
+        }
+    }
+#endregion
 #region TransitionStateChecks
     bool Atk_Input()
     {
@@ -174,9 +220,8 @@ public class p_MovingState : PlayerBaseState
         if (movedirection != Vector2.zero)
         {
             Debug.Log("move animation");
-            lastMovementTime = Time.time; //reset idle timer when moving
             UpdateMoveAnimation();
-            lastNonZeroDirection = movedirection.normalized;
+            lastNonZeroDirection = movedirection.normalized; // Update even when crouching
         }
 
         player_rb.linearVelocity = movedirection * currentspeed;
@@ -219,11 +264,23 @@ public class p_MovingState : PlayerBaseState
 #region Animation
     void UpdateMoveAnimation()
     {
-        if (isDashing) return; // Just in case
-        if (movedirection.x < -0.1f) ChangeAnimation(player_left);
-        else if (movedirection.x > 0.1f) ChangeAnimation(player_right);
-        else if (movedirection.y > 0.1f) ChangeAnimation(player_forward);
-        else if (movedirection.y < -0.1f) ChangeAnimation(player_back);
+        if (isDashing) return;
+
+        if (didCrouch)
+        {
+            // Determine crouch direction based on movement or last direction
+            Vector2 currentDir = movedirection != Vector2.zero ? movedirection : lastNonZeroDirection;
+            string crouchAnim = currentDir.x < 0 ? Crouch_left : Crouch_right;
+            ChangeAnimation(crouchAnim);
+        }
+        else
+        {
+            // Regular movement animations
+            if (movedirection.x < -0.1f) ChangeAnimation(player_left);
+            else if (movedirection.x > 0.1f) ChangeAnimation(player_right);
+            else if (movedirection.y > 0.1f) ChangeAnimation(player_forward);
+            else if (movedirection.y < -0.1f) ChangeAnimation(player_back);
+        }
     }
 
     void ChangeAnimation(string newAnim)
