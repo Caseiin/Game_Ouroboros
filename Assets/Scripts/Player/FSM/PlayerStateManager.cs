@@ -10,13 +10,13 @@ public class PlayerStateManager : MonoBehaviour
     // New instances of the states
     // Initialize states normally (no MonoBehaviour)
     public p_CombatState combatState = new p_CombatState();
-    public p_IdleState idleState = new p_IdleState();
+
     public p_MovingState movingState = new p_MovingState();
 
     void Start()
     {
         // initial player state is the idle state
-        currentState = idleState;
+        currentState = movingState;
         currentState.EnterState(this); //this refers to the context of the player state
     }
 
