@@ -3,18 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 public class PlayerStateManager : MonoBehaviour
 {
-    //Context of the player state
-
+    //Context of the player state  
     PlayerBaseState currentState; //holds a reference to the active state in a state machine
+
+    //Combat state dependecies
+    public GameObject melee;
+    public Transform aim;
+    public GameObject bullet;
+    public float firepower = 10f;
+    public PlayerAttributes playerAttributes;
 
     // New instances of the states
     // Initialize states normally (no MonoBehaviour)
-    public p_CombatState combatState = new p_CombatState();
+    public p_CombatState combatState ;
 
     public p_MovingState movingState = new p_MovingState();
 
     void Start()
     {
+        //Initialize and pass dependencies 
+        combatState = new p_CombatState();
+        playerAttributes = GetComponent<PlayerAttributes>();
+        combatState.Initialize(this);
+
         // initial player state is the idle state
         currentState = movingState;
         currentState.EnterState(this); //this refers to the context of the player state
