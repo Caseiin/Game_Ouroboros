@@ -93,6 +93,7 @@ public class p_MovingState : PlayerBaseState
     public override void ExitState(PlayerStateManager playerState)
     {
         playerState.StopAllCoroutines();
+        UpdateSpeed(0f);
         player.OnPlayerMovespeedChange -= UpdateSpeed;
     }
 
