@@ -2,6 +2,7 @@
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class p_CombatState : PlayerBaseState
 {
@@ -58,7 +59,6 @@ public class p_CombatState : PlayerBaseState
     {
         Debug.Log("Player is attacking!");
         cooldownTimer = combatCooldown;
-        //ChangeAnimation(CombatIdle); //Start with combat idle
     }
 
     public override void UpdateState(PlayerStateManager playerState)
@@ -74,10 +74,10 @@ public class p_CombatState : PlayerBaseState
         }
 
         if (cooldownTimer <= 0 || Move_input())
-            {
-                // if input detected move from idle state to moving state   
-                playerState.SwitchState(playerState.movingState);
-            }
+        {
+            // if input detected move from idle state to moving state   
+            playerState.SwitchState(playerState.movingState);
+        }
 
 
         if (Input.GetMouseButton(0))
@@ -88,11 +88,17 @@ public class p_CombatState : PlayerBaseState
         {
             OnRangedCombat();
         }
+        //Debug.Log(EventSystem.current.IsPointerOverGameObject());
     }
 
     public override void ExitState(PlayerStateManager playerState)
     {
         if (isAttacking) EndAttack();
+    }
+
+    bool isPointerOnUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     bool Move_input()
@@ -104,18 +110,7 @@ public class p_CombatState : PlayerBaseState
     }
 
 
-    void OncloseCombat()
-    {
-        if (!isAttacking)
-        {
-            melee.SetActive(true);
-            isAttacking = true;
-            ChangeAnimation(GetAttackAnim());
-        }
-
-    }
-
-
+    #region Shooting
     void OnRangedCombat()
     {
         if (shootTimer > shootCoolDown)
@@ -149,7 +144,19 @@ public class p_CombatState : PlayerBaseState
             Object.Destroy(intBullet, 2f);
         }
     }
+#endregion
+    #region MeleeCombat
 
+    void OncloseCombat()
+    {
+        if (!isAttacking)
+        {
+            melee.SetActive(true);
+            isAttacking = true;
+            ChangeAnimation(GetAttackAnim());
+        }
+
+    }
 
     void MeleeTimer()
     {
@@ -173,15 +180,17 @@ public class p_CombatState : PlayerBaseState
         ChangeAnimation(CombatIdle);
     }
 
+    #endregion
+    #region CombatAnimation
     string GetAttackAnim()
     {
         bool isXDominant = Mathf.Abs(combatDirection.x) > Mathf.Abs(combatDirection.y);
 
         if (isXDominant)
         {
-            return combatDirection.x < 0 ? RightAttack :LeftAttack ;
+            return combatDirection.x < 0 ? RightAttack : LeftAttack;
         }
-        return combatDirection.y < 0 ?  UpAttack: DownAttack ;
+        return combatDirection.y < 0 ? UpAttack : DownAttack;
     }
 
     void ChangeAnimation(string newAnim)
@@ -191,7 +200,7 @@ public class p_CombatState : PlayerBaseState
         {
             //if attacking, only allow for attack animations
             bool isAttackAnim = newAnim == UpAttack || newAnim == DownAttack || newAnim == LeftAttack || newAnim == RightAttack;
-            
+
             if (!isAttackAnim)
             {
                 Debug.Log($"Blocked {newAnim} during attack");
@@ -205,4 +214,5 @@ public class p_CombatState : PlayerBaseState
         animator.Play(newAnim);
         currentAnim = newAnim;
     }
+#endregion
 }
