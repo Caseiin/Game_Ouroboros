@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protag Dash Down_0: 8395030754974092225
+      Protag Dash Down_1: -4666390143020928097
+      Protag Dash Down_10: -170862327668421101
+      Protag Dash Down_11: -5315334730327072978
+      Protag Dash Down_12: 8014221455975741637
+      Protag Dash Down_13: 4116149615778537563
+      Protag Dash Down_2: 1546928210954438290
+      Protag Dash Down_3: -9113249070864959119
+      Protag Dash Down_4: 8256540217884634907
+      Protag Dash Down_5: -3456830706103329758
+      Protag Dash Down_6: -3388538420128496861
+      Protag Dash Down_7: -4590608471238503712
+      Protag Dash Down_8: -9083713881100835416
+      Protag Dash Down_9: 7857960031198868347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
