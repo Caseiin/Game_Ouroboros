@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         menuCanvas.SetActive(false); //during start up menu object is disabled
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -13,7 +14,9 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            menuCanvas.SetActive(!menuCanvas.activeSelf); // toggles between menu off and on
+            bool isActive = !menuCanvas.activeSelf;
+            menuCanvas.SetActive(isActive); // toggles between menu off and on
+            Time.timeScale = menuCanvas.activeSelf ? 0f : 1f; //check this code           
         }
     }
 }

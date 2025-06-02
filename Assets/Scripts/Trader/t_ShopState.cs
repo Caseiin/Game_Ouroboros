@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class t_ShopState : MonoBehaviour
+public class t_ShopState : TraderBaseState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Enterstate(TraderStateManager TradeState)
     {
-        
+        // throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Updatestate(TraderStateManager TradeState)
     {
-        
+        // throw new System.NotImplementedException();
     }
 }

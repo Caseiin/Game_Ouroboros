@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class t_IdleState : MonoBehaviour
+public class t_IdleState : TraderBaseState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Enterstate(TraderStateManager TradeState)
     {
-        
+        //throw new System.NotImplementedException();
+        Debug.Log("Trader is sleeping!");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Updatestate(TraderStateManager TradeState)
     {
-        
+        //throw new System.NotImplementedException();
     }
 }

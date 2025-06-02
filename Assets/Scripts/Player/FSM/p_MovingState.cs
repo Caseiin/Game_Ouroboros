@@ -247,7 +247,7 @@ public class p_MovingState : PlayerBaseState
 
     }
     #endregion
-    #region DashCode
+#region DashCode
     private IEnumerator Dash(PlayerStateManager playerState)
     {
         canDash = false;
@@ -293,8 +293,7 @@ public class p_MovingState : PlayerBaseState
             yield return null;
 
         }
-
-        // yield return new WaitForSecondsRealtime(dashCooldown);
+        
         canDash = true;
         if (dashSlide != null)
         {
