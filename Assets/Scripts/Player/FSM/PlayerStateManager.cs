@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class PlayerStateManager : MonoBehaviour
 {
     //Context of the player state  
@@ -12,6 +13,9 @@ public class PlayerStateManager : MonoBehaviour
     public GameObject bullet;
     public float firepower = 10f;
     public PlayerAttributes playerAttributes;
+
+    //Dash dependency
+    public Slider slider;
 
     // New instances of the states
     // Initialize states normally (no MonoBehaviour)
@@ -28,8 +32,11 @@ public class PlayerStateManager : MonoBehaviour
     {
         //Initialize and pass dependencies 
         combatState = new p_CombatState();
+        movingState = new p_MovingState();
+
         playerAttributes = GetComponent<PlayerAttributes>();
         combatState.Initialize(this);
+        movingState.Initialize(this);
 
         mainCamera = Camera.main;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class p_MovingState : PlayerBaseState
 {
@@ -34,16 +35,31 @@ public class p_MovingState : PlayerBaseState
     [SerializeField] float dashSpeed = 15f;
     [SerializeField] float dashDuration = 0.2f;
     [SerializeField] float dashCooldown = 1f;
+
+    //Dash slider reference
+    Slider dashSlide;
     
     float lastMovementTime;
     bool canDash = true;
     bool isDashing = false; // Track if currently dashing
 
     Vector2 lastNonZeroDirection = Vector2.right;
-
+    public void Initialize(PlayerStateManager playerState)
+    {
+        dashSlide = playerState.slider;
+        if (dashSlide == null)
+        {
+            Debug.LogError("dash slider does not exist in the moving state");
+        }
+        else
+        {
+            dashSlide.value = 1f;
+            Debug.Log("dash slider properly placed!");
+        }
+    }
     public override void EnterState(PlayerStateManager playerState)
     {
-        Debug.Log("Player now moving!");
+        // Debug.Log("Player now moving!");
 
         player_rb = playerState.GetComponent<Rigidbody2D>();
         player = playerState.GetComponent<PlayerAttributes>();
@@ -51,6 +67,8 @@ public class p_MovingState : PlayerBaseState
         currentspeed = player.playermovespeed;
         player.OnPlayerMovespeedChange += UpdateSpeed;
     }
+
+
 
     public override void UpdateState(PlayerStateManager playerState)
     {
@@ -66,7 +84,7 @@ public class p_MovingState : PlayerBaseState
             MoveBasic();
             Oncrouch();
         }
-        
+
         // Check for attack
         if (Atk_Input())
         {
@@ -228,8 +246,8 @@ public class p_MovingState : PlayerBaseState
         player_rb.linearVelocity = movedirection * currentspeed;
 
     }
-#endregion
-#region DashCode
+    #endregion
+    #region DashCode
     private IEnumerator Dash(PlayerStateManager playerState)
     {
         canDash = false;
@@ -240,6 +258,12 @@ public class p_MovingState : PlayerBaseState
 
         float originalspeed = currentspeed;
         currentspeed = dashSpeed;
+
+        // Set slider to empty immediately
+        if (dashSlide != null)
+        {
+            dashSlide.value = 0f;
+        }
 
         //  force animation change
         string dashAnim = dashDirection.x < 0 ? dash_left : dash_right;
@@ -257,15 +281,32 @@ public class p_MovingState : PlayerBaseState
         isDashing = false;
         player_rb.linearVelocity = movedirection * currentspeed;
 
-        yield return new WaitForSecondsRealtime(dashCooldown);
+        //Gradually refill slider during cooldown
+        float timer = 0f;
+        while (timer < dashCooldown)
+        {
+            timer += Time.deltaTime;
+            if (dashSlide != null)
+            {
+                dashSlide.value = Mathf.Lerp(0f, 1f, timer / dashCooldown);
+            }
+            yield return null;
+
+        }
+
+        // yield return new WaitForSecondsRealtime(dashCooldown);
         canDash = true;
+        if (dashSlide != null)
+        {
+            dashSlide.value = 1f;
+        }
 
     }
 #endregion
 #region Animation
     void UpdateMoveAnimation()
     {
-        if (isDashing) return;
+       // if (isDashing) return;
 
         if (didCrouch)
         {
@@ -291,18 +332,18 @@ public class p_MovingState : PlayerBaseState
     if (isDashing)
     {
         bool isDashAnimation = (newAnim == dash_left || newAnim == dash_right);
-        if (!isDashAnimation)
-        {
-            Debug.Log($"Blocked {newAnim} during dash");
-            return;
-        }
+        // if (!isDashAnimation)
+        // {
+        //     Debug.Log($"Blocked {newAnim} during dash");
+        //     return;
+        // }
     }
 
 
         if (currentAnim == newAnim)
             return;
 
-        Debug.Log($"Animation changed to: {newAnim}");
+        // Debug.Log($"Animation changed to: {newAnim}");
         animator.Play(newAnim);
         currentAnim = newAnim; 
     }
