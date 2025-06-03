@@ -29,6 +29,10 @@ public class p_MovingState : PlayerBaseState
     const string Crouch_left = "Crouch_left";
     const string Crouch_right = "Crouch_right";
 
+
+    // Dash animation lengths
+    //const float dash_left_time = 
+
     //movement variables
     float currentspeed;
     public Vector2 movedirection;
@@ -40,7 +44,7 @@ public class p_MovingState : PlayerBaseState
     //Dash variables
     [SerializeField] float dashSpeed = 15f;
     [SerializeField] float dashDuration = 0.2f;
-    [SerializeField] float dashCooldown = 3f;
+    [SerializeField] float dashCooldown = 1f;
 
     //Dash slider reference
     Slider dashSlide;
