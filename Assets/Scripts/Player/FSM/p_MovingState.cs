@@ -13,8 +13,14 @@ public class p_MovingState : PlayerBaseState
     string currentAnim;
 
     //animation movement states
+
+    //Dash animations
     const string dash_left = "Player_dash_left";
     const string dash_right = "Player_dash_right";
+
+    const string dash_up = "Player_dash_up";
+    const string dash_down = "Player_dash_down";
+    //base move animations
     const string player_left = "Player_Move_left";
     const string player_right = "Player_Move_right";
     const string player_forward = "Player_Move_forward";
@@ -34,7 +40,7 @@ public class p_MovingState : PlayerBaseState
     //Dash variables
     [SerializeField] float dashSpeed = 15f;
     [SerializeField] float dashDuration = 0.2f;
-    [SerializeField] float dashCooldown = 1f;
+    [SerializeField] float dashCooldown = 3f;
 
     //Dash slider reference
     Slider dashSlide;
@@ -265,11 +271,21 @@ public class p_MovingState : PlayerBaseState
             dashSlide.value = 0f;
         }
 
+        string dashAnim;
         //  force animation change
-        string dashAnim = dashDirection.x < 0 ? dash_left : dash_right;
-        ChangeAnimation(dashAnim);
+        if (Mathf.Abs(dashDirection.x) >= Mathf.Abs(dashDirection.y))
+        {
+            dashAnim = dashDirection.x < 0 ? dash_left : dash_right;
+        }
+        else
+        {
+            dashAnim = dashDirection.y < 0 ? dash_down : dash_up;
+        }
+
+
+        
         Debug.Log("dash animation");
-        currentAnim = dashAnim;
+        ChangeAnimation(dashAnim);
 
         //freeze other animation during dash
         player_rb.linearVelocity = dashDirection * currentspeed;
@@ -289,6 +305,7 @@ public class p_MovingState : PlayerBaseState
             if (dashSlide != null)
             {
                 dashSlide.value = Mathf.Lerp(0f, 1f, timer / dashCooldown);
+                
             }
             yield return null;
 
@@ -305,7 +322,7 @@ public class p_MovingState : PlayerBaseState
 #region Animation
     void UpdateMoveAnimation()
     {
-       // if (isDashing) return;
+       if (isDashing) return;
 
         if (didCrouch)
         {
@@ -330,19 +347,13 @@ public class p_MovingState : PlayerBaseState
     // Block non-dash animations during dash
     if (isDashing)
     {
-        bool isDashAnimation = (newAnim == dash_left || newAnim == dash_right);
-        // if (!isDashAnimation)
-        // {
-        //     Debug.Log($"Blocked {newAnim} during dash");
-        //     return;
-        // }
+        bool isDashAnim = newAnim == dash_left || newAnim == dash_right || newAnim == dash_up || newAnim == dash_down;
+
+        if (!isDashAnim) return; // Block non-dash animations during dash
     }
 
 
-        if (currentAnim == newAnim)
-            return;
-
-        // Debug.Log($"Animation changed to: {newAnim}");
+        if (currentAnim == newAnim) return;
         animator.Play(newAnim);
         currentAnim = newAnim; 
     }

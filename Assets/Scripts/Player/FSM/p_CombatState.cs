@@ -80,11 +80,11 @@ public class p_CombatState : PlayerBaseState
         }
 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)&&!isPointerOnUI())
         {
             OncloseCombat();
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&&!isPointerOnUI())
         {
             OnRangedCombat();
         }
