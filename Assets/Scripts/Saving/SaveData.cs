@@ -6,5 +6,6 @@ public class SaveData
 {
    // This script must not be monobehaviour
    public Vector3 playerposition;
+   public string sceneName;
    public List<InventorySaveData> inventorySaveData;
 }

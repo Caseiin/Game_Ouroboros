@@ -65,8 +65,9 @@ public class PlayerStateManager : MonoBehaviour
         //coroutine needs to be within monobehaviour scripts
         StartCoroutine(coroutine);
     }
-    
-        private void RotateMeleeTowardsMouse()
+
+    #region Mouserotation
+    private void RotateMeleeTowardsMouse()
     {
         if (mainCamera == null || melee == null) return;
 
@@ -77,7 +78,7 @@ public class PlayerStateManager : MonoBehaviour
 
         //Calculate direction from melee to mouse
         currentdirection = (mouseWorldPos - melee.transform.position).normalized;
-    // Add minimum distance check to prevent erratic rotation
+        // Add minimum distance check to prevent erratic rotation
         if (currentdirection.magnitude < 0.01f) // Adjust threshold as needed
         {
             // Maintain current rotation when mouse is too close
@@ -85,9 +86,10 @@ public class PlayerStateManager : MonoBehaviour
         }
 
         // //Calculate rotation angle
-        float angle = Mathf.Atan2(currentdirection.y, currentdirection.x) * Mathf.Rad2Deg+90f;
+        float angle = Mathf.Atan2(currentdirection.y, currentdirection.x) * Mathf.Rad2Deg + 90f;
 
         //Apply rotation to melee object
         aim.rotation = Quaternion.Euler(0f, 0f, angle);
     }
+    #endregion
 }

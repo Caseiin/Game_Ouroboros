@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class SaveController : MonoBehaviour
     void Start()
     {
         //define the save location
-        saveLocation = Path.Combine(Application.persistentDataPath,"saveData.json"); //fire directory of the saveData json file
-        initialGameData = Path.Combine(Application.persistentDataPath,"initialData.json");
+        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json"); //fire directory of the saveData json file
+        initialGameData = Path.Combine(Application.persistentDataPath, "initialData.json");
         inventoryController = FindAnyObjectByType<InventoryController>();
-        Debug.Log("save location: "+saveLocation); //path location for debugging and other purposes
-        Debug.Log("initialData location: "+initialGameData); //path location for debugging and other purposes
+        Debug.Log("save location: " + saveLocation); //path location for debugging and other purposes
+        Debug.Log("initialData location: " + initialGameData); //path location for debugging and other purposes
         LoadGame();
     }
 
@@ -30,12 +31,14 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = new SaveData
         {
-            playerposition = GameObject.FindGameObjectWithTag("Player").transform.position, 
+            sceneName = SceneManager.GetActiveScene().name,
+            playerposition = GameObject.FindGameObjectWithTag("Player").transform.position,
             inventorySaveData = inventoryController.GetInvItem()
         };
 
         //write data to textfile
-        File.WriteAllText(saveLocation,JsonUtility.ToJson(saveData)); //File directory set new Data to the a json SaveData
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData)); //File directory set new Data to the a json SaveData
+        Debug.Log("game was saved");
     }
 
     public void LoadGame()
@@ -43,15 +46,32 @@ public class SaveController : MonoBehaviour
         if (File.Exists(saveLocation))
         {
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
-            // reverse of save is done to load from save file to game
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerposition;
+            string currentScene = SceneManager.GetActiveScene().name;
 
-            inventoryController.SetInvItem(saveData.inventorySaveData); //loads the save inventory
-            
+            // Only load position if in the same scene
+            if (saveData.sceneName == currentScene)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    player.transform.position = saveData.playerposition;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Saved position is from different scene. Using default position.");
+            }
+
+            inventoryController.SetInvItem(saveData.inventorySaveData);
         }
         else
         {
-            SaveGame(); //ensures as game starts up you have an initial save point
+            SaveGame();
         }
+    }
+
+    public void LoadInitial()
+    {
+        //Loads initial file 
     }
 }

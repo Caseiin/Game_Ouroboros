@@ -1,16 +1,10 @@
+using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyBaseState : MonoBehaviour
+public abstract class EnemyBaseState : EnemyStateManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void EnterState(EnemyStateManager enemyState);
+    public abstract void UpdateState(EnemyStateManager enemyState);
+    public abstract void ExitState(EnemyStateManager enemyState);
 }
