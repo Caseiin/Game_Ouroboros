@@ -21,7 +21,7 @@ public class PlayerStateManager : MonoBehaviour
     // Initialize states normally (no MonoBehaviour)
     public p_CombatState combatState;
 
-    public p_MovingState movingState = new p_MovingState();
+    public p_MovingState movingState;
 
     //Camera
     Camera mainCamera;
@@ -48,7 +48,7 @@ public class PlayerStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentState.UpdateState(this);
+        currentState?.UpdateState(this);
         RotateMeleeTowardsMouse();
     }
 
@@ -56,8 +56,9 @@ public class PlayerStateManager : MonoBehaviour
     public void SwitchState(PlayerBaseState newState)
     {
         // changes state by taking in new state as a argument 
+        currentState?.ExitState(this);
         currentState = newState;
-        currentState.EnterState(this);
+        currentState?.EnterState(this);
     }
 
     public void StartDashCoroutine(IEnumerator coroutine)

@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    EnemyBaseState currentState; //current context/state  of enemy
-
-    public  e_patrollingState PatrolState = new e_patrollingState();
-    public e_CombatState AttackState = new e_CombatState();
+    public EnemyBaseState currentState; //current context/state  of enemy
+    public BaseEnemy enemy;
+    //hello
+    e_patrollingState PatrolState;
+    e_CombatState AttackState;
 
     void Start()
     {
+        PatrolState = new e_patrollingState();
         currentState = PatrolState;
         currentState.EnterState(this);
     }
@@ -16,6 +18,13 @@ public class EnemyStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentState.UpdateState(this);
+        currentState?.UpdateState(this);
+    }
+
+    public void SwitchState(EnemyBaseState newState)
+    {
+        currentState?.ExitState(this);
+        currentState = newState;
+        currentState?.EnterState(this);
     }
 }

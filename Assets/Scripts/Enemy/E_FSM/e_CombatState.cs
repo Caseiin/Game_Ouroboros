@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class e_CombatState : EnemyBaseState
+public abstract class e_CombatState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemyState)
     {
