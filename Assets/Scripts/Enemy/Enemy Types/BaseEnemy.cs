@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class BaseEnemy : MonoBehaviour
 {
     //Common properties 
+    [Header("Common Enemy Attributes")]
     public float patrolSpeed = 3f;
     public float detectionRange = 5f;
     public float combatRange = 7f;
@@ -19,7 +20,9 @@ public abstract class BaseEnemy : MonoBehaviour
     //Abstract methods (must be implemented)
     public abstract void MeleeAttack();
     public abstract void RangedAttack();
-    public abstract void PlayerDetected();
+    public abstract bool PlayerDetected();
+
+    public abstract bool WithinCombatRange();
 
     //Virtual methods (can be overrided)
 
@@ -39,9 +42,16 @@ public abstract class BaseEnemy : MonoBehaviour
 
     }
 
-    public virtual void EnterCombatMode()
+    public virtual void Chase()
     {
-        Debug.Log($"{name} has entered attack mode");
+        Debug.Log($"{name} has started chasing!");
     }
+
+    public virtual void StopChase()
+    {
+        Debug.Log($"{name} has stopped chasing!");
+    }
+
+    public virtual void StateCleanUp() { }
 
 }

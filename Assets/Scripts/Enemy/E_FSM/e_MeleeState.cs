@@ -1,21 +1,28 @@
 using UnityEngine;
 
-public class e_MeleeState : EnemyBaseState
+public class e_MeleeState : e_CombatState
 {
-    MeleeEnemy enemy;
+   
     public override void EnterState(EnemyStateManager enemyState)
     {
-        enemy = enemyState.GetComponent<MeleeEnemy>();
+        enemyState.enemy.MeleeAttack();
     }
 
     public override void UpdateState(EnemyStateManager enemyState)
     {
-        enemy = enemyState.GetComponent<MeleeEnemy>();
-        //Transition checks?
+        //Transition checks
+        if (!enemyState.enemy.PlayerDetected())
+        {
+            enemyState.SwitchState(enemyState.PatrolState);
+            //return;
+        }
+
+        enemyState.enemy.MeleeAttack();
     }
 
     public override void ExitState(EnemyStateManager enemyState)
     {
-        enemy = enemyState.GetComponent<MeleeEnemy>();
+        //Melee cleanup being animations and coroutines
+        //enemyState.enemy.Melee
     }
 }

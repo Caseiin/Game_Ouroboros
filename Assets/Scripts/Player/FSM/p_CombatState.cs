@@ -210,7 +210,7 @@ public class p_CombatState : PlayerBaseState
 
         if (currentAnim == newAnim) return;
 
-        Debug.Log($"Animation changed to: {newAnim}");
+        // Debug.Log($"Animation changed to: {newAnim}");
         animator.Play(newAnim);
         currentAnim = newAnim;
     }
