@@ -12,14 +12,14 @@
         e_MeleeState meleeState = new e_MeleeState();
         e_ChaseState chaseState = new e_ChaseState();
 
-        void Awake()
-        {
-            stateManager = GetComponent<EnemyStateManager>();
-            stateManager.Start();
-            stateManager.ChaseState = chaseState;
-            stateManager.AttackState = meleeState;
-        }
-
+    protected override void Awake()
+    {
+        base.Awake();
+        stateManager = GetComponent<EnemyStateManager>();
+        stateManager.Start();
+        stateManager.ChaseState = chaseState;
+        stateManager.AttackState = meleeState;
+    }
         public override void MeleeAttack()
         {
             Debug.Log("Melee attack!");

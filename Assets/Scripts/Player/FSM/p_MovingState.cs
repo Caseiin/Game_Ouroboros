@@ -144,7 +144,7 @@ public class p_MovingState : PlayerBaseState
 
                 // Determine crouch animation direction
                 string crouchAnim = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
-                ChangeAnimation(crouchAnim); // <-- HERE (when entering crouch)
+                ChangeAnimation(crouchAnim); 
             }
             else // Exiting crouch
             {
@@ -248,7 +248,7 @@ public class p_MovingState : PlayerBaseState
         //Track last valid direction and movement time
         if (movedirection != Vector2.zero)
         {
-            Debug.Log("move animation");
+            // Debug.Log("move animation");
             UpdateMoveAnimation();
             lastNonZeroDirection = movedirection.normalized; // Update even when crouching
         }

@@ -10,15 +10,11 @@ public class e_patrollingState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemyState)
     {
-        if (enemyState.enemy.PlayerDetected() && !enemyState.enemy.WithinCombatRange())
+        if (enemyState.enemy.PlayerDetected())
         {
             //Move to the chase state
             enemyState.SwitchState(enemyState.ChaseState);
-        }
-        else if (enemyState.enemy.PlayerDetected() && enemyState.enemy.WithinCombatRange())
-        {
-            //Move to the Attack State
-            enemyState.SwitchState(enemyState.AttackState);
+            return; //prevents further execution after switching
         }
 
         //Implementing Patrol logic
