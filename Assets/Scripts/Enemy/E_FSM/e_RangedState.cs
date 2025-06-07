@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class e_RangedState : EnemyBaseState
+public class e_RangedState : e_CombatState
 {
     public override void EnterState(EnemyStateManager enemyState)
     {
-        throw new System.NotImplementedException();
+        enemyState.enemy.RangedAttack();
     }
 
     public override void UpdateState(EnemyStateManager enemyState)
     {
-        throw new System.NotImplementedException();
+        if (!enemyState.enemy.PlayerDetected())
+        { enemyState.SwitchState(enemyState.PatrolState); }
+
+        enemyState.enemy.RangedAttack();
     }
 
     public override void ExitState(EnemyStateManager enemyState)
     {
-        throw new System.NotImplementedException();
+        enemyState.enemy.StateCleanUp();
     }
 }

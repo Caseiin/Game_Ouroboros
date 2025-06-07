@@ -14,7 +14,7 @@ public class e_MeleeState : e_CombatState
         if (!enemyState.enemy.PlayerDetected())
         {
             enemyState.SwitchState(enemyState.PatrolState);
-            //return;
+            return; //important return
         }
 
         enemyState.enemy.MeleeAttack();
@@ -23,6 +23,6 @@ public class e_MeleeState : e_CombatState
     public override void ExitState(EnemyStateManager enemyState)
     {
         //Melee cleanup being animations and coroutines
-        //enemyState.enemy.Melee
+        enemyState.enemy.StateCleanUp();
     }
 }

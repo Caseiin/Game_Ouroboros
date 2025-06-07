@@ -13,6 +13,10 @@ public class e_ChaseState : EnemyBaseState
         {
             enemyState.SwitchState(enemyState.AttackState);
         }
+        else if (!enemyState.enemy.PlayerDetected())
+        {
+            enemyState.SwitchState(enemyState.PatrolState);
+        }
     }
 
     public override void ExitState(EnemyStateManager enemyState)
