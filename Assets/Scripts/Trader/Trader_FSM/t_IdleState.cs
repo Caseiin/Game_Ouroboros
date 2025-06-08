@@ -12,4 +12,9 @@ public class t_IdleState : TraderBaseState
     {
         //throw new System.NotImplementedException();
     }
+
+    public override void ExitState(TraderStateManager traderState)
+    {
+        // throw new System.NotImplementedException();
+    }
 }

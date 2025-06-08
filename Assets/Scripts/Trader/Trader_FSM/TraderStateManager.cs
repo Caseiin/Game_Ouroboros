@@ -7,16 +7,22 @@ public class TraderStateManager : MonoBehaviour
     t_IdleState idleState = new t_IdleState();
     t_ShopState shopState = new t_ShopState();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         CurrentState = idleState;
-        CurrentState.Enterstate(this);
+        CurrentState?.Enterstate(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CurrentState.Updatestate(this);
+        CurrentState?.Updatestate(this);
+    }
+
+    void SwitchState(TraderBaseState newState)
+    {
+        CurrentState = newState;
+        CurrentState?.ExitState(this);
+        CurrentState?.Enterstate(this);
     }
 }

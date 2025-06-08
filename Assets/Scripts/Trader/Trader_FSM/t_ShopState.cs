@@ -11,4 +11,9 @@ public class t_ShopState : TraderBaseState
     {
         // throw new System.NotImplementedException();
     }
+
+    public override void ExitState(TraderStateManager traderState)
+    {
+        // throw new System.NotImplementedException();
+    }
 }

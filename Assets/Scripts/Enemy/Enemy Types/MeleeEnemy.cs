@@ -26,6 +26,11 @@ public class MeleeEnemy : BaseEnemy
         stateManager.AttackState = meleeState;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     public override void MeleeAttack()
     {
 
