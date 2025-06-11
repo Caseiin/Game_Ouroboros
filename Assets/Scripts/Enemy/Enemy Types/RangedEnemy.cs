@@ -11,6 +11,15 @@ public class RangedEnemy : BaseEnemy
     e_RangedState rangedState = new e_RangedState();
     e_ChaseState chaseState = new e_ChaseState();
 
+    Rigidbody2D rangedrb;
+
+
+    //Animation constants
+    Animator animator;
+    const string Attack = "Golem_Attack";
+    const string Death = "Golem_Death";
+    const string Ready = "Golem_Ready";
+
     [Header("Ranged enemy settings")]
     public GameObject projectile;
 
@@ -28,6 +37,10 @@ public class RangedEnemy : BaseEnemy
         stateManager.Start();
         stateManager.ChaseState = chaseState;
         stateManager.AttackState = rangedState;
+        animator = GetComponent<Animator>();
+        animator.Play(Ready);
+        rangedrb = GetComponent<Rigidbody2D>();
+
     }
 
     protected override void Update()
@@ -50,7 +63,7 @@ public class RangedEnemy : BaseEnemy
 
     public override void RangedAttack()
     {
-        if (AimAtPlayer()&& canShoot)
+        if (AimAtPlayer() && canShoot)
         {
             Debug.Log("Enemy shooting!");
             StartCoroutine(ShootRoutine());
@@ -100,7 +113,8 @@ public class RangedEnemy : BaseEnemy
         }
 
 
-
+        rangedrb.linearVelocity = Vector2.zero;
+        animator.Play(Attack);
         GameObject intBullet = Instantiate(projectile, transform.position, quaternion.identity);
         Rigidbody2D BulletRb = intBullet.GetComponent<Rigidbody2D>();
 
@@ -120,5 +134,10 @@ public class RangedEnemy : BaseEnemy
         yield return new WaitForSeconds(shootCooldown);
 
         canShoot = true;
+    }
+
+    public override void StateCleanUp()
+    {
+        animator.Play(Ready);
     }
 }

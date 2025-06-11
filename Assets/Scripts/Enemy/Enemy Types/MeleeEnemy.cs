@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class MeleeEnemy : BaseEnemy
@@ -12,6 +14,15 @@ public class MeleeEnemy : BaseEnemy
     public float attackCooldown = 3f;
     bool CanAttack = true;
 
+    //Animation stuff
+    Animator animator;
+    const string snakeAttack = "Snake Attack";
+    const string snakeDies = "Snake dead";
+    const string snakeReady = "Snake enemy walk";
+
+    //animations durations:
+    private Dictionary<string, float> clipDurations;
+
 
     e_MeleeState meleeState = new e_MeleeState();
     e_ChaseState chaseState = new e_ChaseState();
@@ -24,6 +35,26 @@ public class MeleeEnemy : BaseEnemy
         stateManager.Start();
         stateManager.ChaseState = chaseState;
         stateManager.AttackState = meleeState;
+        animator = GetComponent<Animator>();
+        animator.Play(snakeReady);
+
+
+        //Adding a dictionary of the clip durations
+        clipDurations = new Dictionary<string, float>();
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            //Optional : remove duplicates
+            if (!clipDurations.ContainsKey(clip.name))
+            {
+                clipDurations.Add(clip.name, clip.length);
+            }
+        }
+    }
+
+
+    public float GetDuration(string clipName)
+    {
+        return clipDurations.TryGetValue(clipName, out float duration) ? duration : 0f;
     }
 
     protected override void Update()
@@ -77,7 +108,7 @@ public class MeleeEnemy : BaseEnemy
 
     public override void StateCleanUp()
     {
-
+        animator.Play(snakeReady);
     }
 
     private IEnumerator AttackRoutine()
@@ -86,7 +117,12 @@ public class MeleeEnemy : BaseEnemy
 
         Debug.Log("Melee attack!");
         enemy.color = Color.red;
+        animator.Play(snakeAttack);
+        float waitTime = GetDuration("Snake enemy attack"); //use clipNames not state names
 
+        yield return new WaitForSeconds(waitTime);
+
+        animator.Play(snakeReady);
         yield return new WaitForSeconds(attackCooldown);
 
         enemy.color = Color.white;
