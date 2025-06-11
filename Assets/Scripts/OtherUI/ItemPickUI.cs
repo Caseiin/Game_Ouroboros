@@ -36,6 +36,10 @@ public class ItemPickUI : MonoBehaviour
         {
             itemImage.sprite = itemICon;
         }
+        else
+        {
+            Debug.LogWarning("Sprite passed to ShowItemPickUp is null!");
+        }
 
         activePopups.Enqueue(newPopup);
 
