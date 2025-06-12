@@ -7,6 +7,12 @@ public class Items : MonoBehaviour
     public int ID;
     public string Name;
 
+    public virtual void UseItem()
+    {
+        Debug.Log("Using item" + Name);
+        // Have other items inherit from this class then use this function
+    }
+
     public virtual void PickUp()
     {
         Sprite itemIcon = GetComponent<Image>().sprite;

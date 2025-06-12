@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class SaveController : MonoBehaviour
 {
     InventoryController inventoryController;
+    HotBarController hotBarController;
     string saveLocation;
     string initialGameData;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,6 +15,7 @@ public class SaveController : MonoBehaviour
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json"); //fire directory of the saveData json file
         initialGameData = Path.Combine(Application.persistentDataPath, "initialData.json");
         inventoryController = FindAnyObjectByType<InventoryController>();
+        hotBarController = FindAnyObjectByType<HotBarController>();
         Debug.Log("save location: " + saveLocation); //path location for debugging and other purposes
         Debug.Log("initialData location: " + initialGameData); //path location for debugging and other purposes
         LoadGame();
@@ -33,7 +35,8 @@ public class SaveController : MonoBehaviour
         {
             sceneName = SceneManager.GetActiveScene().name,
             playerposition = GameObject.FindGameObjectWithTag("Player").transform.position,
-            inventorySaveData = inventoryController.GetInvItem()
+            inventorySaveData = inventoryController.GetInvItem(),
+            hotBarSaveData = hotBarController.GetHotbarItem()
         };
 
         //write data to textfile
@@ -63,6 +66,7 @@ public class SaveController : MonoBehaviour
             }
 
             inventoryController.SetInvItem(saveData.inventorySaveData);
+            hotBarController.SetHotbarItem(saveData.hotBarSaveData);
         }
         else
         {
