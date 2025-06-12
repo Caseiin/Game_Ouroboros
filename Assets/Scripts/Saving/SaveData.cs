@@ -9,5 +9,15 @@ public class SaveData
    public string sceneName;
    public List<InventorySaveData> inventorySaveData;
    public List<InventorySaveData> hotBarSaveData;
+
+   public List<ChestSaveData> chestSaveData;
    
+}
+
+[System.Serializable]
+
+public class ChestSaveData
+{
+   public string ChestID;
+   public bool isOpened;
 }
