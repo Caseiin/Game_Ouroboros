@@ -7,7 +7,7 @@ public class LoadQuit : MonoBehaviour
 
     void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
         if (Player == null)
         {
             Debug.LogError("Player not in inspector");

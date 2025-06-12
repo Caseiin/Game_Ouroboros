@@ -15,16 +15,6 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         itemDictionary = FindObjectOfType<ItemDictionary>(); // grab existing itemDictionary
-/*         for (int i=0; i< slotCounter; i++)
-        {
-            Slots slots = Instantiate(slotPrefab, inventoryPanel.transform).GetComponent<Slots>();
-            if (i < itemPrefabs.Length)
-            {
-                GameObject item = Instantiate(itemPrefabs[i],slots.transform);
-                item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                slots.currentItem = item;
-            }
-        } */
     }
 
     public bool AddItem(GameObject itemPrefab)

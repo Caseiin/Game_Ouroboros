@@ -301,7 +301,7 @@ public class p_MovingState : PlayerBaseState
         isDashing = false;
         player_rb.linearVelocity = movedirection * currentspeed;
 
-        //Gradually refill slider during cooldown
+        // Gradually refill slider during cooldown
         float timer = 0f;
         while (timer < dashCooldown)
         {
