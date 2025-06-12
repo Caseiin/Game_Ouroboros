@@ -1,4 +1,5 @@
 using System.Collections;
+using Mono.Cecil.Cil;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ public class Bounce : MonoBehaviour
         transform.position = startPosition;
     }
 
-    private IEnumerator BounceRoutine( Vector3 start, float height, float duration)
+    private IEnumerator BounceRoutine(Vector3 start, float height, float duration)
     {
         Vector3 peak = start + Vector3.up * height;
         float elapsed = 0f;
@@ -57,3 +58,7 @@ public class Bounce : MonoBehaviour
 
     }
 }
+
+// Code references:
+// 1) the bounce effect logic
+// https://www.youtube.com/watch?v=CcfYUYgaBTw
