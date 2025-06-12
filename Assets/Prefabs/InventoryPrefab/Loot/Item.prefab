@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5268439142157478149}
   - component: {fileID: 6506252109992235872}
   - component: {fileID: 2293274453046756696}
+  - component: {fileID: 7432566264072162936}
   - component: {fileID: -1234367765051816663}
   - component: {fileID: 843007631905654237}
   m_Layer: 5
@@ -32,7 +33,7 @@ RectTransform:
   m_GameObject: {fileID: 1099580867941818854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de51b091f4f6e44aa71c929a2b309b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDropDistance: 2
+  maxDropDistance: 3
 --- !u!114 &2293274453046756696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +121,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   Name: Coin
+--- !u!114 &7432566264072162936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099580867941818854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b66c893162635243b69581aba27d856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceHeight: 0.3
+  bounceDuration: 0.4
+  bounceCount: 2
 --- !u!58 &-1234367765051816663
 CircleCollider2D:
   m_ObjectHideFlags: 0
