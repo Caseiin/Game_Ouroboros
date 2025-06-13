@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e756afe6237a5d4b8f2c1206e09b690, type: 3}
+  m_Name: NewNPCDialogue
+  m_EditorClassIdentifier: 
+  npcName: Trader
+  npcPortrait: {fileID: 8934219060623788946, guid: 2cfd958469a619241816916391318af0, type: 3}
+  dialogueLines:
+  - Hello traveller
+  - What brings you here
+  autoProgressLines: 0100
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 6610d37716881a04e9fdeb5dc728d1ad, type: 3}
+  voicePitch: 1

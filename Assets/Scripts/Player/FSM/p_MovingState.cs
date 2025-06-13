@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Threading;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,7 +49,7 @@ public class p_MovingState : PlayerBaseState
 
     //Dash slider reference
     Slider dashSlide;
-    
+
     float lastMovementTime;
     bool canDash = true;
     bool isDashing = false; // Track if currently dashing
@@ -82,6 +83,13 @@ public class p_MovingState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager playerState)
     {
+
+        // First check pause status and skip all logic if paused
+        if (PauseController.isGamePaused)
+        {
+            Pauselogic();  // Ensure pause effects are applied
+            return;        // Skip all other update logic
+        }
         ReadMovementInput();
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
@@ -131,7 +139,7 @@ public class p_MovingState : PlayerBaseState
         currentspeed = newSpeed;
     }
 
-#region CrouchMechanic
+    #region CrouchMechanic
     void Oncrouch()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -144,7 +152,7 @@ public class p_MovingState : PlayerBaseState
 
                 // Determine crouch animation direction
                 string crouchAnim = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
-                ChangeAnimation(crouchAnim); 
+                ChangeAnimation(crouchAnim);
             }
             else // Exiting crouch
             {
@@ -161,8 +169,8 @@ public class p_MovingState : PlayerBaseState
             didCrouch = !didCrouch;
         }
     }
-#endregion
-#region TransitionStateChecks
+    #endregion
+    #region TransitionStateChecks
     bool Atk_Input()
     {
         bool hasMouseInput = Input.GetMouseButton(0) || Input.GetMouseButton(1); //checks for mouse input
@@ -174,8 +182,8 @@ public class p_MovingState : PlayerBaseState
         bool Moved = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D);
         return Moved;
     }
-#endregion
-#region  Direction/MoveInput
+    #endregion
+    #region  Direction/MoveInput
     void ReadMovementInput()
     {
         movedirection = Vector2.zero;
@@ -218,10 +226,13 @@ public class p_MovingState : PlayerBaseState
 
         return direction.normalized;
     }
- #endregion
-#region BasicMoveCode
+    #endregion
+    #region BasicMoveCode
     void MoveBasic()
     {
+        // Skip movement if paused
+        if (PauseController.isGamePaused) return;
+
         movedirection = Vector2.zero;
         //ChangeAnimation(player_idle);
         bool movedHorizontal = false;
@@ -244,7 +255,7 @@ public class p_MovingState : PlayerBaseState
             if (Input.GetKey(KeyCode.W)) movedirection.y += 1;
             if (Input.GetKey(KeyCode.S)) movedirection.y -= 1;
         }
-        
+
         //Track last valid direction and movement time
         if (movedirection != Vector2.zero)
         {
@@ -257,7 +268,7 @@ public class p_MovingState : PlayerBaseState
 
     }
     #endregion
-#region DashCode
+    #region DashCode
     private IEnumerator Dash(PlayerStateManager playerState)
     {
         canDash = false;
@@ -287,7 +298,7 @@ public class p_MovingState : PlayerBaseState
         }
 
 
-        
+
         Debug.Log("dash animation");
         ChangeAnimation(dashAnim);
 
@@ -305,16 +316,16 @@ public class p_MovingState : PlayerBaseState
         float timer = 0f;
         while (timer < dashCooldown)
         {
-            timer += Time.deltaTime;
-            if (dashSlide != null)
+            // Add pause check in cooldown loop
+            if (!PauseController.isGamePaused)
             {
+                timer += Time.deltaTime;
                 dashSlide.value = Mathf.Lerp(0f, 1f, timer / dashCooldown);
-                
             }
             yield return null;
 
         }
-        
+
         canDash = true;
         if (dashSlide != null)
         {
@@ -322,11 +333,11 @@ public class p_MovingState : PlayerBaseState
         }
 
     }
-#endregion
-#region Animation
+    #endregion
+    #region Animation
     void UpdateMoveAnimation()
     {
-       if (isDashing) return;
+        if (isDashing) return;
 
         if (didCrouch)
         {
@@ -347,19 +358,27 @@ public class p_MovingState : PlayerBaseState
 
     void ChangeAnimation(string newAnim)
     {
+        // Prevent animation changes during pause
+        if (PauseController.isGamePaused) return;
 
-    // Block non-dash animations during dash
-    if (isDashing)
-    {
-        bool isDashAnim = newAnim == dash_left || newAnim == dash_right || newAnim == dash_up || newAnim == dash_down;
+        // Block non-dash animations during dash
+        if (isDashing)
+        {
+            bool isDashAnim = newAnim == dash_left || newAnim == dash_right || newAnim == dash_up || newAnim == dash_down;
 
-        if (!isDashAnim) return; // Block non-dash animations during dash
-    }
+            if (!isDashAnim) return; // Block non-dash animations during dash
+        }
 
 
         if (currentAnim == newAnim) return;
         animator.Play(newAnim);
-        currentAnim = newAnim; 
+        currentAnim = newAnim;
     }
-#endregion
+    #endregion
+    void Pauselogic()
+    {
+        player_rb.linearVelocity = Vector2.zero;
+        ChangeAnimation(player_idle);
+    }
+
 }

@@ -7,6 +7,8 @@ public class TraderStateManager : MonoBehaviour
     t_IdleState idleState = new t_IdleState();
     t_ShopState shopState = new t_ShopState();
 
+    public NPC traderNPC;
+    public BaseTrader baseTrader;
 
     void Start()
     {

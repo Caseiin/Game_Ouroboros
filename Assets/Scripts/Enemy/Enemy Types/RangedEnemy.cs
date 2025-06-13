@@ -47,8 +47,8 @@ public class RangedEnemy : BaseEnemy
     {
         base.Update();
         Debug.Log("Current state: " + stateManager.currentState);
-        //Debug.DrawRay(transform.position, direction * detectionRange, Color.cyan);
-        //Debug.Log("Direction: " + direction);
+        Debug.DrawRay(transform.position, direction * detectionRange, Color.cyan);
+        Debug.Log("Direction: " + direction);
     }
 
     public override void Chase()
@@ -92,14 +92,30 @@ public class RangedEnemy : BaseEnemy
 
     private bool AimAtPlayer()
     {
+        Transform player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (player == null)
+        {
+            Debug.LogWarning("Player not found in AimAtPlayer");
+            return false;
+        }
+
+        // Update direction here
+        direction = (player.position - transform.position).normalized;
 
         float maxRayDistance = detectionRange;
-        int playerLayer = LayerMask.GetMask("Player");
+        int playerLayerMask = LayerMask.GetMask("Player");
 
-        bool aim = Physics2D.Raycast(transform.position, direction, maxRayDistance, playerLayer);
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxRayDistance, playerLayerMask);
         Debug.DrawRay(transform.position, direction * maxRayDistance, Color.red, 0.5f);
-        return aim;
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Ray hit: " + hit.collider.name);
+            return true;
+        }
+
+        Debug.Log("Raycast did not hit player");
+        return false;
     }
 
     private IEnumerator ShootRoutine()
@@ -121,7 +137,7 @@ public class RangedEnemy : BaseEnemy
         if (BulletRb == null)
         {
             Debug.LogError("Bullet has no rigidbody");
-            Object.Destroy(intBullet, 2f);
+            Object.Destroy(intBullet, 1f);
             yield break;
         }
 
