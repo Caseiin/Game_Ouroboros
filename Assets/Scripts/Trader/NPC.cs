@@ -1,9 +1,7 @@
-
-using System.Collections;
-using Mono.Cecil.Cil;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -22,22 +20,21 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log($"Interact called. isDialogueActive = {isDialogueActive}, index = {dialogueIndex}");
-
         if (dialogueData == null || (PauseController.isGamePaused && !isDialogueActive))
             return;
 
         if (isDialogueActive)
         {
-            Debug.Log("NextLine called from Interact()");
+            //Next line
             NextLine();
         }
         else
         {
-            Debug.Log("Starting dialogue...");
+            //StartDialogue
             StartDialogue();
         }
     }
+
 
     void StartDialogue()
     {
@@ -50,11 +47,31 @@ public class NPC : MonoBehaviour, IInteractable
         dialoguePanel.SetActive(true);
         PauseController.SetPause(true);
 
-        //Typeline
+        //Type Line
         StartCoroutine(TypeRoutine());
     }
 
-    private IEnumerator TypeRoutine()
+    void NextLine()
+    {
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }
+        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
+        {
+            StartCoroutine(TypeRoutine());
+        }
+        else
+        {
+            //End dialogue
+            EndDialogue();
+        }
+
+    }
+
+    IEnumerator TypeRoutine()
     {
         isTyping = true;
         dialogueText.SetText("");
@@ -65,57 +82,25 @@ public class NPC : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
+
         isTyping = false;
 
-        if (dialogueIndex < dialogueData.dialogueLines.Length - 1 // not last line
-            && dialogueData.autoProgressLines.Length > dialogueIndex
-            && dialogueData.autoProgressLines[dialogueIndex])
+        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
             yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            //Display next Line
             NextLine();
-        }
-    }
-
-    void NextLine()
-    {
-        if (isTyping)
-        {
-            StopAllCoroutines();
-            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
-            isTyping = false;
-            Debug.Log("Typing skipped.");
-        }
-        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
-        {
-            Debug.Log($"Next line: {dialogueIndex}");
-            StartCoroutine(TypeRoutine());
-        }
-        else
-        {
-            Debug.Log("Reached end of dialogue.");
-            EndDialogue();
         }
     }
 
     public void EndDialogue()
     {
-        if (!isDialogueActive) return;
-
-        Debug.Log("Ending dialogue"); // <-- add this line
-
-        isDialogueActive = false;
         StopAllCoroutines();
-
-        if (dialogueText != null)
-            dialogueText.SetText("");
-
-        if (dialoguePanel != null)
-            dialoguePanel.SetActive(false);
-
+        isDialogueActive = false;
+        dialogueText.SetText("");
+        dialoguePanel.SetActive(false);
         PauseController.SetPause(false);
     }
-    
-}
 
-// Code references:
-// 1) The NPC Dialogue and etc...:https://www.youtube.com/watch?v=eSH9mzcMRqw
+
+}

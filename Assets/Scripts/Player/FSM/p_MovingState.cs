@@ -2,6 +2,7 @@ using System.Collections;
 using System.Threading;
 using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class p_MovingState : PlayerBaseState
@@ -31,8 +32,10 @@ public class p_MovingState : PlayerBaseState
     const string Crouch_right = "Crouch_right";
 
 
-    // Dash animation lengths
-    //const float dash_left_time = 
+    // Player control requirements
+    private PlayerControls controls;
+    private Vector2 moveInput;
+
 
     //movement variables
     float currentspeed;
@@ -68,9 +71,21 @@ public class p_MovingState : PlayerBaseState
             Debug.Log("dash slider properly placed!");
         }
     }
+    
     public override void EnterState(PlayerStateManager playerState)
     {
-        // Debug.Log("Player now moving!");
+        controls = new PlayerControls();
+        controls.Player.Enable();
+
+        // Movement
+        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
+
+        // Dash (set dashPressed = true only briefly)
+        controls.Player.Dash.performed += ctx => StartDash(playerState);
+
+        // Crouch (toggle crouch directly)
+        controls.Player.Crouch.performed += ctx => ToggleCrouch();
 
         player_rb = playerState.GetComponent<Rigidbody2D>();
         player = playerState.GetComponent<PlayerAttributes>();
@@ -90,21 +105,14 @@ public class p_MovingState : PlayerBaseState
             Pauselogic();  // Ensure pause effects are applied
             return;        // Skip all other update logic
         }
-        ReadMovementInput();
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-        {
-            playerState.StartCoroutine(Dash(playerState));
-        }
-
 
         if (!isDashing)
         {
             MoveBasic();
-            Oncrouch();
         }
 
         // Check for attack
-        if (Atk_Input())
+        if ((Input.GetMouseButton(0) || Input.GetMouseButtonDown(1)) && !PauseController.isGamePaused && !isDashing && !didCrouch)
         {
             playerState.SwitchState(playerState.combatState);
             return;
@@ -122,12 +130,14 @@ public class p_MovingState : PlayerBaseState
             {
                 ChangeAnimation(player_idle);
             }
+            player_rb.linearVelocity = Vector2.zero;
         }
 
     }
 
     public override void ExitState(PlayerStateManager playerState)
     {
+        controls.Player.Disable(); // <--- Add this
         playerState.StopAllCoroutines();
         UpdateSpeed(0f);
         player.OnPlayerMovespeedChange -= UpdateSpeed;
@@ -139,142 +149,63 @@ public class p_MovingState : PlayerBaseState
         currentspeed = newSpeed;
     }
 
-    #region CrouchMechanic
-    void Oncrouch()
+
+    void ToggleCrouch()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (!didCrouch) // Entering crouch
         {
-            if (!didCrouch) // Entering crouch
-            {
-                preCrouchSpeed = currentspeed;
-                currentspeed *= 0.5f;
-                canDash = false;
+            preCrouchSpeed = currentspeed;
+            currentspeed *= 0.5f;
+            canDash = false;
 
-                // Determine crouch animation direction
-                string crouchAnim = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
-                ChangeAnimation(crouchAnim);
-            }
-            else // Exiting crouch
-            {
-                currentspeed = preCrouchSpeed;
-                canDash = true;
-
-                // Revert to movement/idle animation
-                if (movedirection != Vector2.zero)
-                    UpdateMoveAnimation();
-                else
-                    ChangeAnimation(player_idle);
-            }
-
-            didCrouch = !didCrouch;
+            string crouchAnim = (lastNonZeroDirection.x < 0) ? Crouch_left : Crouch_right;
+            ChangeAnimation(crouchAnim);
         }
-    }
-    #endregion
-    #region TransitionStateChecks
-    bool Atk_Input()
-    {
-        bool hasMouseInput = Input.GetMouseButton(0) || Input.GetMouseButton(1); //checks for mouse input
-        return hasMouseInput;
+        else // Exiting crouch
+        {
+            currentspeed = preCrouchSpeed;
+            canDash = true;
+
+            if (movedirection != Vector2.zero)
+                UpdateMoveAnimation();
+            else
+                ChangeAnimation(player_idle);
+        }
+
+        didCrouch = !didCrouch;
     }
 
-    bool Move_input()
-    {
-        bool Moved = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D);
-        return Moved;
-    }
-    #endregion
-    #region  Direction/MoveInput
-    void ReadMovementInput()
-    {
-        movedirection = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.A)) movedirection.x -= 1;
-        if (Input.GetKey(KeyCode.D)) movedirection.x += 1;
-        if (Input.GetKey(KeyCode.W)) movedirection.y += 1;
-        if (Input.GetKey(KeyCode.S)) movedirection.y -= 1;
 
+
+
+    void MoveBasic()
+    {
+        movedirection = moveInput;
         if (movedirection != Vector2.zero)
         {
             movedirection.Normalize();
             lastNonZeroDirection = movedirection;
-        }
-    }
-
-    Vector2 GetCurrentMovementDirection()
-    {
-        Vector2 direction = Vector2.zero;
-        bool hasHorizontal = false;
-
-        // Check horizontal first with priority
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction.x -= 1;
-            hasHorizontal = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction.x += 1;
-            hasHorizontal = true;
-        }
-
-        // Only check vertical if no horizontal
-        if (!hasHorizontal)
-        {
-            if (Input.GetKey(KeyCode.W)) direction.y += 1;
-            if (Input.GetKey(KeyCode.S)) direction.y -= 1;
-        }
-
-        return direction.normalized;
-    }
-    #endregion
-    #region BasicMoveCode
-    void MoveBasic()
-    {
-        // Skip movement if paused
-        if (PauseController.isGamePaused) return;
-
-        movedirection = Vector2.zero;
-        //ChangeAnimation(player_idle);
-        bool movedHorizontal = false;
-        // Check horizontal first
-        if (Input.GetKey(KeyCode.A))
-        {
-            movedirection.x -= 1;
-            movedHorizontal = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movedirection.x += 1;
-            movedHorizontal = true;
-        }
-
-        // Vertical movement (only if no horizontal)
-
-        if (!movedHorizontal)
-        {
-            if (Input.GetKey(KeyCode.W)) movedirection.y += 1;
-            if (Input.GetKey(KeyCode.S)) movedirection.y -= 1;
-        }
-
-        //Track last valid direction and movement time
-        if (movedirection != Vector2.zero)
-        {
-            // Debug.Log("move animation");
             UpdateMoveAnimation();
-            lastNonZeroDirection = movedirection.normalized; // Update even when crouching
         }
 
         player_rb.linearVelocity = movedirection * currentspeed;
 
     }
-    #endregion
-    #region DashCode
+
+
+    void StartDash(PlayerStateManager playerState)
+    {
+        if (!canDash || isDashing || didCrouch)  return;
+        playerState.StartCoroutine(Dash(playerState));
+    }
+
     private IEnumerator Dash(PlayerStateManager playerState)
     {
         canDash = false;
         isDashing = true;
 
-        Vector2 dashDirection = GetCurrentMovementDirection();
+        Vector2 dashDirection = moveInput;
         if (dashDirection == Vector2.zero) dashDirection = lastNonZeroDirection;
 
         float originalspeed = currentspeed;
@@ -333,7 +264,7 @@ public class p_MovingState : PlayerBaseState
         }
 
     }
-    #endregion
+
     #region Animation
     void UpdateMoveAnimation()
     {
@@ -380,5 +311,6 @@ public class p_MovingState : PlayerBaseState
         player_rb.linearVelocity = Vector2.zero;
         ChangeAnimation(player_idle);
     }
+
 
 }

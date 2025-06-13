@@ -17,6 +17,9 @@ public class p_CombatState : PlayerBaseState
     int CurrentHealth;
     bool dead;
 
+    //Player Control
+    public PlayerControls controls;
+
     //References
     GameObject melee;
     Transform aim;
@@ -40,6 +43,13 @@ public class p_CombatState : PlayerBaseState
     //Animation management
     string currentAnim;
 
+    void Awake()
+    {
+        controls = new PlayerControls();
+    }
+
+    void OnEnable() => controls.Enable();
+    void OnDisable() => controls.Disable();
 
     //Initialize method to inject dependencies
     public void Initialize(PlayerStateManager manager)
@@ -50,6 +60,9 @@ public class p_CombatState : PlayerBaseState
         bullet = manager.bullet;
         firepower = manager.firepower;
         playerAttributes = manager.playerAttributes;
+
+        // Get controls
+        controls = manager.controls;
     }
 
 
@@ -103,10 +116,9 @@ public class p_CombatState : PlayerBaseState
 
     bool Move_input()
     {
-        //checks for key input
-        bool hasKeyInput = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D);
-
-        return hasKeyInput;
+        Vector2 move = controls.Player.Move.ReadValue<Vector2>();
+        bool result = move.magnitude > 0.1f || controls.Player.Crouch.ReadValue<float>() > 0 || controls.Player.Dash.ReadValue<float>() > 0;
+        return result;
     }
 
 

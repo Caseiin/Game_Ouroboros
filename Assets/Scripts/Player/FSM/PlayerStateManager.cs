@@ -28,8 +28,14 @@ public class PlayerStateManager : MonoBehaviour
 
     public Vector3 currentdirection;
 
+    //Player controls
+    public PlayerControls controls { get; private set; }
+
     void Start()
     {
+        controls = new PlayerControls();
+        controls.Enable();
+
         //Initialize and pass dependencies 
         combatState = new p_CombatState();
         movingState = new p_MovingState();
