@@ -9,6 +9,7 @@ public class NPC : MonoBehaviour, IInteractable
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
+    public Button shopButton;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
@@ -45,7 +46,10 @@ public class NPC : MonoBehaviour, IInteractable
         portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
+        shopButton.interactable = false;
         PauseController.SetPause(true);
+
+        
 
         //Type Line
         StartCoroutine(TypeRoutine());
@@ -66,6 +70,7 @@ public class NPC : MonoBehaviour, IInteractable
         else
         {
             //End dialogue
+            shopButton.interactable = true;
             EndDialogue();
         }
 
