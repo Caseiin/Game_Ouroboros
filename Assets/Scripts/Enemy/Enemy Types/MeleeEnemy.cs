@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class MeleeEnemy : BaseEnemy, IHealth
+public class MeleeEnemy : BaseEnemy
 {
     EnemyStateManager stateManager;
     SpriteRenderer enemy;
@@ -136,21 +136,5 @@ public class MeleeEnemy : BaseEnemy, IHealth
         CanAttack = true;
     }
 
-    public void TakeHealth()
-    {
-        enemyHealth--;
-        if (enemyHealth <= 0)
-        {
-            Debug.Log("enemy died");
-            enemy.color = Color.blue;
 
-            //Death()
-        }
-
-    }
-
-    public void GiveHealth()
-    {
-        throw new System.NotImplementedException();
-    }
 }
