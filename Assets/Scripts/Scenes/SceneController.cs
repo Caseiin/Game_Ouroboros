@@ -7,6 +7,13 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
 
     private static bool loadFromDoor;
+
+    //Player requirements
+    private GameObject _player;
+    private Collider2D _playercoll;
+    private Collider2D _doorColl;
+    private Vector3 _playerSpawnPos;
+
     private DoorsInteraction.DoorSpawnAt _doorToSpawnTo;
 
     private void Awake()
@@ -15,6 +22,10 @@ public class SceneController : MonoBehaviour
         {
             instance = this;
         }
+
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _playercoll = _player.GetComponent<Collider2D>();
+
     }
 
     private void OnEnable()
@@ -54,9 +65,30 @@ public class SceneController : MonoBehaviour
         if (loadFromDoor)
         {
             //warp player to correct location based on door
-
-
+            FindDoor(_doorToSpawnTo);
+            _player.transform.position = _playerSpawnPos;
             loadFromDoor = false;
         }
+    }
+
+    private void FindDoor(DoorsInteraction.DoorSpawnAt doorSpawnNumber)
+    {
+        DoorsInteraction[] doors = FindObjectsByType<DoorsInteraction>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < doors.Length; i++)
+        {
+            if (doors[i].currentDoorPosition == doorSpawnNumber)
+            {
+                _doorColl = doors[i].gameObject.GetComponent<Collider2D>();
+                CalculateSpawnPosition();
+                return;
+            }
+        }
+    }
+
+    private void CalculateSpawnPosition()
+    {
+        float ColliderHeight = _playercoll.bounds.extents.y;
+        _playerSpawnPos = _doorColl.transform.position - new Vector3(0f, ColliderHeight, 0f);
     }
 }

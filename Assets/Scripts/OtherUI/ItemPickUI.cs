@@ -19,10 +19,20 @@ public class ItemPickUI : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+
+            // Safely handle persistence
+            if (Persistence.instance != null)
+            {
+                transform.SetParent(Persistence.instance.transform);
+            }
+            else
+            {
+                Debug.LogWarning("Persistence instance not found. ItemPickUI won't persist between scenes.");
+            }
         }
         else
         {
-            Debug.LogError("Multiple ItemPickUpUiManager instances dectected! Destroying the extra one.");
+            Debug.Log("ItemPickUI already exists in persistence. Destroying duplicate.");
             Destroy(gameObject);
         }
     }
