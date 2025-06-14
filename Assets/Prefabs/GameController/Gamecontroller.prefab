@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3437081182134890150}
   - component: {fileID: 5299644489286739441}
   - component: {fileID: 3168549076356012063}
+  - component: {fileID: 8467585600464272784}
   m_Layer: 0
   m_Name: Gamecontroller
   m_TagString: Untagged
@@ -60,10 +61,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 0}
   slotPrefab: {fileID: 9167588116212545119, guid: d9537a85012305642af854d2be6486b9, type: 3}
-  slotCounter: 21
+  slotCounter: 25
   itemPrefabs:
   - {fileID: 1099580867941818854, guid: a513d4a98d31c08449bb531a37a97cfe, type: 3}
-  - {fileID: 4262889541840999168, guid: 3345e72f576c16f44ab1504b45eb9b4c, type: 3}
+  - {fileID: 3365968204380304895, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
+--- !u!114 &8467585600464272784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805832215482447419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7128b25541abbe41af54120d4216544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5532191166166457226
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,4 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefabs:
   - {fileID: 2293274453046756696, guid: a513d4a98d31c08449bb531a37a97cfe, type: 3}
-  - {fileID: 3150819327700203454, guid: 3345e72f576c16f44ab1504b45eb9b4c, type: 3}
+  - {fileID: 1357284246063259555, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
