@@ -45,7 +45,7 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator FadeOutThenChangeScene(SceneField myScene, DoorsInteraction.DoorSpawnAt doorSpawnAt = DoorsInteraction.DoorSpawnAt.None)
     {
-        SceneFadeManager.instance.StarFadeOut();
+        SceneFadeManager.instance.StartFadeOut();
 
         while (SceneFadeManager.instance.IsFadingOut)
         {

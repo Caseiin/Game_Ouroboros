@@ -597,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.2528302, g: 0.24376647, b: 0.24376647, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3706,7 +3706,7 @@ MonoBehaviour:
   _fadeOutImage: {fileID: 44458835}
   _fadeOutSpeed: 5
   _fadeInSpeed: 5
-  _fadeOutStartColor: {r: 0.14716971, g: 0.14522596, b: 0.14522596, a: 0}
+  _fadeOutStartColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1138827230
 GameObject:
   m_ObjectHideFlags: 0

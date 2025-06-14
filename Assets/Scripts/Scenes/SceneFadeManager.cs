@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,7 +57,7 @@ public class SceneFadeManager : MonoBehaviour
         }
     }
 
-    public void StarFadeOut()
+    public void StartFadeOut()
     {
         _fadeOutImage.color = _fadeOutStartColor;
         IsFadingOut = true;
