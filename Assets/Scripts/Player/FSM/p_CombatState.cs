@@ -28,6 +28,10 @@ public class p_CombatState : PlayerBaseState
     PlayerAttributes playerAttributes;
     PlayerStateManager playerstate;
     Animator animator;
+
+    BaseEnemy enemy;
+    Transform transform;
+
     //direction reference
     Vector3 combatDirection;
 
@@ -60,6 +64,9 @@ public class p_CombatState : PlayerBaseState
         bullet = manager.bullet;
         firepower = manager.firepower;
         playerAttributes = manager.playerAttributes;
+
+        enemy = manager.baseEnemy;
+        transform = manager.transform;
 
         // Get controls
         controls = manager.controls;
@@ -121,6 +128,11 @@ public class p_CombatState : PlayerBaseState
         return result;
     }
 
+    public  bool EnemyDetected() //transition check to the combat state;
+    {
+        bool Detect = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Enemy"));
+        return Detect;
+    }
 
     #region Shooting
     void OnRangedCombat()
@@ -166,6 +178,11 @@ public class p_CombatState : PlayerBaseState
             melee.SetActive(true);
             isAttacking = true;
             ChangeAnimation(GetAttackAnim());
+
+            if (EnemyDetected())
+            {
+                ;
+            }
         }
 
     }

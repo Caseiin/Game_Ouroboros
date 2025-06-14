@@ -7,6 +7,7 @@ public class PlayerStateManager : MonoBehaviour
     //Context of the player state  
     PlayerBaseState currentState; //holds a reference to the active state in a state machine
 
+
     //Combat state dependecies
     public GameObject melee;
     public Transform aim;
@@ -14,8 +15,14 @@ public class PlayerStateManager : MonoBehaviour
     public float firepower = 10f;
     public PlayerAttributes playerAttributes;
 
+    public Transform playerTransfrom;
+
+    //enemy
+    public BaseEnemy baseEnemy;
+
     //Dash dependency
     public Slider slider;
+
 
     // New instances of the states
     // Initialize states normally (no MonoBehaviour)
@@ -33,6 +40,9 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
+        baseEnemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<BaseEnemy>();
+
+
         controls = new PlayerControls();
         controls.Enable();
 
@@ -98,5 +108,6 @@ public class PlayerStateManager : MonoBehaviour
         //Apply rotation to melee object
         aim.rotation = Quaternion.Euler(0f, 0f, angle);
     }
+
     #endregion
 }

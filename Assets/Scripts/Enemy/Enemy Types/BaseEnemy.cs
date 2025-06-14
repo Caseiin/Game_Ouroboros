@@ -1,10 +1,16 @@
 using System;
+using System.Collections;
 using Mono.Cecil.Cil;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-public abstract class BaseEnemy : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour, IHealth
 {
+    //Health
+    [Header("Health Settings")]
+    [SerializeField] protected int maxHealth = 4;
+    protected int currentHealth;
+
     //Common properties 
     [Header("Common Enemy Attributes")]
     public float patrolMovementRange = 5f;
@@ -13,6 +19,7 @@ public abstract class BaseEnemy : MonoBehaviour
     public float combatRange = 7f;
     public Transform target;
     protected float ChaseSpeed = 2f;
+
 
 
     private Vector3 randomPos;
@@ -25,12 +32,17 @@ public abstract class BaseEnemy : MonoBehaviour
     //Reference to state manager of enemy
     protected EnemyStateManager manager;
     protected Rigidbody2D enemyBody;
-    
+
+    SpriteRenderer enemySprite;
+
 
     protected virtual void Awake()
     {
+        currentHealth = maxHealth;
+
         manager = GetComponent<EnemyStateManager>();
         enemyBody = GetComponent<Rigidbody2D>();
+        enemySprite = GetComponent<SpriteRenderer>();
 
         if (enemyBody == null)
         {
@@ -123,6 +135,39 @@ public abstract class BaseEnemy : MonoBehaviour
     //function for animation clean ups
     public virtual void StateCleanUp() { }
 
+    public virtual void TakeHealth()
+    {
+        currentHealth--;
+        Debug.Log($"{name} took damage! Health: {currentHealth}/{maxHealth}");
+        
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(FlashRed());
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log($"{name} has died");
+    }
+
+    public virtual void GiveHealth()
+    {
+        throw new NotImplementedException();
+    }
+
+
+    private IEnumerator FlashRed()
+    {
+        enemySprite.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        enemySprite.color = Color.white;
+
+    }
 }
 
 //  Code references:

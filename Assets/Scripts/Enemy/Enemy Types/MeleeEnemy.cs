@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class MeleeEnemy : BaseEnemy
+public class MeleeEnemy : BaseEnemy, IHealth
 {
     EnemyStateManager stateManager;
     SpriteRenderer enemy;
+
+    private HeartUIController heart;
 
     [Header("Melee parameters")]
     public int meleeDamage = 20;
@@ -49,6 +51,12 @@ public class MeleeEnemy : BaseEnemy
                 clipDurations.Add(clip.name, clip.length);
             }
         }
+
+        heart = FindFirstObjectByType<HeartUIController>();
+        if (heart == null)
+        {
+            Debug.LogWarning("HeartUIController not found in the scene.");
+        }
     }
 
 
@@ -68,6 +76,7 @@ public class MeleeEnemy : BaseEnemy
         if (CanAttack && WithinCombatRange())
         {
             StartCoroutine(AttackRoutine());
+            heart.OnPlayerTakesDamage();
         }
 
     }
@@ -116,7 +125,6 @@ public class MeleeEnemy : BaseEnemy
         CanAttack = false;
 
         Debug.Log("Melee attack!");
-        enemy.color = Color.red;
         animator.Play(snakeAttack);
         float waitTime = GetDuration("Snake enemy attack"); //use clipNames not state names
 
@@ -125,8 +133,24 @@ public class MeleeEnemy : BaseEnemy
         animator.Play(snakeReady);
         yield return new WaitForSeconds(attackCooldown);
 
-        enemy.color = Color.white;
         CanAttack = true;
     }
 
+    public void TakeHealth()
+    {
+        enemyHealth--;
+        if (enemyHealth <= 0)
+        {
+            Debug.Log("enemy died");
+            enemy.color = Color.blue;
+
+            //Death()
+        }
+
+    }
+
+    public void GiveHealth()
+    {
+        throw new System.NotImplementedException();
+    }
 }
