@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private bool isLastLine = false; // Track if we're at last line
 
     public bool CanInteract()
     {
@@ -26,32 +27,34 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (isDialogueActive)
         {
-            //Next line
+            // Handle special case for last line
+            if (isLastLine && !isTyping)
+            {
+                EndDialogue();
+                return;
+            }
+            
             NextLine();
         }
         else
         {
-            //StartDialogue
             StartDialogue();
         }
     }
 
-
     void StartDialogue()
     {
         isDialogueActive = true;
+        isLastLine = false;
         dialogueIndex = 0;
 
         nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
-        shopButton.interactable = false;
+        shopButton.gameObject.SetActive(false); // Hide button initially
         PauseController.SetPause(true);
 
-        
-
-        //Type Line
         StartCoroutine(TypeRoutine());
     }
 
@@ -62,18 +65,25 @@ public class NPC : MonoBehaviour, IInteractable
             StopAllCoroutines();
             dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
+            
+            // Check if we should show shop button after skipping typing
+            CheckForShopButton();
+            return;
         }
-        else if (++dialogueIndex < dialogueData.dialogueLines.Length)
+
+        dialogueIndex++;
+        
+        if (dialogueIndex < dialogueData.dialogueLines.Length)
         {
             StartCoroutine(TypeRoutine());
         }
         else
         {
-            //End dialogue
+            // Prepare to end dialogue but show shop button first
+            isLastLine = true;
+            shopButton.gameObject.SetActive(true);
             shopButton.interactable = true;
-            EndDialogue();
         }
-
     }
 
     IEnumerator TypeRoutine()
@@ -87,14 +97,37 @@ public class NPC : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
-
         isTyping = false;
+        CheckForShopButton();
 
-        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
+        // Handle auto-progress
+        if (dialogueData.autoProgressLines.Length > dialogueIndex && 
+            dialogueData.autoProgressLines[dialogueIndex])
         {
             yield return new WaitForSeconds(dialogueData.autoProgressDelay);
-            //Display next Line
-            NextLine();
+            
+            if (dialogueIndex < dialogueData.dialogueLines.Length - 1)
+            {
+                dialogueIndex++;
+                StartCoroutine(TypeRoutine());
+            }
+            else
+            {
+                isLastLine = true;
+                shopButton.gameObject.SetActive(true);
+                shopButton.interactable = true;
+            }
+        }
+    }
+
+    void CheckForShopButton()
+    {
+        // Show shop button if at last line and not typing
+        if (dialogueIndex == dialogueData.dialogueLines.Length - 1 && !isTyping)
+        {
+            isLastLine = true;
+            shopButton.gameObject.SetActive(true);
+            shopButton.interactable = true;
         }
     }
 
@@ -102,10 +135,18 @@ public class NPC : MonoBehaviour, IInteractable
     {
         StopAllCoroutines();
         isDialogueActive = false;
+        isLastLine = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
+        shopButton.gameObject.SetActive(false); // Hide button
         PauseController.SetPause(false);
     }
 
-
+    // Call this from your shop button's OnClick event
+    public void OpenShop()
+    {
+        Debug.Log("Shop opened!");
+        // Implement your shop opening logic here
+        EndDialogue(); // Close dialogue when shop opens
+    }
 }
