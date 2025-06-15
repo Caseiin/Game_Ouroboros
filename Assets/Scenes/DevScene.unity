@@ -4371,11 +4371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528237792220341742, guid: 37cd94fcf2f7eb240b65d6b5f75e42e2, type: 3}
       propertyPath: m_Name
-      value: _Archer
+      value: Gem Golem
       objectReference: {fileID: 0}
     - target: {fileID: 3528237792220341742, guid: 37cd94fcf2f7eb240b65d6b5f75e42e2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3528237792220341742, guid: 37cd94fcf2f7eb240b65d6b5f75e42e2, type: 3}
       propertyPath: m_TagString
@@ -4533,11 +4533,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1276631514494129921, guid: c1cf7021fbe77f3458763b8aba1cf1ce, type: 3}
       propertyPath: m_Name
-      value: _enemy
+      value: Snake enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1276631514494129921, guid: c1cf7021fbe77f3458763b8aba1cf1ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1276631514494129921, guid: c1cf7021fbe77f3458763b8aba1cf1ce, type: 3}
       propertyPath: m_TagString
