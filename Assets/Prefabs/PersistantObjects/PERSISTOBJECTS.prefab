@@ -3251,7 +3251,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.07924521, g: 0.07640434, b: 0.07640434, a: 1}
   m_Origin: {x: -11, y: -4, z: 0}
   m_Size: {x: 22, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -3999,7 +3999,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.009718723, g: 0.13801755, b: 0.735849, a: 1}
+  m_Color: {r: 0.94716984, g: 0.94716984, b: 0.94716984, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -53535,7 +53535,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.07169801, g: 0.06858659, b: 0.06858659, a: 1}
   m_Origin: {x: -56, y: -14, z: 0}
   m_Size: {x: 103, y: 82, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -62000,6 +62000,10 @@ PrefabInstance:
     - target: {fileID: 1331235068470300557, guid: 93afbc35a90efde4ba2dbea664cdb139, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743870045310254475, guid: 93afbc35a90efde4ba2dbea664cdb139, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8233211337640965984, guid: 93afbc35a90efde4ba2dbea664cdb139, type: 3}
       propertyPath: slider

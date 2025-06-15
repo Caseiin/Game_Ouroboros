@@ -4,9 +4,11 @@ public class weapon : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IHealth>(out var enemyHealth))
+        if (other.CompareTag("Enemy"))
         {
-            enemyHealth.TakeHealth(); // Calls TakeHealth() once per hit
+            EnemyStateManager enemyState = other.gameObject.GetComponent<EnemyStateManager>();
+
+            enemyState.TakeHealth();
         }
     }
 }

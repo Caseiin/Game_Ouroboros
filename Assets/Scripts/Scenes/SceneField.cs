@@ -52,8 +52,6 @@ public class SceneFieldPropertyDrawer : PropertyDrawer
             }
         }
 
-
-
         EditorGUI.EndProperty();
     }
 }
