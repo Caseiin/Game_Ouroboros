@@ -33,6 +33,7 @@ public class HotBarController : MonoBehaviour
             {
                 //Use Item
                 UseITemInSlot(i);
+                
             }
         }
     }
@@ -49,6 +50,7 @@ public class HotBarController : MonoBehaviour
             if (item.Name != "Coin")
             {
                 item.UseItem();
+                Destroy(slot.currentItem);
             }
             
         }

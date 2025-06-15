@@ -7,10 +7,24 @@ public class Items : MonoBehaviour
     public int ID;
     public string Name;
 
+
+    private HeartUIController heart;
+    void Awake()
+    {
+        heart = FindFirstObjectByType<HeartUIController>();
+        if (heart == null)
+        {
+            Debug.LogWarning("HeartUIController not found in the scene.");
+        }
+    }
+
     public virtual void UseItem()
     {
         Debug.Log("Using item" + Name);
         // Have other items inherit from this class then use this function
+
+        heart.ResetHeart();
+
     }
 
     public virtual void PickUp()

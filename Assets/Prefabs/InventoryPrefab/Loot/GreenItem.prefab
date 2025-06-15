@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Name: HealingOrb
+  heartUI: {fileID: 0}
 --- !u!58 &2603688743155701041
 CircleCollider2D:
   m_ObjectHideFlags: 0
