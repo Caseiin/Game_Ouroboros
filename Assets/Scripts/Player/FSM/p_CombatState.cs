@@ -178,11 +178,6 @@ public class p_CombatState : PlayerBaseState
             melee.SetActive(true);
             isAttacking = true;
             ChangeAnimation(GetAttackAnim());
-
-            if (EnemyDetected())
-            {
-                ;
-            }
         }
 
     }

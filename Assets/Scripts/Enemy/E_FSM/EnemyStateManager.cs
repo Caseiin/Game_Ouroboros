@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour, IHealth
@@ -20,6 +21,10 @@ public class EnemyStateManager : MonoBehaviour, IHealth
     private Dictionary<string, float> clipDurations;  // Holds durations of clips by name
     string DeathAnimationName;
     float DeathAnimDuration;
+
+    //LootTable
+    [Header("loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
 
     void Awake()
@@ -98,6 +103,35 @@ public class EnemyStateManager : MonoBehaviour, IHealth
     {
         animator.Play(DeathAnimationName);
         yield return new WaitForSeconds(DeathAnimDuration);
+        LootDrop();
         Destroy(gameObject);
     }
+
+    void LootDrop()
+    {
+        foreach (LootItem loot in lootTable)
+        {
+            if (Random.Range(0f, 100) <= loot.dropChance)
+            {
+                InstantiateLoot(loot.itemPrefab);
+            }
+
+            break;
+        }
+    }
+
+    private void InstantiateLoot(GameObject loot)
+    {
+        if (loot)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+
+            //just a check
+            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
 }
+
+
+// Code reference
+// Enemy drop loot logic based from this video: https://www.youtube.com/watch?v=Xe73unMxNiY
