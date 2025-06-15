@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: a14e456fba9ac0146bf18e80a73b045c
+guid: e34a8f41b5dce3a43b45e96d356a1441
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2393365944820671393
-    second: Gem golem drop item_0
+      213: 3156051381423492046
+    second: Bossfight death_0
+  - first:
+      213: 6394335819108327079
+    second: Bossfight death_1
+  - first:
+      213: 4516503507465892072
+    second: Bossfight death_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gem golem drop item_0
+      name: Bossfight death_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 16
+        width: 58
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3ad8e65a1f63120800000000000000
-      internalID: 2393365944820671393
+      spriteID: ecbc0aa820c8ccb20800000000000000
+      internalID: 3156051381423492046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight death_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 59
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae12808c8e3db850800000000000000
+      internalID: 6394335819108327079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight death_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 60
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e07f45b208ddae30800000000000000
+      internalID: 4516503507465892072
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gem golem drop item_0: 2393365944820671393
+      Bossfight death_0: 3156051381423492046
+      Bossfight death_1: 6394335819108327079
+      Bossfight death_2: 4516503507465892072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a14e456fba9ac0146bf18e80a73b045c
+guid: 4926e9397c1288643a5ab52e07cbec4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2393365944820671393
-    second: Gem golem drop item_0
+      213: -5339764981526675889
+    second: Inventory slot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gem golem drop item_0
+      name: Inventory slot_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3ad8e65a1f63120800000000000000
-      internalID: 2393365944820671393
+      spriteID: f4e38046a0855e5b0800000000000000
+      internalID: -5339764981526675889
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gem golem drop item_0: 2393365944820671393
+      Inventory slot_0: -5339764981526675889
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

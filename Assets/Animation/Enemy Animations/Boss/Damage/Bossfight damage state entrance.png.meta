@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 1abaa590a83ccea4ca4ddc13f068ad1b
+guid: 685a3bb96dbd49144bfaa066c341c8ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6923364877491417930
-    second: Main Gem_0
+      213: -9193661775495524038
+    second: Bossfight damage state entrance_0
   - first:
-      213: -1921051023082105807
-    second: Main Gem_1
+      213: -4201388752398658839
+    second: Bossfight damage state entrance_1
   - first:
-      213: 7159749133104399517
-    second: Main Gem_2
+      213: -6567807687129744482
+    second: Bossfight damage state entrance_2
   - first:
-      213: -7164493532505423592
-    second: Main Gem_3
+      213: -5384674363504565942
+    second: Bossfight damage state entrance_3
   - first:
-      213: -3048794553921265123
-    second: Main Gem_4
+      213: -6369318726065233663
+    second: Bossfight damage state entrance_4
+  - first:
+      213: -4200938886444672976
+    second: Bossfight damage state entrance_5
+  - first:
+      213: 1101242086951562109
+    second: Bossfight damage state entrance_6
+  - first:
+      213: 2710489639771156944
+    second: Bossfight damage state entrance_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main Gem_0
+      name: Bossfight damage state entrance_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 3
         y: 0
-        width: 14
-        height: 15
+        width: 55
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a43ba4dacabb41060800000000000000
-      internalID: 6923364877491417930
+      spriteID: a319086435d896080800000000000000
+      internalID: -9193661775495524038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_1
+      name: Bossfight damage state entrance_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 63
         y: 0
-        width: 14
-        height: 15
+        width: 55
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1345acdc54e0755e0800000000000000
-      internalID: -1921051023082105807
+      spriteID: 9e2d4f9803ba1b5c0800000000000000
+      internalID: -4201388752398658839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_2
+      name: Bossfight damage state entrance_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 123
         y: 0
-        width: 14
-        height: 15
+        width: 55
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d94499f07e98c5360800000000000000
-      internalID: 7159749133104399517
+      spriteID: e9b3d8fc4b57ad4a0800000000000000
+      internalID: -6567807687129744482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_3
+      name: Bossfight damage state entrance_3
       rect:
         serializedVersion: 2
-        x: 49
+        x: 179
         y: 0
-        width: 14
-        height: 15
+        width: 64
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8114e6f571b929c90800000000000000
-      internalID: -7164493532505423592
+      spriteID: a416824123bc545b0800000000000000
+      internalID: -5384674363504565942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_4
+      name: Bossfight damage state entrance_4
       rect:
         serializedVersion: 2
-        x: 65
+        x: 242
         y: 0
-        width: 14
-        height: 15
+        width: 59
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +237,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d12a064a18180b5d0800000000000000
-      internalID: -3048794553921265123
+      spriteID: 10163af5d52ab97a0800000000000000
+      internalID: -6369318726065233663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state entrance_5
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 038175e175443b5c0800000000000000
+      internalID: -4200938886444672976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state entrance_6
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b257ce7d5684f00800000000000000
+      internalID: 1101242086951562109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state entrance_7
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1bfe177f79d9520800000000000000
+      internalID: 2710489639771156944
       vertices: []
       indices: 
       edges: []
@@ -238,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 39d57d040257a8444b775f796643ed73
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Main Gem_0: 6923364877491417930
-      Main Gem_1: -1921051023082105807
-      Main Gem_2: 7159749133104399517
-      Main Gem_3: -7164493532505423592
-      Main Gem_4: -3048794553921265123
+      Bossfight damage state entrance_0: -9193661775495524038
+      Bossfight damage state entrance_1: -4201388752398658839
+      Bossfight damage state entrance_2: -6567807687129744482
+      Bossfight damage state entrance_3: -5384674363504565942
+      Bossfight damage state entrance_4: -6369318726065233663
+      Bossfight damage state entrance_5: -4200938886444672976
+      Bossfight damage state entrance_6: 1101242086951562109
+      Bossfight damage state entrance_7: 2710489639771156944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

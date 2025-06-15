@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1082889428253792089}
   - component: {fileID: 6041756337547580479}
   m_Layer: 5
-  m_Name: GreenItem
+  m_Name: HealthGem
   m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,14 +64,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23940362, g: 0.85660374, b: 0.06303301, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6035535660870477217, guid: b84ff1abc56bbe34c8da5da3a827e006, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3e0bc7dcda990e40a898b555ffcf26d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   Name: HealingOrb
-  heartUI: {fileID: 0}
 --- !u!58 &2603688743155701041
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6035535660870477217, guid: b84ff1abc56bbe34c8da5da3a827e006, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3e0bc7dcda990e40a898b555ffcf26d, type: 3}
   m_Color: {r: 1, g: 0.95660377, b: 0.95660377, a: 1}
   m_FlipX: 0
   m_FlipY: 0

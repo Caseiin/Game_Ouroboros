@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a14e456fba9ac0146bf18e80a73b045c
+guid: adb250c28520dd54b9d8d06ae75a657f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2393365944820671393
-    second: Gem golem drop item_0
+      213: 2724704364724340417
+    second: Treasure chest_0
+  - first:
+      213: 6874509073645978628
+    second: Treasure chest_1
+  - first:
+      213: 7329152149293569852
+    second: Treasure chest_2
+  - first:
+      213: -6172371292189780595
+    second: Treasure chest_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gem golem drop item_0
+      name: Treasure chest_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
-        width: 12
-        height: 16
+        y: 5
+        width: 28
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3ad8e65a1f63120800000000000000
-      internalID: 2393365944820671393
+      spriteID: 1c6c9510f2810d520800000000000000
+      internalID: 2724704364724340417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure chest_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 5
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4044edb6499276f50800000000000000
+      internalID: 6874509073645978628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure chest_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 5
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c371f6b5c0166b560800000000000000
+      internalID: 7329152149293569852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure chest_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 5
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85953b2305575aa0800000000000000
+      internalID: -6172371292189780595
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 40501b786aa1b54448f179957e573c43
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gem golem drop item_0: 2393365944820671393
+      Treasure chest_0: 2724704364724340417
+      Treasure chest_1: 6874509073645978628
+      Treasure chest_2: 7329152149293569852
+      Treasure chest_3: -6172371292189780595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

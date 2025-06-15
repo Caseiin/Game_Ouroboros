@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a14e456fba9ac0146bf18e80a73b045c
+guid: b5f1ec0bba85b004da7f557c1a54459e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2393365944820671393
-    second: Gem golem drop item_0
+      213: 4454833960204566245
+    second: Bossfight attack startup_0
+  - first:
+      213: -2139624453799872540
+    second: Bossfight attack startup_1
+  - first:
+      213: -7793088437488141646
+    second: Bossfight attack startup_2
+  - first:
+      213: 7407783581772695245
+    second: Bossfight attack startup_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gem golem drop item_0
+      name: Bossfight attack startup_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 3
         y: 0
-        width: 12
-        height: 16
+        width: 55
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3ad8e65a1f63120800000000000000
-      internalID: 2393365944820671393
+      spriteID: 5eef65352efb2dd30800000000000000
+      internalID: 4454833960204566245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight attack startup_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7f48e35e68e42e0800000000000000
+      internalID: -2139624453799872540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight attack startup_2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bab05c0b5369d390800000000000000
+      internalID: -7793088437488141646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight attack startup_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc648846bebbdc660800000000000000
+      internalID: 7407783581772695245
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gem golem drop item_0: 2393365944820671393
+      Bossfight attack startup_0: 4454833960204566245
+      Bossfight attack startup_1: -2139624453799872540
+      Bossfight attack startup_2: -7793088437488141646
+      Bossfight attack startup_3: 7407783581772695245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 1abaa590a83ccea4ca4ddc13f068ad1b
+guid: f2d8aa17c84bc204c80be9c499f34b9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6923364877491417930
-    second: Main Gem_0
+      213: 2099055159055310883
+    second: Trap_0
   - first:
-      213: -1921051023082105807
-    second: Main Gem_1
+      213: 3333967470306039257
+    second: Trap_1
   - first:
-      213: 7159749133104399517
-    second: Main Gem_2
+      213: 6168736975187873401
+    second: Trap_2
   - first:
-      213: -7164493532505423592
-    second: Main Gem_3
+      213: 1018633133331934498
+    second: Trap_3
   - first:
-      213: -3048794553921265123
-    second: Main Gem_4
+      213: 6840254211512974232
+    second: Trap_4
+  - first:
+      213: -6925860838805389657
+    second: Trap_5
+  - first:
+      213: 8052341174007337326
+    second: Trap_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main Gem_0
+      name: Trap_0
       rect:
         serializedVersion: 2
         x: 1
         y: 0
         width: 14
-        height: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a43ba4dacabb41060800000000000000
-      internalID: 6923364877491417930
+      spriteID: 320617fbb87512d10800000000000000
+      internalID: 2099055159055310883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_1
+      name: Trap_1
       rect:
         serializedVersion: 2
         x: 17
         y: 0
         width: 14
-        height: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1345acdc54e0755e0800000000000000
-      internalID: -1921051023082105807
+      spriteID: 9d59c4800c1a44e20800000000000000
+      internalID: 3333967470306039257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_2
+      name: Trap_2
       rect:
         serializedVersion: 2
         x: 33
         y: 0
         width: 14
-        height: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d94499f07e98c5360800000000000000
-      internalID: 7159749133104399517
+      spriteID: 97e04e67891cb9550800000000000000
+      internalID: 6168736975187873401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_3
+      name: Trap_3
       rect:
         serializedVersion: 2
         x: 49
         y: 0
         width: 14
-        height: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8114e6f571b929c90800000000000000
-      internalID: -7164493532505423592
+      spriteID: 22d61b41079e22e00800000000000000
+      internalID: 1018633133331934498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Gem_4
+      name: Trap_4
       rect:
         serializedVersion: 2
         x: 65
         y: 0
         width: 14
-        height: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +234,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d12a064a18180b5d0800000000000000
-      internalID: -3048794553921265123
+      spriteID: 89bb992d6f67dee50800000000000000
+      internalID: 6840254211512974232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trap_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae373b034662ef90800000000000000
+      internalID: -6925860838805389657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trap_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6195f672a9afbf60800000000000000
+      internalID: 8052341174007337326
       vertices: []
       indices: 
       edges: []
@@ -238,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 39d57d040257a8444b775f796643ed73
+    spriteID: 4786ee8f465d8fc43b977038695e6246
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Main Gem_0: 6923364877491417930
-      Main Gem_1: -1921051023082105807
-      Main Gem_2: 7159749133104399517
-      Main Gem_3: -7164493532505423592
-      Main Gem_4: -3048794553921265123
+      Trap_0: 2099055159055310883
+      Trap_1: 3333967470306039257
+      Trap_2: 6168736975187873401
+      Trap_3: 1018633133331934498
+      Trap_4: 6840254211512974232
+      Trap_5: -6925860838805389657
+      Trap_6: 8052341174007337326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
