@@ -62134,6 +62134,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5946784978193192320, guid: 93afbc35a90efde4ba2dbea664cdb139, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a741221eeb777343b53e051057e1a57, type: 3}
     - target: {fileID: 8233211337640965984, guid: 93afbc35a90efde4ba2dbea664cdb139, type: 3}
       propertyPath: slider
       value: 
