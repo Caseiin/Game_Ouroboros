@@ -40,7 +40,7 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
-        baseEnemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<BaseEnemy>();
+        // baseEnemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<BaseEnemy>();
 
 
         controls = new PlayerControls();
