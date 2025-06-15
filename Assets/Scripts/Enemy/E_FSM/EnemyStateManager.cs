@@ -115,8 +115,6 @@ public class EnemyStateManager : MonoBehaviour, IHealth
             {
                 InstantiateLoot(loot.itemPrefab);
             }
-
-            break;
         }
     }
 
@@ -125,9 +123,6 @@ public class EnemyStateManager : MonoBehaviour, IHealth
         if (loot)
         {
             GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
-
-            //just a check
-            droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 }
