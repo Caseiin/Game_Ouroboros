@@ -18,8 +18,8 @@ public class MeleeEnemy : BaseEnemy
 
     //Animation stuff
     Animator animator;
-    const string snakeAttack = "Snake Attack";
-    const string snakeDies = "Snake dead";
+    const string snakeAttack = "Snake enemy attack";
+    const string snakeDies = "Snake enemy death";
     const string snakeReady = "Snake enemy walk";
 
     //animations durations:

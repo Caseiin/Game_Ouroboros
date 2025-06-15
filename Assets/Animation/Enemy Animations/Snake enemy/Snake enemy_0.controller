@@ -74,10 +74,10 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7499980565850789796}
-    m_Position: {x: 350, y: 140, z: 0}
+    m_Position: {x: 730, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2650603957592087245}
-    m_Position: {x: 580, y: 70, z: 0}
+    m_Position: {x: 500, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -95,7 +95,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snake Attack
+  m_Name: Snake enemy attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

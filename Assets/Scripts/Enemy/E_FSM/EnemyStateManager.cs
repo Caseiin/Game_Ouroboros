@@ -15,8 +15,12 @@ public class EnemyStateManager : MonoBehaviour, IHealth
 
     SpriteRenderer enemySprite;
 
+    //Animation stuff
     Animator animator;
     private Dictionary<string, float> clipDurations;  // Holds durations of clips by name
+    string DeathAnimationName;
+    float DeathAnimDuration;
+
 
     void Awake()
     {
@@ -30,6 +34,15 @@ public class EnemyStateManager : MonoBehaviour, IHealth
             if (!clipDurations.ContainsKey(clip.name))
             {
                 clipDurations.Add(clip.name, clip.length);
+                Debug.Log($"Clip name: {clip.name}, Length: {clip.length}");
+
+                if (clip.name.ToLower().Contains("death"))
+                {
+                    Debug.Log($"This clip seems to be a death animation: {clip.name}");
+                    DeathAnimationName = clip.name;
+                    DeathAnimDuration = clip.length;
+
+                }
             }
         }
     }
@@ -61,6 +74,7 @@ public class EnemyStateManager : MonoBehaviour, IHealth
         {
             Debug.Log("Enemy has died");
             //Dead
+            StartCoroutine(DeathRoutine());
         }
 
         //FlashRed
@@ -80,8 +94,10 @@ public class EnemyStateManager : MonoBehaviour, IHealth
     }
 
 
-    private IEnumerable DeathRoutine()
+    private IEnumerator DeathRoutine()
     {
-        yield return null;
+        animator.Play(DeathAnimationName);
+        yield return new WaitForSeconds(DeathAnimDuration);
+        Destroy(gameObject);
     }
 }
