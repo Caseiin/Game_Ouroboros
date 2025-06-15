@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class B_CooldownState : B_BaseState, IHealth
+public class B_CooldownState : B_BaseState
 {
     Slider slider;
     float pronelength;
@@ -84,26 +84,5 @@ public class B_CooldownState : B_BaseState, IHealth
         return transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 2;
     }
 
-    public void TakeHealth()
-    {
 
-        bossHealth--;
-        bSprite.color = Color.black;
-        //Update slider
-        if (bossHealth <= 0)
-        {
-            //Die
-        }
-
-    }
-
-    public void GiveHealth()
-    {
-
-    }
-
-    public void UpdateSlider(int health)
-    {
-
-    }
 }

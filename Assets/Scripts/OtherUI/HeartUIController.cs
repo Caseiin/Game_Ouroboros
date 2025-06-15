@@ -57,7 +57,7 @@ public class HeartUIController : MonoBehaviour, IHealth
     }
 
     // Triggered when player receives healing
-    public void TakeHealth()
+    public void TakeHealth(int damage)
     {
         if (currentStateIndex <= 0)
         {

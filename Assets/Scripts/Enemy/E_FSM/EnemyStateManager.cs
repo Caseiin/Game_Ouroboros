@@ -72,9 +72,9 @@ public class EnemyStateManager : MonoBehaviour, IHealth
         currentState?.EnterState(this);
     }
 
-    public void TakeHealth()
+    public void TakeHealth(int damage)
     {
-        CurrentHealth--;
+        CurrentHealth-=damage;
         if (CurrentHealth <= 0)
         {
             Debug.Log("Enemy has died");

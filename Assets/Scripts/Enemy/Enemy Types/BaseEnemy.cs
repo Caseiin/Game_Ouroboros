@@ -145,9 +145,9 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
     //function for animation clean ups
     public virtual void StateCleanUp() { }
 
-    public virtual void TakeHealth()
+    public virtual void TakeHealth(int damage)
     {
-        currentHealth--;
+        currentHealth-= damage;
         Debug.Log($"{name} took damage! Health: {currentHealth}/{maxHealth}");
         
         if (currentHealth <= 0)

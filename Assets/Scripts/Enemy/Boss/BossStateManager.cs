@@ -59,11 +59,11 @@ public class BossStateManager : MonoBehaviour, IHealth
         StartCoroutine(coroutine);
     }
 
-    public void TakeHealth()
+    public void TakeHealth(int damage)
     {
         if (currentState == proneState)
         {
-            BossHealth--;
+            BossHealth-= damage;
             //Update slider
             UpdateSlider(BossHealth);
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IHealth
 {
-    void TakeHealth();
+    void TakeHealth(int damage);
 
     void GiveHealth();
 }
