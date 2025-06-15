@@ -10,5 +10,11 @@ public class weapon : MonoBehaviour
 
             enemyState.TakeHealth();
         }
+
+        if (other.CompareTag("Boss"))
+        {
+            BossStateManager bossState = FindFirstObjectByType<BossStateManager>();
+            bossState.TakeHealth();
+        }
     }
 }

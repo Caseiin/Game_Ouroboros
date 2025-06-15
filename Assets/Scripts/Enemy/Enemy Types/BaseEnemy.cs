@@ -98,6 +98,8 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
 
     public virtual void PatrolPattern()
     {
+        float PatrolDelay = 0.5f;
+        float PatrolWait = 0f;
         //Implement how enemy patrols
         if (!isPatrolling) return; // patrol flag
 
@@ -109,7 +111,15 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
 
         if ((randomPos - transform.position).sqrMagnitude < 0.01f)
         {
-            randomPos = GetRandomPointForPatrol();
+            PatrolWait += Time.deltaTime;
+            Debug.Log("Enemy is waiting");
+
+            if (PatrolWait >= PatrolDelay)
+            {
+                randomPos = GetRandomPointForPatrol();
+            }
+
+            
         }
     }
 

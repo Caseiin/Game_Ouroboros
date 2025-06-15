@@ -1,37 +1,83 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class B_AttackState : B_BaseState
 {
+    Slider slider;
+    float attackLength;
+    float atkTimer;
+    Transform transform;
+    GameObject projectile;
+    bool canShoot;
+
+    float shootCooldown;
+    float firepower;
+
+
+    public void Initialize(BossStateManager boss)
+    {
+        slider = boss.slider;
+        attackLength = boss.AttackDuration;
+        transform = boss.BossTransform;
+        projectile = boss.bullet;
+        shootCooldown = boss.attackCooldown;
+        firepower = boss.firepower;
+
+        atkTimer = 0f;
+    }
+
     public override void EnterState(BossStateManager boss)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Enemy is attacking");
+        atkTimer = 0f;
+        canShoot = true;
     }
 
     public override void UpdateState(BossStateManager boss)
     {
-        throw new System.NotImplementedException();
+        atkTimer += Time.deltaTime;
+
+        if (canShoot)
+        {
+            canShoot = false;
+            
+            boss.StartShootCoroutine(ShootRoutine());
+        }
+
+
+        Debug.Log("Enemy attack duration:" + atkTimer);
+        if (atkTimer >= attackLength)
+        {
+            boss.SwitchState(boss.proneState);
+        }
     }
 
     public override void ExitState(BossStateManager boss)
     {
-        throw new System.NotImplementedException();
+        
     }
 
-    //   public override void RangedAttack()
-    // {
-    //     if (AimAtPlayer()&& canShoot)
-    //     {
-    //         Debug.Log("Enemy shooting!");
-    //         StartCoroutine(ShootRoutine());
-    //     }
-    // }
+    Vector2 direction
+    {
+        get
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                return (player.transform.position - transform.position).normalized;
+            }
+            return Vector2.right; // fallback direction
+        }
+    }
 
-    // public override bool WithinCombatRange()
+
+    // public  bool WithinCombatRange()
     // {
     //     return PlayerDetected();
     // }
 
-    // public override bool PlayerDetected()
+    // public  bool PlayerDetected()
     // {
     //     bool Detect = Physics2D.OverlapCircle(transform.position, detectionRange, LayerMask.GetMask("Player"));
     //     return Detect;
@@ -39,12 +85,12 @@ public class B_AttackState : B_BaseState
 
 
 
-    // private void OnDrawGizmosSelected()
-    // {
-    //     //Detection range 
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawWireSphere(transform.position, detectionRange);
-    // }
+    private void OnDrawGizmosSelected()
+    {
+        //Detection range 
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 3);
+    }
 
     // private bool AimAtPlayer()
     // {
@@ -58,36 +104,36 @@ public class B_AttackState : B_BaseState
     //     return aim;
     // }
 
-    // private IEnumerator ShootRoutine()
-    // {
-    //     canShoot = false;
+    private IEnumerator ShootRoutine()
+    {
+        
 
-    //     if (projectile == null)
-    //     {
-    //         Debug.Log("Enemy has no bullets");
-    //         yield break;
-    //     }
+        if (projectile == null)
+        {
+            Debug.Log("Enemy has no bullets");
+            yield break;
+        }
 
 
 
-    //     GameObject intBullet = Instantiate(projectile, transform.position, quaternion.identity);
-    //     Rigidbody2D BulletRb = intBullet.GetComponent<Rigidbody2D>();
+        GameObject intBullet = Object.Instantiate(projectile, transform.position, Quaternion.identity);
+        Rigidbody2D BulletRb = intBullet.GetComponent<Rigidbody2D>();
 
-    //     if (BulletRb == null)
-    //     {
-    //         Debug.LogError("Bullet has no rigidbody");
-    //         Object.Destroy(intBullet, 2f);
-    //         yield break;
-    //     }
+        if (BulletRb == null)
+        {
+            Debug.LogError("Bullet has no rigidbody");
+            Object.Destroy(intBullet, 2f);
+            yield break;
+        }
 
-    //     //Apply force on bullet
-    //     BulletRb.AddForce(direction * firepower, ForceMode2D.Impulse);
-    //     Debug.Log("Bullet is shot!");
-    //     Debug.Log("shootDirection" + direction);
+        //Apply force on bullet
+        BulletRb.AddForce(direction * firepower, ForceMode2D.Impulse);
+        Debug.Log("Bullet is shot!");
+        Debug.Log("shootDirection" + direction);
 
-    //     //wait for cooldown duration
-    //     yield return new WaitForSeconds(shootCooldown);
+        //wait for cooldown duration
+        yield return new WaitForSeconds(shootCooldown);
 
-    //     canShoot = true;
-    // }
+        canShoot = true;
+    }
 }
