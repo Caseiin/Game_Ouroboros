@@ -23,7 +23,7 @@ public class Items : MonoBehaviour
         Debug.Log("Using item" + Name);
         // Have other items inherit from this class then use this function
 
-        heart.ResetHeart();
+        heart.Heal();
 
     }
 

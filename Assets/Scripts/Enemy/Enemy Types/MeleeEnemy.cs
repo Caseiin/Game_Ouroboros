@@ -76,7 +76,7 @@ public class MeleeEnemy : BaseEnemy
         if (CanAttack && WithinCombatRange())
         {
             StartCoroutine(AttackRoutine());
-            heart.OnPlayerTakesDamage();
+            heart.TakeHealth(1);
         }
 
     }
