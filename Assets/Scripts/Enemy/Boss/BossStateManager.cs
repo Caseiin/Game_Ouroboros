@@ -38,7 +38,7 @@ public class BossStateManager : MonoBehaviour
     public Animator animator;
 
 
-
+    private bool interactflag = false;
     public string DeathAnimationName, hitAnimationName;
     public float DeathAnimDuration, hitAnimationDuration;
 
@@ -159,31 +159,13 @@ public class BossStateManager : MonoBehaviour
         bossSprite.color = Color.white;
     }
 
-    // public void Interact()
-    // {
-    //     if (!CanInteract()) return;
-
-    //     deathState.interacted = false;
-
-    // }
-
-    // public bool CanInteract()
-    // {
-    //     if (currentState == deathState && deathState.interacted)
-    //     {
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
 
     public void DeathCheck()
     {
         if (currentState == deathState)
         {
             dialogue.InteractReady = true;
-            // dialogue.CanInteract();
-            // dialogue.Interact();
+            interactflag = true;
         }
     }
 }

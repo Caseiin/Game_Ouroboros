@@ -9,6 +9,7 @@ public class BossDialogue : MonoBehaviour, IInteractable
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
+    public GameObject mainGem;
 
 
     private int dialogueIndex;
@@ -135,6 +136,13 @@ public class BossDialogue : MonoBehaviour, IInteractable
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
         PauseController.SetPause(false);
+
+        if (mainGem)
+        {
+            GameObject droppedItem = Instantiate(mainGem, transform.position+ new Vector3(0f,-5f,0f) + Vector3.down, Quaternion.identity);
+            droppedItem.GetComponent<Bounce>().StartBounce();
+            InteractReady = false;
+        }
     }
 
     // Call this from your shop button's OnClick event
