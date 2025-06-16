@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2
-  Name: HealingOrb
+  Name: HealthGem
 --- !u!58 &2603688743155701041
 CircleCollider2D:
   m_ObjectHideFlags: 0

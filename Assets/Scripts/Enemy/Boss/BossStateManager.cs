@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,17 +27,52 @@ public class BossStateManager : MonoBehaviour, IHealth
     public Rigidbody2D rb;
     public GameObject bullet;
 
+    
+    private Dictionary<string, float> clipDurations;
+    Animator animator;
 
+    string DeathAnimationName,hitAnimationName ;
+    float DeathAnimDuration,hitAnimationDuration ;
 
     void Awake()
     {
         BossTransform = transform;
         rb = GetComponent<Rigidbody2D>();
         bossSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         attackState.Initialize(this);
         proneState.Initialize(this);
         currentState = attackState;
         currentState?.EnterState(this);
+
+        //Adding a dictionary of the clip durations
+        clipDurations = new Dictionary<string, float>();
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            //Optional : remove duplicates
+            if (!clipDurations.ContainsKey(clip.name))
+            {
+                clipDurations.Add(clip.name, clip.length);
+
+                Debug.Log($"Clip name: {clip.name}, Length: {clip.length}");
+
+                if (clip.name.ToLower().Contains("death"))
+                {
+                    Debug.Log($"This clip seems to be a death animation: {clip.name}");
+                    DeathAnimationName = clip.name;
+                    DeathAnimDuration = clip.length;
+
+                }
+
+                if (clip.name.ToLower().Contains("hit"))
+                {
+                    Debug.Log($"This clip seems to be a hit animation: {clip.name}");
+                    DeathAnimationName = clip.name;
+                    DeathAnimDuration = clip.length;
+
+                }
+            }
+        }
     }
 
     // Update is called once per frame
