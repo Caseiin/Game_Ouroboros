@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossStateManager : MonoBehaviour, IHealth, IInteractable
+public class BossStateManager : MonoBehaviour
 {
     B_BaseState currentState;
 
@@ -25,6 +25,9 @@ public class BossStateManager : MonoBehaviour, IHealth, IInteractable
     public SpriteRenderer bossSprite;
     public Sprite deathBoss;
 
+    private BossDialogue dialogue;
+    //public GameObject mainGem;
+
     public float firepower = 8f;
     public Transform BossTransform;
     public Rigidbody2D rb;
@@ -33,6 +36,7 @@ public class BossStateManager : MonoBehaviour, IHealth, IInteractable
 
     private Dictionary<string, float> clipDurations;
     public Animator animator;
+
 
 
     public string DeathAnimationName, hitAnimationName;
@@ -44,11 +48,14 @@ public class BossStateManager : MonoBehaviour, IHealth, IInteractable
         rb = GetComponent<Rigidbody2D>();
         bossSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        dialogue = GetComponent<BossDialogue>();
+
         attackState.Initialize(this);
         proneState.Initialize(this);
         deathState.Initialize(this);
         currentState = attackState;
         currentState?.EnterState(this);
+
 
         slider.maxValue = BossHealth;
         slider.value = BossHealth;
@@ -87,6 +94,7 @@ public class BossStateManager : MonoBehaviour, IHealth, IInteractable
     void Update()
     {
         currentState.UpdateState(this);
+        DeathCheck();
     }
 
 
@@ -151,18 +159,31 @@ public class BossStateManager : MonoBehaviour, IHealth, IInteractable
         bossSprite.color = Color.white;
     }
 
-    public void Interact()
-    {
-        
-    }
+    // public void Interact()
+    // {
+    //     if (!CanInteract()) return;
 
-    public bool CanInteract()
+    //     deathState.interacted = false;
+
+    // }
+
+    // public bool CanInteract()
+    // {
+    //     if (currentState == deathState && deathState.interacted)
+    //     {
+    //         return true;
+    //     }
+
+    //     return false;
+    // }
+
+    public void DeathCheck()
     {
         if (currentState == deathState)
         {
-            return true;
+            dialogue.InteractReady = true;
+            // dialogue.CanInteract();
+            // dialogue.Interact();
         }
-
-        return false;
     }
 }

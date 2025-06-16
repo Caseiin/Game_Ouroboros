@@ -11,7 +11,7 @@ public class B_DeathState : B_BaseState
 
     public void Initialize(BossStateManager boss)
     {
-        interacted = false;
+        interacted = true;
         animator = boss.animator;
         deadRender = boss.bossSprite;
         deathSprite = boss.deathBoss;
