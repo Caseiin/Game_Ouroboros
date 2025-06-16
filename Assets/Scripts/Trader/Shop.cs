@@ -7,7 +7,10 @@ public class Shop : MonoBehaviour
 {
     public int[,] shopItem = new int[5, 5]; //no of shop items
     public float coins;
-    public TextMeshProUGUI  CoinstTxt;
+    public TextMeshProUGUI CoinstTxt;
+    public Canvas canvas;
+
+    public GameObject[] items;
 
     void Start()
     {
@@ -47,8 +50,13 @@ public class Shop : MonoBehaviour
             CoinstTxt.text = "Coins:" + coins.ToString();
 
             //Update quantity text 
-            Buttonref.GetComponent<ButtonInfo>().QuantityTxt.text = shopItem[3, Buttonref.GetComponent<ButtonInfo>().ItemID].ToString(); 
+            Buttonref.GetComponent<ButtonInfo>().QuantityTxt.text = shopItem[3, Buttonref.GetComponent<ButtonInfo>().ItemID].ToString();
         }
+    }
+
+    public void closeShop()
+    {
+        canvas.gameObject.SetActive(false);
     }
 
 }
