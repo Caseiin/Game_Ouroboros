@@ -23,7 +23,23 @@ public class Items : MonoBehaviour
         Debug.Log("Using item" + Name);
         // Have other items inherit from this class then use this function
 
-        heart.Heal();
+        switch (ID)
+        {
+            case 2:
+                heart.Heal();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+
+        }
+
+        
 
     }
 
