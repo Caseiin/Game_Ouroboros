@@ -17,6 +17,7 @@ public class BossStateManager : MonoBehaviour, IHealth
 
     public float attackCooldown = 2f;
 
+
     public float moveSpeed = 2f;
 
     public int BossHealth = 10;
@@ -27,12 +28,13 @@ public class BossStateManager : MonoBehaviour, IHealth
     public Rigidbody2D rb;
     public GameObject bullet;
 
-    
+
     private Dictionary<string, float> clipDurations;
     public Animator animator;
 
-    string DeathAnimationName,hitAnimationName ;
-    float DeathAnimDuration,hitAnimationDuration ;
+
+    string DeathAnimationName, hitAnimationName;
+    float DeathAnimDuration, hitAnimationDuration;
 
     void Awake()
     {
@@ -44,6 +46,9 @@ public class BossStateManager : MonoBehaviour, IHealth
         proneState.Initialize(this);
         currentState = attackState;
         currentState?.EnterState(this);
+
+        slider.maxValue = BossHealth;
+        slider.value = BossHealth;
 
         //Adding a dictionary of the clip durations
         clipDurations = new Dictionary<string, float>();
@@ -99,13 +104,16 @@ public class BossStateManager : MonoBehaviour, IHealth
     {
         if (currentState == proneState)
         {
-            BossHealth-= damage;
+            BossHealth -= damage;
+            Debug.Log("Boss current hp:" + BossHealth);
             //Update slider
             UpdateSlider(BossHealth);
+            StartCoroutine(hitRoutine());
 
             if (BossHealth <= 0)
             {
                 //Die
+
             }
         }
         else
@@ -125,5 +133,18 @@ public class BossStateManager : MonoBehaviour, IHealth
     public void UpdateSlider(int health)
     {
         Debug.Log("Slider is being updated!");
+        slider.value = BossHealth;
+    }
+
+    public void Die()
+    {
+        animator.Play(DeathAnimationName);
+    }
+
+    private IEnumerator hitRoutine()
+    {
+        bossSprite.color = Color.red;
+        yield return new WaitForSeconds(1f);
+        bossSprite.color = Color.white;
     }
 }
