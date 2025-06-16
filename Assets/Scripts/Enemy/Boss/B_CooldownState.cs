@@ -12,7 +12,7 @@ public class B_CooldownState : B_BaseState
     Transform transform;
     Vector3 randomPos;
     SpriteRenderer bSprite;
-
+    private Animator animator;
     int bossHealth;
 
 
@@ -28,11 +28,13 @@ public class B_CooldownState : B_BaseState
         proneMovespeed = boss.moveSpeed;
         bossHealth = boss.BossHealth;
         bSprite = boss.bossSprite;
+        animator = boss.animator;
     }
 
     public override void EnterState(BossStateManager boss)
     {
         Debug.Log("Enemy is proned!");
+        animator.Play("BossDamageStateIdle");
         proneTimer = 0;
     }
 

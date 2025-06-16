@@ -9,6 +9,7 @@ public class B_AttackState : B_BaseState
     float atkTimer;
     Transform transform;
     GameObject projectile;
+    private Animator animator;
     bool canShoot;
 
     float shootCooldown;
@@ -23,13 +24,14 @@ public class B_AttackState : B_BaseState
         projectile = boss.bullet;
         shootCooldown = boss.attackCooldown;
         firepower = boss.firepower;
-
+        animator = boss.animator;
         atkTimer = 0f;
     }
 
     public override void EnterState(BossStateManager boss)
     {
         Debug.Log("Enemy is attacking");
+        animator.Play("BossAttack");
         atkTimer = 0f;
         canShoot = true;
     }
@@ -55,7 +57,7 @@ public class B_AttackState : B_BaseState
 
     public override void ExitState(BossStateManager boss)
     {
-        
+        animator.Play("Boss_damage_stateEnter");
     }
 
     Vector2 direction

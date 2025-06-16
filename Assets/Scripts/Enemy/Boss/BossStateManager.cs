@@ -29,7 +29,7 @@ public class BossStateManager : MonoBehaviour, IHealth
 
     
     private Dictionary<string, float> clipDurations;
-    Animator animator;
+    public Animator animator;
 
     string DeathAnimationName,hitAnimationName ;
     float DeathAnimDuration,hitAnimationDuration ;
