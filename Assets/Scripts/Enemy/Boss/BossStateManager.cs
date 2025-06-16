@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossStateManager : MonoBehaviour, IHealth
+public class BossStateManager : MonoBehaviour, IHealth, IInteractable
 {
     B_BaseState currentState;
 
     public B_AttackState attackState = new B_AttackState();
     public B_CooldownState proneState = new B_CooldownState();
+    public B_DeathState deathState = new B_DeathState();
 
     //References
     public Slider slider;
@@ -22,6 +23,7 @@ public class BossStateManager : MonoBehaviour, IHealth
 
     public int BossHealth = 10;
     public SpriteRenderer bossSprite;
+    public Sprite deathBoss;
 
     public float firepower = 8f;
     public Transform BossTransform;
@@ -33,8 +35,8 @@ public class BossStateManager : MonoBehaviour, IHealth
     public Animator animator;
 
 
-    string DeathAnimationName, hitAnimationName;
-    float DeathAnimDuration, hitAnimationDuration;
+    public string DeathAnimationName, hitAnimationName;
+    public float DeathAnimDuration, hitAnimationDuration;
 
     void Awake()
     {
@@ -44,6 +46,7 @@ public class BossStateManager : MonoBehaviour, IHealth
         animator = GetComponent<Animator>();
         attackState.Initialize(this);
         proneState.Initialize(this);
+        deathState.Initialize(this);
         currentState = attackState;
         currentState?.EnterState(this);
 
@@ -113,7 +116,7 @@ public class BossStateManager : MonoBehaviour, IHealth
             if (BossHealth <= 0)
             {
                 //Die
-
+                Die();
             }
         }
         else
@@ -138,7 +141,7 @@ public class BossStateManager : MonoBehaviour, IHealth
 
     public void Die()
     {
-        animator.Play(DeathAnimationName);
+        SwitchState(deathState);
     }
 
     private IEnumerator hitRoutine()
@@ -146,5 +149,20 @@ public class BossStateManager : MonoBehaviour, IHealth
         bossSprite.color = Color.red;
         yield return new WaitForSeconds(1f);
         bossSprite.color = Color.white;
+    }
+
+    public void Interact()
+    {
+        
+    }
+
+    public bool CanInteract()
+    {
+        if (currentState == deathState)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
