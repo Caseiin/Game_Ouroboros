@@ -7,13 +7,21 @@ public class ButtonInfo : MonoBehaviour
     public TextMeshProUGUI  PriceTxt;
     public TextMeshProUGUI  QuantityTxt;
     public GameObject ShopManager;
+    public GameObject item;
+
+    private Image buttonImage;
+
+    void Awake()
+    {
+        buttonImage = GetComponent<Image>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         PriceTxt.text = "Price: $" + ShopManager.GetComponent<Shop>().shopItem[2, ItemID].ToString();
         QuantityTxt.text = ShopManager.GetComponent<Shop>().shopItem[3, ItemID].ToString();
-
+        buttonImage.sprite = item.gameObject.GetComponent<Image>().sprite;
     }
 }
 

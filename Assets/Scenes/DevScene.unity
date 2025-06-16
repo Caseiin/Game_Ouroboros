@@ -775,6 +775,7 @@ MonoBehaviour:
   PriceTxt: {fileID: 1938579931}
   QuantityTxt: {fileID: 892479114}
   ShopManager: {fileID: 2147337983}
+  item: {fileID: 9000607039999629422, guid: 51acdc2a9eb21b346b7a03e2f2cc8958, type: 3}
 --- !u!222 &162582380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1148,6 +1149,7 @@ MonoBehaviour:
   PriceTxt: {fileID: 31222729}
   QuantityTxt: {fileID: 629022600}
   ShopManager: {fileID: 2147337983}
+  item: {fileID: 3365968204380304895, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
 --- !u!222 &298729617
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1915,6 +1917,7 @@ MonoBehaviour:
   PriceTxt: {fileID: 106043188}
   QuantityTxt: {fileID: 859902642}
   ShopManager: {fileID: 2147337983}
+  item: {fileID: 8056130699440760647, guid: f1ff6dc9a3f05be49a5e5782f1f3f998, type: 3}
 --- !u!1 &689443649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +2987,7 @@ GameObject:
   - component: {fileID: 1133213678}
   - component: {fileID: 1133213677}
   m_Layer: 5
-  m_Name: Item4 (1)
+  m_Name: Item 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3109,10 +3112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eddb9efe5e65054098ac37556d58bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemID: 4
+  ItemID: 5
   PriceTxt: {fileID: 2106515528}
   QuantityTxt: {fileID: 1572560087}
   ShopManager: {fileID: 2147337983}
+  item: {fileID: 366147475290884473, guid: 314f7e30d8cf03649b5d96584a65a078, type: 3}
 --- !u!222 &1133213680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3961,6 +3965,7 @@ MonoBehaviour:
   PriceTxt: {fileID: 1731444411}
   QuantityTxt: {fileID: 1949714896}
   ShopManager: {fileID: 2147337983}
+  item: {fileID: 835578383004725366, guid: 0bd62e84e9ebb6b45a75c7c1b4b60555, type: 3}
 --- !u!222 &1626968937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6086,12 +6091,6 @@ MonoBehaviour:
   coins: 1000
   CoinstTxt: {fileID: 689443651}
   canvas: {fileID: 1026386817}
-  items:
-  - {fileID: 9000607039999629422, guid: 51acdc2a9eb21b346b7a03e2f2cc8958, type: 3}
-  - {fileID: 366147475290884473, guid: 314f7e30d8cf03649b5d96584a65a078, type: 3}
-  - {fileID: 8056130699440760647, guid: f1ff6dc9a3f05be49a5e5782f1f3f998, type: 3}
-  - {fileID: 3365968204380304895, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
-  - {fileID: 835578383004725366, guid: 0bd62e84e9ebb6b45a75c7c1b4b60555, type: 3}
 --- !u!4 &2147337985
 Transform:
   m_ObjectHideFlags: 0
@@ -6257,6 +6256,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1322571470578124187, guid: 3c76ad21dd25d384294a93ace3ac8a9c, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322571470578124187, guid: 3c76ad21dd25d384294a93ace3ac8a9c, type: 3}
+      propertyPath: 'itemPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8835252153416632446, guid: e3659e9b010334a4b897ee66aa4b07e7, type: 3}
     - target: {fileID: 5265779478375144757, guid: 3c76ad21dd25d384294a93ace3ac8a9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6305,6 +6312,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8802098489589703971, guid: 3c76ad21dd25d384294a93ace3ac8a9c, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802098489589703971, guid: 3c76ad21dd25d384294a93ace3ac8a9c, type: 3}
+      propertyPath: 'itemPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 7862753674927802996, guid: e3659e9b010334a4b897ee66aa4b07e7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

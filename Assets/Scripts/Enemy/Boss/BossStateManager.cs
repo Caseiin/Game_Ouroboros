@@ -38,7 +38,6 @@ public class BossStateManager : MonoBehaviour
     public Animator animator;
 
 
-    private bool interactflag = false;
     public string DeathAnimationName, hitAnimationName;
     public float DeathAnimDuration, hitAnimationDuration;
 
@@ -165,7 +164,6 @@ public class BossStateManager : MonoBehaviour
         if (currentState == deathState)
         {
             dialogue.InteractReady = true;
-            interactflag = true;
         }
     }
 }
