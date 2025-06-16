@@ -2473,11 +2473,16 @@ MonoBehaviour:
   moveSpeed: 2
   BossHealth: 10
   bossSprite: {fileID: 0}
+  deathBoss: {fileID: -4324947991119771389, guid: 96a54786aa6e2c546983919fc0b28450, type: 3}
   firepower: 8
   BossTransform: {fileID: 0}
   rb: {fileID: 0}
   bullet: {fileID: 1201128470212929357, guid: a01b8014b5bbbb9418b27f595f1ffcd6, type: 3}
   animator: {fileID: 0}
+  DeathAnimationName: 
+  hitAnimationName: 
+  DeathAnimDuration: 0
+  hitAnimationDuration: 0
 --- !u!212 &920687276
 SpriteRenderer:
   m_ObjectHideFlags: 0
