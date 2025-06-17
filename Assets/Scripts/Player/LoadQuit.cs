@@ -1,26 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadQuit : MonoBehaviour
 {
-    public GameObject Player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Start()
+    void GameQuit()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        if (Player == null)
-        {
-            Debug.LogError("Player not in inspector");
-            return;
-        }
+        Application.Quit();
+    }
 
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Player == null)
-        {
-            SceneManager.LoadScene(2);
-        }
-        }
-    }
+}
