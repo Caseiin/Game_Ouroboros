@@ -1,4 +1,5 @@
 
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -32,6 +33,8 @@ public class p_CombatState : PlayerBaseState
     BaseEnemy enemy;
     Transform transform;
 
+    private SpriteRenderer sprite;
+    private weapon weap;
     //direction reference
     Vector3 combatDirection;
 
@@ -67,9 +70,11 @@ public class p_CombatState : PlayerBaseState
 
         enemy = manager.baseEnemy;
         transform = manager.transform;
+        sprite = manager.playersprite;
 
         // Get controls
         controls = manager.controls;
+
     }
 
 
@@ -79,6 +84,7 @@ public class p_CombatState : PlayerBaseState
     {
         Debug.Log("Player is attacking!");
         cooldownTimer = combatCooldown;
+        
     }
 
     public override void UpdateState(PlayerStateManager playerState)
@@ -100,11 +106,11 @@ public class p_CombatState : PlayerBaseState
         }
 
 
-        if (Input.GetMouseButton(0)&&!isPointerOnUI())
+        if (Input.GetMouseButton(0) && !isPointerOnUI())
         {
             OncloseCombat();
         }
-        if (Input.GetMouseButtonDown(1)&&!isPointerOnUI())
+        if (Input.GetMouseButtonDown(1) && !isPointerOnUI())
         {
             OnRangedCombat();
         }
@@ -128,7 +134,7 @@ public class p_CombatState : PlayerBaseState
         return result;
     }
 
-    public  bool EnemyDetected() //transition check to the combat state;
+    public bool EnemyDetected() //transition check to the combat state;
     {
         bool Detect = Physics2D.OverlapCircle(transform.position, 2, LayerMask.GetMask("Enemy"));
         return Detect;
@@ -168,7 +174,7 @@ public class p_CombatState : PlayerBaseState
             Object.Destroy(intBullet, 2f);
         }
     }
-#endregion
+    #endregion
     #region MeleeCombat
 
     void OncloseCombat()
@@ -237,6 +243,21 @@ public class p_CombatState : PlayerBaseState
         // Debug.Log($"Animation changed to: {newAnim}");
         animator.Play(newAnim);
         currentAnim = newAnim;
+    }
+
+    public IEnumerator SwordRoutine()
+    {
+        sprite.color = Color.magenta;
+
+        // weap can still be accessed and modified while inactive
+        weap = melee.GetComponent<weapon>();
+        weap.weapondamage = 4;
+
+        yield return new WaitForSeconds(3f);
+
+        weap.weapondamage = 1;
+        sprite.color = Color.white;
+
     }
 #endregion
 }

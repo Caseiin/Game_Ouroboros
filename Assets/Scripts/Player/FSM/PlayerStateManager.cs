@@ -36,6 +36,7 @@ public class PlayerStateManager : MonoBehaviour
     Camera mainCamera;
 
     public Vector3 currentdirection;
+    GameObject meleeG;
 
     //Player controls
     public PlayerControls controls { get; private set; }
@@ -44,6 +45,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         controls = new PlayerControls();
         controls.Enable();
+
 
         //Initialize and pass dependencies 
         combatState = new p_CombatState();
@@ -78,6 +80,12 @@ public class PlayerStateManager : MonoBehaviour
     }
 
     public void StartDashCoroutine(IEnumerator coroutine)
+    {
+        //coroutine needs to be within monobehaviour scripts
+        StartCoroutine(coroutine);
+    }
+
+    public void StartSwordCoroutine(IEnumerator coroutine)
     {
         //coroutine needs to be within monobehaviour scripts
         StartCoroutine(coroutine);

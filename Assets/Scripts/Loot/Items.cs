@@ -39,6 +39,7 @@ public class Items : MonoBehaviour
 
                 break;
             case 4:
+                player.StartSwordCoroutine(player.combatState.SwordRoutine());
                 break;
             case 5:
                 foreach (BaseEnemy enemy in enemyInstances)
