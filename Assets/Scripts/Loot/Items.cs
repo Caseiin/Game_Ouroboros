@@ -29,6 +29,7 @@ public class Items : MonoBehaviour
     {
         Debug.Log("Using item" + Name);
         // Have other items inherit from this class then use this function
+        SoundEffectManager.Play("Skill Activation");
 
         switch (ID)
         {
@@ -56,7 +57,7 @@ public class Items : MonoBehaviour
                 {
                     player.StartSpeedCoroutine(player.movingState.SpeedRoutine());
                 }
-                
+
                 break;
 
         }

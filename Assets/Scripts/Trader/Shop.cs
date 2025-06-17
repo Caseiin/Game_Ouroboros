@@ -9,12 +9,14 @@ public class Shop : MonoBehaviour
     public float coins;
     public TextMeshProUGUI CoinstTxt;
     public Canvas canvas;
+    public Canvas Uicanvas;
 
     private InventoryController inventory;
 
     void Start()
     {
         inventory = FindFirstObjectByType<InventoryController>();
+        Uicanvas.enabled = false;
 
         CoinstTxt.text = "Coins:" + coins.ToString();
 
@@ -70,6 +72,7 @@ public class Shop : MonoBehaviour
     public void closeShop()
     {
         canvas.gameObject.SetActive(false);
+        Uicanvas.enabled = true;
     }
 
 }

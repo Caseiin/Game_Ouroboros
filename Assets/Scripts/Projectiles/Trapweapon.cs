@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class weapon : MonoBehaviour
+public class Trapweapon : MonoBehaviour
 {
     public int weapondamage = 1;
+    HeartUIController heart;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Player"))
         {
-            EnemyStateManager enemyState = other.gameObject.GetComponent<EnemyStateManager>();
+            PlayerStateManager PlayerState = other.gameObject.GetComponent<PlayerStateManager>();
 
-            enemyState.TakeHealth(weapondamage);
+            heart = FindFirstObjectByType<HeartUIController>();
+            if (heart == null)
+            {
+                Debug.LogWarning("HeartUIController not found in the scene.");
+            }
+
+            heart.TakeHealth(1);
 
             if (gameObject.name == "melee")
             {
@@ -23,10 +30,11 @@ public class weapon : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Boss"))
+        if (other.CompareTag("Enemy"))
         {
-            BossStateManager bossState = FindFirstObjectByType<BossStateManager>();
-            bossState.TakeHealth(weapondamage);
+            EnemyStateManager enemyState = other.gameObject.GetComponent<EnemyStateManager>();
+
+            enemyState.TakeHealth(weapondamage);
 
             if (gameObject.name == "melee")
             {

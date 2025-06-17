@@ -11,6 +11,9 @@ public class NPC : MonoBehaviour, IInteractable
     public Image portraitImage;
     public Button shopButton;
 
+    public GameObject shop;
+    public GameObject shopManager;
+
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private bool isLastLine = false; // Track if we're at last line
@@ -144,8 +147,11 @@ public class NPC : MonoBehaviour, IInteractable
     // Call this from your shop button's OnClick event
     public void OpenShop()
     {
+        EndDialogue(); // Close dialogue when shop opens
         Debug.Log("Shop opened!");
         // Implement your shop opening logic here
-        EndDialogue(); // Close dialogue when shop opens
+        shopManager.SetActive(true);
+
+        shop.SetActive(true);
     }
 }
