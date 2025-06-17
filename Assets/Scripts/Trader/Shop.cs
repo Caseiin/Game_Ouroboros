@@ -13,10 +13,14 @@ public class Shop : MonoBehaviour
 
     private InventoryController inventory;
 
+    void Awake()
+    {
+        canvas.gameObject.SetActive(false);
+    }
+
     void Start()
     {
         inventory = FindFirstObjectByType<InventoryController>();
-        Uicanvas.enabled = false;
 
         CoinstTxt.text = "Coins:" + coins.ToString();
 
@@ -44,29 +48,52 @@ public class Shop : MonoBehaviour
 
     public void Buy()
     {
-        GameObject Buttonref = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        int itemID = Buttonref.GetComponent<ButtonInfo>().ItemID;
+        canvas.gameObject.SetActive(true);
+
+
+        GameObject Buttonref = EventSystem.current.currentSelectedGameObject;
+
+        if (Buttonref == null)
+        {
+            Debug.LogError("No button is currently selected.");
+            return;
+        }
+
+        ButtonInfo info = Buttonref.GetComponent<ButtonInfo>();
+        if (info == null)
+        {
+            Debug.LogError("ButtonInfo component is missing.");
+            return;
+        }
+
+        if (info.QuantityTxt == null)
+        {
+            Debug.LogError("QuantityTxt is not assigned in ButtonInfo.");
+            return;
+        }
+
+        int itemID = info.ItemID;
         int itemPrice = shopItem[2, itemID];
 
         if (coins >= itemPrice)
         {
-            GameObject itemButton = Buttonref.GetComponent<ButtonInfo>().item;
+            GameObject itemButton = info.item;
 
-            // Add item to inventory
             bool added = inventory.AddItem(itemButton);
             if (!added)
             {
                 Debug.Log("Could not add item to inventory.");
-                return; // Don't deduct coins or update UI if adding failed
+                return;
             }
 
             coins -= itemPrice;
             shopItem[3, itemID]++;
 
-            CoinstTxt.text = "Coins:" + coins.ToString();
-            Buttonref.GetComponent<ButtonInfo>().QuantityTxt.text = shopItem[3, itemID].ToString();
+            CoinstTxt.text = "Coins: " + coins.ToString();
+            info.QuantityTxt.text = shopItem[3, itemID].ToString();
         }
+
     }
 
     public void closeShop()
