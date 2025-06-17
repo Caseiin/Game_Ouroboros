@@ -41,8 +41,37 @@ public class PlayerStateManager : MonoBehaviour
     public Vector3 currentdirection;
     GameObject meleeG;
 
+    Animator animator;
+
     //Player controls
     public PlayerControls controls { get; private set; }
+    private Dictionary<string, float> clipDurations;  // Holds durations of clips by name
+
+    string DeathAnimationName;
+    float DeathAnimDuration;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+
+        clipDurations = new Dictionary<string, float>();
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (!clipDurations.ContainsKey(clip.name))
+            {
+                clipDurations.Add(clip.name, clip.length);
+                Debug.Log($"Clip name: {clip.name}, Length: {clip.length}");
+
+                if (clip.name.ToLower().Contains("death"))
+                {
+                    Debug.Log($"This clip seems to be a death animation: {clip.name}");
+                    DeathAnimationName = clip.name;
+                    DeathAnimDuration = clip.length;
+
+                }
+            }
+        }
+    }
 
     void Start()
     {
@@ -134,6 +163,14 @@ public class PlayerStateManager : MonoBehaviour
     public void StopCouroutine(IEnumerator routine)
     {
         StartCoroutine(routine);
+    }
+
+    public IEnumerator DeathRoutine()
+    {
+        animator.Play(DeathAnimationName);
+        yield return new WaitForSeconds(DeathAnimDuration);
+
+        Destroy(gameObject);
     }
 
     #endregion

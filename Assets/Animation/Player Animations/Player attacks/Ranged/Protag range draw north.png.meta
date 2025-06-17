@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,10 +131,10 @@ TextureImporter:
       name: Protag range draw north_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 3
-        width: 13
-        height: 25
+        x: 12
+        y: 4
+        width: 11
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Protag range draw north_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 3
-        width: 14
-        height: 25
+        x: 48
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Protag range draw north_2
       rect:
         serializedVersion: 2
-        x: 82
-        y: 3
-        width: 14
-        height: 25
+        x: 83
+        y: 4
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Protag range draw north_3
       rect:
         serializedVersion: 2
-        x: 118
-        y: 3
-        width: 15
-        height: 25
+        x: 119
+        y: 4
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Protag range draw north_4
       rect:
         serializedVersion: 2
-        x: 154
-        y: 3
-        width: 15
-        height: 25
+        x: 155
+        y: 4
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Protag range draw north_5
       rect:
         serializedVersion: 2
-        x: 190
-        y: 3
-        width: 15
-        height: 25
+        x: 191
+        y: 4
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 94707ecf964f6884998e9b0f70c4dbed
     internalID: 0
     vertices: []
     indices: 

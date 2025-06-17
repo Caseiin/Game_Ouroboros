@@ -138,7 +138,7 @@ public class MeleeEnemy : BaseEnemy
 
         yield return new WaitForSeconds(attackCooldown);
 
-        CanAttack = true;   
+        CanAttack = true;
         currentAttackCoroutine = null;
     }
 
@@ -173,6 +173,15 @@ public class MeleeEnemy : BaseEnemy
 
         yield return base.TimeStop(); // optional
 
+    }
+
+    public override IEnumerator SpikeDamage()
+    {
+        enemy.color = Color.black;
+        yield return new WaitForSeconds(3f);
+
+        enemy.color = Color.white;
+        
     }
 
 

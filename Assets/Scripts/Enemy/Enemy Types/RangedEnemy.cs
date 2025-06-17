@@ -186,6 +186,16 @@ public class RangedEnemy : BaseEnemy
         yield return base.TimeStop(); // optional
     }
 
+    public override IEnumerator SpikeDamage()
+    {
+        archer.color = Color.black;
+        yield return new WaitForSeconds(3f);
+
+        archer.color = Color.white;
+        
+    }
+
+
     public override void StateCleanUp()
     {
         animator.Play(Ready);

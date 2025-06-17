@@ -47,6 +47,11 @@ public class p_CombatState : PlayerBaseState
     const string LeftAttack = "Attack_Right";
     const string CombatIdle = "Player_idle_forward";
 
+    const string Leftshoot= "Shoot left";
+    const string Upshoot= "Shoot up";
+    const string Downshoot= "Shoot down";
+    const string Rightshoot= "Shoot right";
+
     //Animation management
     string currentAnim;
 
@@ -158,6 +163,21 @@ public class p_CombatState : PlayerBaseState
             }
 
             Vector2 shootDirection = combatDirection.normalized;
+
+            // bool isXDominant = Mathf.Abs(shootDirection.x) > Mathf.Abs(shootDirection.y);
+            // string shootAnim = "";
+                
+            // if (isXDominant)
+            // {
+            //     shootAnim = shootDirection.x < 0 ? Rightshoot : Leftshoot;
+            // }
+            // else
+            // {
+            //     shootAnim= shootDirection.y < 0 ? Downshoot : Upshoot;
+            // }
+
+            // animator.Play(shootAnim);
+
             float BulletAngle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
             Quaternion bulletRotation = Quaternion.Euler(0f, 0f, BulletAngle);
 

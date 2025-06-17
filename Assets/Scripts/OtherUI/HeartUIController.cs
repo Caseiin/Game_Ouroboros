@@ -16,12 +16,14 @@ public class HeartUIController : MonoBehaviour, IHealth
 
     private Dictionary<string, float> clipDurations;
     private int currentStateIndex = 0;
+    PlayerStateManager playerState;
 
     void Awake()
     {
         heartAnimator = GetComponent<Animator>();
         heartImage = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+        playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateManager>();
 
         clipDurations = new Dictionary<string, float>();
         foreach (AnimationClip clip in heartAnimator.runtimeAnimatorController.animationClips)
@@ -38,6 +40,7 @@ public class HeartUIController : MonoBehaviour, IHealth
         if (currentStateIndex >= heartStates.Length - 1)
         {
             Debug.Log("Heart already fully damaged");
+            StartCoroutine(playerState.DeathRoutine());
             return;
         }
 

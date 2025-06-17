@@ -98,7 +98,7 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
 
     public virtual void PatrolPattern()
     {
-        float PatrolDelay = 0.5f;
+        float PatrolDelay = 0.3f;
         float PatrolWait = 0f;
         //Implement how enemy patrols
         if (!isPatrolling) return; // patrol flag
@@ -179,6 +179,12 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
 
     }
     public virtual IEnumerator TimeStop()
+    {
+        // Default behavior if needed
+        yield break;
+    }
+
+    public virtual IEnumerator SpikeDamage()
     {
         // Default behavior if needed
         yield break;

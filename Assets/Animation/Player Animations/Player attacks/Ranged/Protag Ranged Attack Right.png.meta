@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,10 +128,10 @@ TextureImporter:
       name: Protag Ranged Attack Right_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 2
-        width: 16
-        height: 25
+        x: 13
+        y: 3
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Protag Ranged Attack Right_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 2
-        width: 16
-        height: 25
+        x: 49
+        y: 3
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Protag Ranged Attack Right_2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 2
-        width: 16
-        height: 25
+        x: 85
+        y: 3
+        width: 14
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Protag Ranged Attack Right_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 2
-        width: 23
-        height: 25
+        x: 121
+        y: 3
+        width: 21
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: Protag Ranged Attack Right_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 2
-        width: 23
-        height: 25
+        x: 157
+        y: 3
+        width: 21
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54856f2fd8a448f4383525211864f288
     internalID: 0
     vertices: []
     indices: 

@@ -37,7 +37,13 @@ public class Items : MonoBehaviour
                 heart.Heal();
                 break;
             case 3:
-
+                foreach (BaseEnemy enemy in enemyInstances)
+                {
+                    if (enemy != null)
+                    {
+                        enemy.StartCoroutine(enemy.SpikeDamage());
+                    }
+                }
                 break;
             case 4:
                 player.StartSwordCoroutine(player.combatState.SwordRoutine());
