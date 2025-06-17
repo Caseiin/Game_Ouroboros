@@ -91,7 +91,6 @@ public class BossDialogue : MonoBehaviour, IInteractable
     {
         isTyping = true;
         dialogueText.SetText("");
-
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;

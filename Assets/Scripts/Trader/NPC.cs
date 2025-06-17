@@ -99,7 +99,6 @@ public class NPC : MonoBehaviour, IInteractable
 
         isTyping = false;
         CheckForShopButton();
-
         // Handle auto-progress
         if (dialogueData.autoProgressLines.Length > dialogueIndex && 
             dialogueData.autoProgressLines[dialogueIndex])
