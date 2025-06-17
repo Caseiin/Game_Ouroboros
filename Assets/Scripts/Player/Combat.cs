@@ -26,7 +26,7 @@ public class Combat : MonoBehaviour
 
 
     //Enemy variables
-    private EnemyCombat1 enemyCombat;
+
 
     //Combat sound effects
     public AudioClip[] clips;

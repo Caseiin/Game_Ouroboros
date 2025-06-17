@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using Mono.Cecil.Cil;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public abstract class BaseEnemy : MonoBehaviour, IHealth
@@ -187,6 +185,7 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
     public virtual IEnumerator SpikeDamage()
     {
         // Default behavior if needed
+        TakeHealth(1);
         yield break;
     }
 }

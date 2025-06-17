@@ -1,8 +1,7 @@
 using System.Collections;
 using Unity.Mathematics;
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class RangedEnemy : BaseEnemy
 {
@@ -191,7 +190,7 @@ public class RangedEnemy : BaseEnemy
         archer.color = Color.black;
         yield return new WaitForSeconds(3f);
 
-        archer.color = Color.white;
+        archer  .color = Color.white;
         
     }
 

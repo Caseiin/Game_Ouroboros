@@ -144,18 +144,6 @@ public class BossDialogue : MonoBehaviour, IInteractable
             InteractReady = false;
         }
 
-
-        InventoryController inv = FindFirstObjectByType<InventoryController>();
-        List<InventorySaveData> invData = inv.GetInvItem();
-
-        foreach (InventorySaveData inventory in invData)
-        {
-            if (inventory.itemID == 7)
-            {
-                
-            }
-        }
-
     }
 
     // Call this from your shop button's OnClick event

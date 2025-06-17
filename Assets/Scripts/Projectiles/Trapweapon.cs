@@ -5,6 +5,8 @@ public class Trapweapon : MonoBehaviour
     public int weapondamage = 1;
     HeartUIController heart;
 
+
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
