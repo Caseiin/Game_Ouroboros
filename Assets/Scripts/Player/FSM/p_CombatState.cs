@@ -50,6 +50,8 @@ public class p_CombatState : PlayerBaseState
     //Animation management
     string currentAnim;
 
+
+    private float shootspeed;
     void Awake()
     {
         controls = new PlayerControls();
@@ -72,6 +74,8 @@ public class p_CombatState : PlayerBaseState
         transform = manager.transform;
         sprite = manager.playersprite;
 
+        shootspeed = manager.shootspeed;
+
         // Get controls
         controls = manager.controls;
 
@@ -84,7 +88,7 @@ public class p_CombatState : PlayerBaseState
     {
         Debug.Log("Player is attacking!");
         cooldownTimer = combatCooldown;
-        
+
     }
 
     public override void UpdateState(PlayerStateManager playerState)
@@ -145,6 +149,7 @@ public class p_CombatState : PlayerBaseState
     {
         if (shootTimer > shootCoolDown)
         {
+            SoundEffectManager.Play("Playershoot");
             //null check 
             if (bullet == null)
             {
@@ -182,6 +187,7 @@ public class p_CombatState : PlayerBaseState
         if (!isAttacking)
         {
             melee.SetActive(true);
+            SoundEffectManager.Play("Playermelee");
             isAttacking = true;
             ChangeAnimation(GetAttackAnim());
         }
@@ -259,5 +265,8 @@ public class p_CombatState : PlayerBaseState
         sprite.color = Color.white;
 
     }
-#endregion
+    #endregion
+
+    //Sound coroutines
+
 }

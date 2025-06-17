@@ -35,6 +35,9 @@ public class PlayerStateManager : MonoBehaviour
     //Camera
     Camera mainCamera;
 
+    public float footstepspeed = 0.4f;
+    public float shootspeed = 0.5f;
+
     public Vector3 currentdirection;
     GameObject meleeG;
 
@@ -120,6 +123,17 @@ public class PlayerStateManager : MonoBehaviour
 
         //Apply rotation to melee object
         aim.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+
+    public void StartCouroutine(IEnumerator routine)
+    {
+        StartCoroutine(routine);
+    }
+
+    public void StopCouroutine(IEnumerator routine)
+    {
+        StartCoroutine(routine);
     }
 
     #endregion

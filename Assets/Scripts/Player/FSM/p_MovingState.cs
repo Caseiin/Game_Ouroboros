@@ -58,12 +58,16 @@ public class p_MovingState : PlayerBaseState
     bool isDashing = false; // Track if currently dashing
     SpriteRenderer sprite;
 
+    private bool playingFootsteps = false;
+    private float footstepspeed;
+
     Vector2 lastNonZeroDirection = Vector2.right;
     public void Initialize(PlayerStateManager playerState)
     {
 
         dashSlide = playerState.slider;
         sprite = playerState.playersprite;
+        footstepspeed = playerState.footstepspeed;
         if (dashSlide == null)
         {
             Debug.LogError("dash slider does not exist in the moving state");
@@ -74,7 +78,7 @@ public class p_MovingState : PlayerBaseState
             Debug.Log("dash slider properly placed!");
         }
     }
-    
+
     public override void EnterState(PlayerStateManager playerState)
     {
         controls = new PlayerControls();
@@ -111,7 +115,7 @@ public class p_MovingState : PlayerBaseState
 
         if (!isDashing)
         {
-            MoveBasic();
+            MoveBasic(playerState);
         }
 
         // Check for attack
@@ -182,7 +186,7 @@ public class p_MovingState : PlayerBaseState
 
 
 
-    void MoveBasic()
+    void MoveBasic(PlayerStateManager playerState)
     {
         movedirection = moveInput;
         if (movedirection != Vector2.zero)
@@ -194,12 +198,21 @@ public class p_MovingState : PlayerBaseState
 
         player_rb.linearVelocity = movedirection * currentspeed;
 
+        if (player_rb.linearVelocity.magnitude > 0)
+        {
+            StartFootSteps(playerState);
+        }
+        else
+        {
+            StopFootsteps(playerState);
+        }
+        
     }
 
 
     void StartDash(PlayerStateManager playerState)
     {
-        if (!canDash || isDashing || didCrouch)  return;
+        if (!canDash || isDashing || didCrouch) return;
         playerState.StartCoroutine(Dash(playerState));
     }
 
@@ -325,8 +338,36 @@ public class p_MovingState : PlayerBaseState
     void Pauselogic()
     {
         player_rb.linearVelocity = Vector2.zero;
+        //StopFootsteps
         ChangeAnimation(player_idle);
     }
 
+    Coroutine footstepRoutine;  // This keeps track of the coroutine
 
+    void StartFootSteps(PlayerStateManager playerState)
+    {
+        playingFootsteps = true;
+        if (footstepRoutine == null)
+        footstepRoutine = playerState.StartCoroutine(FootstepLoop());
+        
+    }
+
+    void StopFootsteps(PlayerStateManager playerState)
+    {
+        playingFootsteps = false;
+        if (footstepRoutine != null)
+        {
+            playerState.StopCoroutine(footstepRoutine);
+            footstepRoutine = null;
+        }
+    }
+
+    IEnumerator FootstepLoop()
+    {
+        while (playingFootsteps)
+        {
+            SoundEffectManager.Play("Move");
+            yield return new WaitForSeconds(footstepspeed);
+        }
+    }
 }

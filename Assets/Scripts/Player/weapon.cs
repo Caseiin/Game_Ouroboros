@@ -11,12 +11,32 @@ public class weapon : MonoBehaviour
             EnemyStateManager enemyState = other.gameObject.GetComponent<EnemyStateManager>();
 
             enemyState.TakeHealth(weapondamage);
+
+                if (gameObject.name == "melee")
+                {
+                    SoundEffectManager.Play("Meleehit");
+                }
+                else
+                {
+                    SoundEffectManager.Play("Arrowhit");
+                }
         }
 
         if (other.CompareTag("Boss"))
         {
             BossStateManager bossState = FindFirstObjectByType<BossStateManager>();
             bossState.TakeHealth(weapondamage);
+
+            if (gameObject.name == "melee")
+            {
+                SoundEffectManager.Play("Meleehit");
+            }
+            else
+            {
+                SoundEffectManager.Play("Arrowhit");
+            }
         }
+
+
     }
 }
