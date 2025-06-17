@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerStateManager : MonoBehaviour
 {
     //Context of the player state  
@@ -167,10 +168,14 @@ public class PlayerStateManager : MonoBehaviour
 
     public IEnumerator DeathRoutine()
     {
+        Rigidbody2D player = GetComponent<Rigidbody2D>();
+        player.linearVelocity = Vector2.zero;
         animator.Play(DeathAnimationName);
         yield return new WaitForSeconds(DeathAnimDuration);
-
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        GameObject UI = GameObject.Find("UI");
+        UI.SetActive(false);
+        SceneManager.LoadScene(4);
     }
 
     #endregion

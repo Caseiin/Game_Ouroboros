@@ -15,7 +15,7 @@ public class Shop : MonoBehaviour
 
     void Awake()
     {
-        canvas.gameObject.SetActive(false);
+        Uicanvas.gameObject.SetActive(false);
     }
 
     void Start()
@@ -32,10 +32,10 @@ public class Shop : MonoBehaviour
         shopItem[1, 5] = 5;
 
         //Price
-        shopItem[2, 1] = 10;
-        shopItem[2, 2] = 20;
-        shopItem[2, 3] = 30;
-        shopItem[2, 4] = 40;
+        shopItem[2, 1] = 50;
+        shopItem[2, 2] = 50;
+        shopItem[2, 3] = 50;
+        shopItem[2, 4] = 50;
         shopItem[2, 5] = 50;
 
         //Quantity
@@ -48,10 +48,6 @@ public class Shop : MonoBehaviour
 
     public void Buy()
     {
-
-        canvas.gameObject.SetActive(true);
-
-
         GameObject Buttonref = EventSystem.current.currentSelectedGameObject;
 
         if (Buttonref == null)
@@ -98,8 +94,8 @@ public class Shop : MonoBehaviour
 
     public void closeShop()
     {
+        Uicanvas.gameObject.SetActive(true);
         canvas.gameObject.SetActive(false);
-        Uicanvas.enabled = true;
     }
 
 }

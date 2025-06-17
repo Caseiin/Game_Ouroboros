@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1181882983
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4604858779746428154, guid: cea357cf11fbb514596fc632b7cafa48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,7 +129,15 @@ MonoBehaviour:
   enemy: {fileID: 2547173443568442042}
   maxHealth: 4
   CurrentHealth: 4
-  lootTable: []
+  lootTable:
+  - itemPrefab: {fileID: 3365968204380304895, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
+    dropChance: 100
+  - itemPrefab: {fileID: 366147475290884473, guid: 314f7e30d8cf03649b5d96584a65a078, type: 3}
+    dropChance: 10
+  - itemPrefab: {fileID: 835578383004725366, guid: 0bd62e84e9ebb6b45a75c7c1b4b60555, type: 3}
+    dropChance: 10
+  - itemPrefab: {fileID: 9000607039999629422, guid: 51acdc2a9eb21b346b7a03e2f2cc8958, type: 3}
+    dropChance: 10
 --- !u!61 &7605309935908543446
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -151,7 +151,6 @@ public class NPC : MonoBehaviour, IInteractable
         Debug.Log("Shop opened!");
         // Implement your shop opening logic here
         shopManager.SetActive(true);
-
         shop.SetActive(true);
     }
 }

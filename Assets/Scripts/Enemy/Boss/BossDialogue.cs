@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BossDialogue : MonoBehaviour, IInteractable
 {
@@ -138,10 +139,23 @@ public class BossDialogue : MonoBehaviour, IInteractable
 
         if (mainGem)
         {
-            GameObject droppedItem = Instantiate(mainGem, transform.position+ new Vector3(0f,-5f,0f) + Vector3.down, Quaternion.identity);
+            GameObject droppedItem = Instantiate(mainGem, transform.position + new Vector3(3f, -3f, 0f) + Vector3.down, Quaternion.identity);
             droppedItem.GetComponent<Bounce>().StartBounce();
             InteractReady = false;
         }
+
+
+        InventoryController inv = FindFirstObjectByType<InventoryController>();
+        List<InventorySaveData> invData = inv.GetInvItem();
+
+        foreach (InventorySaveData inventory in invData)
+        {
+            if (inventory.itemID == 7)
+            {
+                
+            }
+        }
+
     }
 
     // Call this from your shop button's OnClick event

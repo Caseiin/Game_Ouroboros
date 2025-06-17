@@ -19,8 +19,13 @@ public class Items : MonoBehaviour
             Debug.LogWarning("HeartUIController not found in the scene.");
         }
 
-        // If you want a single instance, use FindObjectOfType:
-        enemyInstances = FindObjectsByType<BaseEnemy>(FindObjectsSortMode.None);
+        GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyInstances = new BaseEnemy[enemyObjects.Length];
+
+        for (int i = 0; i < enemyObjects.Length; i++)
+        {
+            enemyInstances[i] = enemyObjects[i].GetComponent<BaseEnemy>();
+        }
         player = FindFirstObjectByType<PlayerStateManager>();
 
     }

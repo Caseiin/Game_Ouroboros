@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerItemCollect : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerItemCollect : MonoBehaviour
             Items item = collision.GetComponent<Items>();
             if (item != null)
             {
+                int ID = item.ID;
                 //add item to inventory
                 bool itemAdded = inventoryController.AddItem(collision.gameObject);
                 if (itemAdded)
@@ -25,6 +27,11 @@ public class PlayerItemCollect : MonoBehaviour
                     item.PickUp();
                     Destroy(collision.gameObject);
 
+                }
+
+                if (ID == 7)
+                {
+                    Application.Quit();
                 }
             }
         }

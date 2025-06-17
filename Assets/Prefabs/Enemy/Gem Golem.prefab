@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1181882983
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7479069434481945118, guid: 3c4b4e63b3b832e46acdda71a026e30f, type: 3}
   m_Color: {r: 0.9150584, g: 0.9132147, b: 0.94716984, a: 1}
@@ -140,6 +140,14 @@ MonoBehaviour:
     dropChance: 80
   - itemPrefab: {fileID: 1099580867941818854, guid: a513d4a98d31c08449bb531a37a97cfe, type: 3}
     dropChance: 92.1
+  - itemPrefab: {fileID: 835578383004725366, guid: 0bd62e84e9ebb6b45a75c7c1b4b60555, type: 3}
+    dropChance: 1
+  - itemPrefab: {fileID: 366147475290884473, guid: 314f7e30d8cf03649b5d96584a65a078, type: 3}
+    dropChance: 1
+  - itemPrefab: {fileID: 8056130699440760647, guid: f1ff6dc9a3f05be49a5e5782f1f3f998, type: 3}
+    dropChance: 1
+  - itemPrefab: {fileID: 9000607039999629422, guid: 51acdc2a9eb21b346b7a03e2f2cc8958, type: 3}
+    dropChance: 1
 --- !u!114 &6438856770938768577
 MonoBehaviour:
   m_ObjectHideFlags: 0

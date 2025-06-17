@@ -26,7 +26,6 @@ public class Trapshooter : MonoBehaviour
 
 
             rb.AddForce(Vector3.down * 10f, ForceMode2D.Impulse);
-            SoundEffectManager.Play("Playershoot");
             yield return new WaitForSeconds(shootInterval); // Wait before shooting next
 
             Destroy(bullet, 1f);

@@ -41,7 +41,6 @@ public class B_CooldownState : B_BaseState
     public override void UpdateState(BossStateManager boss)
     {
         proneTimer += Time.deltaTime;
-        PatrolPattern();
 
         if (proneTimer >= pronelength)
         {
@@ -54,37 +53,6 @@ public class B_CooldownState : B_BaseState
         bossrb.linearVelocity = Vector2.zero;
     }
 
-    public virtual void PatrolPattern()
-    {
-        float PatrolDelay = 0.5f;
-        float PatrolWait = 0f;
-        //Implement how enemy patrols
-        randomPos = GetRandomPointForPatrol();
-
-        Vector2 randomDirection = (randomPos - transform.position).normalized;
-        if (bossrb != null)
-            bossrb.linearVelocity = randomDirection * proneMovespeed;
-        else
-            Debug.LogError("boss is missing Rigidbody2D!");
-
-        if ((randomPos - transform.position).sqrMagnitude < 0.01f)
-        {
-            PatrolWait += Time.deltaTime;
-
-            if (PatrolWait >= PatrolDelay)
-            {
-                randomPos = GetRandomPointForPatrol();
-            }
-
-
-        }
-    }
-
-    private Vector3 GetRandomPointForPatrol()
-    {
-        //Get A random point to move to
-        return transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * 2;
-    }
 
 
 }
