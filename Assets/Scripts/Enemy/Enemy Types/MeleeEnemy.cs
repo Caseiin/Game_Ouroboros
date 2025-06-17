@@ -16,6 +16,9 @@ public class MeleeEnemy : BaseEnemy
     public float attackCooldown = 3f;
     bool CanAttack = true;
 
+    bool isTimeStopped = false;
+    bool AttackReady;
+
     //Animation stuff
     Animator animator;
     const string snakeAttack = "Snake enemy attack";
@@ -73,9 +76,9 @@ public class MeleeEnemy : BaseEnemy
     public override void MeleeAttack()
     {
 
-        if (CanAttack && WithinCombatRange())
+        if (CanAttack && !isTimeStopped && WithinCombatRange())
         {
-            StartCoroutine(AttackRoutine());
+            currentAttackCoroutine = StartCoroutine(AttackRoutine());
             heart.TakeHealth(1);
         }
 
@@ -88,7 +91,7 @@ public class MeleeEnemy : BaseEnemy
 
     public override bool WithinCombatRange()
     {
-        bool AttackReady = false;
+        AttackReady = false;
         if (PlayerDetected())
         {
             AttackReady = Physics2D.OverlapCircle(transform.position, attackRadius, LayerMask.GetMask("Player"));
@@ -120,31 +123,56 @@ public class MeleeEnemy : BaseEnemy
         animator.Play(snakeReady);
     }
 
+    private Coroutine currentAttackCoroutine;
     private IEnumerator AttackRoutine()
     {
         CanAttack = false;
 
         Debug.Log("Melee attack!");
         animator.Play(snakeAttack);
-        float waitTime = GetDuration("Snake enemy attack"); //use clipNames not state names
+        float waitTime = GetDuration("Snake enemy attack");
 
         yield return new WaitForSeconds(waitTime);
 
         animator.Play(snakeReady);
+
         yield return new WaitForSeconds(attackCooldown);
 
-        CanAttack = true;
+        CanAttack = true;   
+        currentAttackCoroutine = null;
     }
+
 
     public override IEnumerator TimeStop()
     {
         Debug.Log("MeleeEnemy TimeStop");
+
+        isTimeStopped = true;
+
+        // Stop attack coroutine if it’s running
+        if (currentAttackCoroutine != null)
+        {
+            StopCoroutine(currentAttackCoroutine);
+            currentAttackCoroutine = null;
+        }
+
+        CanAttack = false;
+        animator.enabled = false;
+        enemyBody.linearVelocity = Vector2.zero;
         enemy.color = Color.blue;
-        yield return new WaitForSeconds(1f);
-        Debug.Log("After 1s delay");
-        enemy.color = Color.blue;
-        yield return base.TimeStop();
-        
+
+        yield return new WaitForSeconds(3f);
+
+        enemy.color = Color.white;
+        animator.enabled = true;
+        CanAttack = true;
+
+        isTimeStopped = false;
+
+        Debug.Log("Time resumes");
+
+        yield return base.TimeStop(); // optional
+
     }
 
 

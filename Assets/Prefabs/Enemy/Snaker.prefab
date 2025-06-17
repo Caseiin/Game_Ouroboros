@@ -16,12 +16,12 @@ GameObject:
   - component: {fileID: 4890311540434404054}
   - component: {fileID: 4196872516727116826}
   m_Layer: 7
-  m_Name: _enemy
+  m_Name: Snaker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6906097015453130092
 Transform:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   enemy: {fileID: 2547173443568442042}
   maxHealth: 4
   CurrentHealth: 4
+  lootTable: []
 --- !u!61 &7605309935908543446
 BoxCollider2D:
   m_ObjectHideFlags: 0

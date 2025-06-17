@@ -27,6 +27,8 @@ public class RangedEnemy : BaseEnemy
     public float firepower = 15f;
     public int rangedDamage = 1;
     protected bool canShoot = true;
+    private bool isTimeStopped = false;
+    private Coroutine currentAttackCoroutine;
 
 
     protected override void Awake()
@@ -63,10 +65,10 @@ public class RangedEnemy : BaseEnemy
 
     public override void RangedAttack()
     {
-        if (AimAtPlayer() && canShoot)
+        if (AimAtPlayer() && canShoot && !isTimeStopped)
         {
             Debug.Log("Enemy shooting!");
-            StartCoroutine(ShootRoutine());
+            currentAttackCoroutine = StartCoroutine(ShootRoutine());
         }
     }
 
@@ -150,6 +152,38 @@ public class RangedEnemy : BaseEnemy
         yield return new WaitForSeconds(shootCooldown);
 
         canShoot = true;
+        currentAttackCoroutine = null;
+    }
+
+    public override IEnumerator TimeStop()
+    {
+        Debug.Log("RangedEnemy TimeStop");
+
+        isTimeStopped = true;
+
+        // Stop attack coroutine if it’s running
+        if (currentAttackCoroutine != null)
+        {
+            StopCoroutine(currentAttackCoroutine);
+            currentAttackCoroutine = null;
+        }
+
+        canShoot = false;
+        animator.enabled = false;
+        rangedrb.linearVelocity = Vector2.zero;
+        archer.color = Color.blue;
+
+        yield return new WaitForSeconds(3f);
+
+        archer.color = Color.white;
+        animator.enabled = true;
+        canShoot = true;
+
+        isTimeStopped = false;
+
+        Debug.Log("Time resumes");
+
+        yield return base.TimeStop(); // optional
     }
 
     public override void StateCleanUp()
