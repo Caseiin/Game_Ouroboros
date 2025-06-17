@@ -47,7 +47,7 @@ public class HotBarController : MonoBehaviour
             //checks if current slot is not empty
             Items item = slot.currentItem.GetComponent<Items>();
 
-            if (item.Name != "Coin")
+            if (item.Name != "Coin"&& item.Name != "MainGem")
             {
                 item.UseItem();
                 Destroy(slot.currentItem);

@@ -119,7 +119,7 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
                 randomPos = GetRandomPointForPatrol();
             }
 
-            
+
         }
     }
 
@@ -147,9 +147,9 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
 
     public virtual void TakeHealth(int damage)
     {
-        currentHealth-= damage;
+        currentHealth -= damage;
         Debug.Log($"{name} took damage! Health: {currentHealth}/{maxHealth}");
-        
+
         if (currentHealth <= 0)
         {
             Die();
@@ -177,6 +177,11 @@ public abstract class BaseEnemy : MonoBehaviour, IHealth
         yield return new WaitForSeconds(0.2f);
         enemySprite.color = Color.white;
 
+    }
+    public virtual IEnumerator TimeStop()
+    {
+        // Default behavior if needed
+        yield break;
     }
 }
 

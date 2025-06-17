@@ -136,5 +136,16 @@ public class MeleeEnemy : BaseEnemy
         CanAttack = true;
     }
 
+    public override IEnumerator TimeStop()
+    {
+        Debug.Log("MeleeEnemy TimeStop");
+        enemy.color = Color.blue;
+        yield return new WaitForSeconds(1f);
+        Debug.Log("After 1s delay");
+        enemy.color = Color.blue;
+        yield return base.TimeStop();
+        
+    }
+
 
 }

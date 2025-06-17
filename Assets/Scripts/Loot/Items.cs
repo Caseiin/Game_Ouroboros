@@ -9,6 +9,7 @@ public class Items : MonoBehaviour
 
 
     private HeartUIController heart;
+    private BaseEnemy[]enemyInstances;
     void Awake()
     {
         heart = FindFirstObjectByType<HeartUIController>();
@@ -16,6 +17,11 @@ public class Items : MonoBehaviour
         {
             Debug.LogWarning("HeartUIController not found in the scene.");
         }
+
+        // If you want a single instance, use FindObjectOfType:
+        enemyInstances = FindObjectsByType<BaseEnemy>(FindObjectsSortMode.None);
+
+
     }
 
     public virtual void UseItem()
@@ -29,10 +35,18 @@ public class Items : MonoBehaviour
                 heart.Heal();
                 break;
             case 3:
+
                 break;
             case 4:
                 break;
             case 5:
+                foreach (BaseEnemy enemy in enemyInstances)
+                {
+                    if (enemy != null)
+                    {
+                        enemy.StartCoroutine(enemy.TimeStop());
+                    }
+                }
                 break;
             case 6:
                 break;

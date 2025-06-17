@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4788740737352516858}
   - component: {fileID: 364627977040280136}
   m_Layer: 7
-  m_Name: _Archer
+  m_Name: Gem Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +135,11 @@ MonoBehaviour:
   enemy: {fileID: 6438856770938768577}
   maxHealth: 0
   CurrentHealth: 4
+  lootTable:
+  - itemPrefab: {fileID: 3365968204380304895, guid: 6f4cf7171e979f1449161bceea21f490, type: 3}
+    dropChance: 80
+  - itemPrefab: {fileID: 1099580867941818854, guid: a513d4a98d31c08449bb531a37a97cfe, type: 3}
+    dropChance: 92.1
 --- !u!114 &6438856770938768577
 MonoBehaviour:
   m_ObjectHideFlags: 0
