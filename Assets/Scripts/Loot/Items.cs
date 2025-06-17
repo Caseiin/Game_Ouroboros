@@ -10,6 +10,7 @@ public class Items : MonoBehaviour
 
     private HeartUIController heart;
     private BaseEnemy[]enemyInstances;
+    private PlayerStateManager player;
     void Awake()
     {
         heart = FindFirstObjectByType<HeartUIController>();
@@ -20,7 +21,7 @@ public class Items : MonoBehaviour
 
         // If you want a single instance, use FindObjectOfType:
         enemyInstances = FindObjectsByType<BaseEnemy>(FindObjectsSortMode.None);
-
+        player = FindFirstObjectByType<PlayerStateManager>();
 
     }
 
@@ -49,6 +50,12 @@ public class Items : MonoBehaviour
                 }
                 break;
             case 6:
+
+                if (player.currentState == player.movingState)
+                {
+                    player.StartSpeedCoroutine(player.movingState.SpeedRoutine());
+                }
+                
                 break;
 
         }

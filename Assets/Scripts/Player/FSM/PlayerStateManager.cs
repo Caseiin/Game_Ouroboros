@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerStateManager : MonoBehaviour
 {
     //Context of the player state  
-    PlayerBaseState currentState; //holds a reference to the active state in a state machine
+    public PlayerBaseState currentState; //holds a reference to the active state in a state machine
 
 
     //Combat state dependecies
@@ -30,6 +30,8 @@ public class PlayerStateManager : MonoBehaviour
 
     public p_MovingState movingState;
 
+    public SpriteRenderer playersprite;
+
     //Camera
     Camera mainCamera;
 
@@ -48,6 +50,7 @@ public class PlayerStateManager : MonoBehaviour
         movingState = new p_MovingState();
 
         playerAttributes = GetComponent<PlayerAttributes>();
+        playersprite = GetComponent<SpriteRenderer>();
         combatState.Initialize(this);
         movingState.Initialize(this);
 
@@ -80,6 +83,11 @@ public class PlayerStateManager : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
+    public void StartSpeedCoroutine(IEnumerator coroutine)
+    {
+        //coroutine needs to be within monobehaviour scripts
+        StartCoroutine(coroutine);
+    }
     #region Mouserotation
     private void RotateMeleeTowardsMouse()
     {

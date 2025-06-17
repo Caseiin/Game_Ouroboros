@@ -56,11 +56,14 @@ public class p_MovingState : PlayerBaseState
     float lastMovementTime;
     bool canDash = true;
     bool isDashing = false; // Track if currently dashing
+    SpriteRenderer sprite;
 
     Vector2 lastNonZeroDirection = Vector2.right;
     public void Initialize(PlayerStateManager playerState)
     {
+
         dashSlide = playerState.slider;
+        sprite = playerState.playersprite;
         if (dashSlide == null)
         {
             Debug.LogError("dash slider does not exist in the moving state");
@@ -306,6 +309,19 @@ public class p_MovingState : PlayerBaseState
         currentAnim = newAnim;
     }
     #endregion
+
+    public IEnumerator SpeedRoutine()
+    {
+        float speedboast = currentspeed * 4;
+        float preSpeed = currentspeed;
+
+        UpdateSpeed(speedboast);
+        sprite.color = Color.yellow;
+        yield return new WaitForSeconds(3f);
+
+        sprite.color = Color.white;
+        UpdateSpeed(preSpeed);
+    }
     void Pauselogic()
     {
         player_rb.linearVelocity = Vector2.zero;
