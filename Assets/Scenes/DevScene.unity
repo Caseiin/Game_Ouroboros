@@ -6515,10 +6515,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1276631514494129921, guid: c1cf7021fbe77f3458763b8aba1cf1ce, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2547173443568442042, guid: c1cf7021fbe77f3458763b8aba1cf1ce, type: 3}
       propertyPath: target
       value: 
