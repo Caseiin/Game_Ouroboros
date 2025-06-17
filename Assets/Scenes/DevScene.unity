@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 31222728}
   - component: {fileID: 31222730}
   - component: {fileID: 31222729}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: PriceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 106043187}
   - component: {fileID: 106043189}
   - component: {fileID: 106043188}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: PriceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 162582379}
   - component: {fileID: 162582378}
   - component: {fileID: 162582377}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,9 +668,9 @@ RectTransform:
   - {fileID: 892479113}
   m_Father: {fileID: 2126926636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162582377
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 298729616}
   - component: {fileID: 298729615}
   - component: {fileID: 298729614}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,9 +1042,9 @@ RectTransform:
   - {fileID: 629022599}
   m_Father: {fileID: 2126926636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 510, y: -300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298729614
@@ -1176,7 +1176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &423012346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 460921362}
   - component: {fileID: 460921361}
   - component: {fileID: 460921360}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,8 +1476,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -5127526071306969194, guid: 673bc2a86a7d8d743be4468444e892a6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 629022599}
   - component: {fileID: 629022601}
   - component: {fileID: 629022600}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: QuantityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 685251330}
   - component: {fileID: 685251328}
   - component: {fileID: 685251327}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Item1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,9 +1903,9 @@ RectTransform:
   - {fileID: 859902641}
   m_Father: {fileID: 2126926636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685251327
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 689443650}
   - component: {fileID: 689443652}
   - component: {fileID: 689443651}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: CoinsTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2166,7 +2166,7 @@ GameObject:
   - component: {fileID: 769612890}
   - component: {fileID: 769612892}
   - component: {fileID: 769612891}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2474,7 +2474,7 @@ GameObject:
   - component: {fileID: 859902641}
   - component: {fileID: 859902643}
   - component: {fileID: 859902642}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: QuantityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2610,7 +2610,7 @@ GameObject:
   - component: {fileID: 892479113}
   - component: {fileID: 892479115}
   - component: {fileID: 892479114}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: QuantityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,13 +2982,13 @@ GameObject:
   - component: {fileID: 1026386817}
   - component: {fileID: 1026386816}
   - component: {fileID: 1026386815}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1026386815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3087,7 +3087,7 @@ GameObject:
   - component: {fileID: 1133213679}
   - component: {fileID: 1133213678}
   - component: {fileID: 1133213677}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Item 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3110,9 +3110,9 @@ RectTransform:
   - {fileID: 1572560086}
   m_Father: {fileID: 2126926636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1140, y: -300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1133213677
@@ -3371,7 +3371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160085708}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3784,7 +3784,7 @@ GameObject:
   - component: {fileID: 1572560086}
   - component: {fileID: 1572560088}
   - component: {fileID: 1572560087}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: QuantityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3920,7 +3920,7 @@ GameObject:
   - component: {fileID: 1588222579}
   - component: {fileID: 1588222581}
   - component: {fileID: 1588222580}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3942,7 +3942,7 @@ RectTransform:
   m_Father: {fileID: 1160085708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 1626968936}
   - component: {fileID: 1626968935}
   - component: {fileID: 1626968934}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Item4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4020,9 +4020,9 @@ RectTransform:
   - {fileID: 1949714895}
   m_Father: {fileID: 2126926636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 930, y: -300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626968934
@@ -4358,7 +4358,7 @@ GameObject:
   - component: {fileID: 1731444410}
   - component: {fileID: 1731444412}
   - component: {fileID: 1731444411}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: PriceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4809,7 +4809,7 @@ GameObject:
   - component: {fileID: 1924398927}
   - component: {fileID: 1924398926}
   - component: {fileID: 1924398925}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4832,9 +4832,9 @@ RectTransform:
   m_Father: {fileID: 460921359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -17}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1924398925
 MonoBehaviour:
@@ -4869,8 +4869,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -5127526071306969194, guid: 673bc2a86a7d8d743be4468444e892a6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 1932007496}
   - component: {fileID: 1932007495}
   - component: {fileID: 1932007494}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Scrollbar Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5024,7 +5024,7 @@ GameObject:
   - component: {fileID: 1938579930}
   - component: {fileID: 1938579932}
   - component: {fileID: 1938579931}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: PriceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5261,7 +5261,7 @@ GameObject:
   - component: {fileID: 1949714895}
   - component: {fileID: 1949714897}
   - component: {fileID: 1949714896}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: QuantityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5398,7 +5398,7 @@ GameObject:
   - component: {fileID: 1953055848}
   - component: {fileID: 1953055847}
   - component: {fileID: 1953055846}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Closebutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5977,7 +5977,7 @@ GameObject:
   - component: {fileID: 2106515527}
   - component: {fileID: 2106515529}
   - component: {fileID: 2106515528}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: PriceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6251,7 +6251,7 @@ GameObject:
   - component: {fileID: 2126926636}
   - component: {fileID: 2126926638}
   - component: {fileID: 2126926637}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6280,7 +6280,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000001282926, y: 0.00006564633}
-  m_SizeDelta: {x: -480, y: 600}
+  m_SizeDelta: {x: 0, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2126926637
 MonoBehaviour:

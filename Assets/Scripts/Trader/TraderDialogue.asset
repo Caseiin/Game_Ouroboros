@@ -20,5 +20,5 @@ MonoBehaviour:
   autoProgressLines: 0100
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 8300000, guid: 6610d37716881a04e9fdeb5dc728d1ad, type: 3}
+  voiceSound: {fileID: 8300000, guid: 0346c424776e9ef45bb5edfbcae70424, type: 3}
   voicePitch: 1
