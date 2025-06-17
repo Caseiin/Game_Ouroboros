@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
-    public int damage = 1;
-    public enum weapontype {melee,bullet}
-    public weapontype Weapontype;
-    void OnTriggerEnter2D(Collider2D collision)
+    public int weapondamage = 1;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyCombat1 enemyCombat = collision.GetComponent<EnemyCombat1>();
-       if (enemyCombat != null)
+        if (other.CompareTag("Enemy"))
         {
-            bool hit = true;
-            enemyCombat.TakeDamage(hit, damage);
+            EnemyStateManager enemyState = other.gameObject.GetComponent<EnemyStateManager>();
+
+            enemyState.TakeHealth(weapondamage);
+        }
+
+        if (other.CompareTag("Boss"))
+        {
+            BossStateManager bossState = FindFirstObjectByType<BossStateManager>();
+            bossState.TakeHealth(weapondamage);
         }
     }
 }

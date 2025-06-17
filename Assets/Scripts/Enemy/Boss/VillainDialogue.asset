@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e756afe6237a5d4b8f2c1206e09b690, type: 3}
+  m_Name: VillainDialogue
+  m_EditorClassIdentifier: 
+  npcName: General Sinclaire
+  npcPortrait: {fileID: 3793768839139879550, guid: 666eba1253719bc41a175b0545f394d5, type: 3}
+  dialogueLines:
+  - Why did you come
+  - I would have been the most powerful person. If It wasnt for you
+  - 'That GEM! is mine ....Mine I say! '
+  - Noo ! dont take it its too strong for the likes of you!
+  - Nooo!
+  autoProgressLines: 0101010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: 6610d37716881a04e9fdeb5dc728d1ad, type: 3}
+  voicePitch: 1

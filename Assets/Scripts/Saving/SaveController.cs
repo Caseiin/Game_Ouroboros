@@ -1,21 +1,35 @@
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
     InventoryController inventoryController;
+    HotBarController hotBarController;
+
+    Chest[] chests;
     string saveLocation;
     string initialGameData;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //define the save location
-        saveLocation = Path.Combine(Application.persistentDataPath,"saveData.json"); //fire directory of the saveData json file
-        initialGameData = Path.Combine(Application.persistentDataPath,"initialData.json");
-        inventoryController = FindAnyObjectByType<InventoryController>();
-        Debug.Log("save location: "+saveLocation); //path location for debugging and other purposes
-        Debug.Log("initialData location: "+initialGameData); //path location for debugging and other purposes
+        InitialiseComponenets();
+        Debug.Log("save location: " + saveLocation); //path location for debugging and other purposes
+        Debug.Log("initialData location: " + initialGameData); //path location for debugging and other purposes
+
         LoadGame();
+    }
+
+    void InitialiseComponenets()
+    {
+        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json"); //fire directory of the saveData json file
+        initialGameData = Path.Combine(Application.persistentDataPath, "initialData.json");
+        inventoryController = FindAnyObjectByType<InventoryController>();
+        hotBarController = FindAnyObjectByType<HotBarController>();
+        chests = FindObjectsByType<Chest>(FindObjectsSortMode.None);
     }
 
     public void SaveGame()
@@ -30,12 +44,33 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = new SaveData
         {
-            playerposition = GameObject.FindGameObjectWithTag("Player").transform.position, 
-            inventorySaveData = inventoryController.GetInvItem()
+            sceneName = SceneManager.GetActiveScene().name,
+            playerposition = GameObject.FindGameObjectWithTag("Player").transform.position,
+            inventorySaveData = inventoryController.GetInvItem(),
+            hotBarSaveData = hotBarController.GetHotbarItem(),
+            chestSaveData = GetChestsState()
         };
 
         //write data to textfile
-        File.WriteAllText(saveLocation,JsonUtility.ToJson(saveData)); //File directory set new Data to the a json SaveData
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData)); //File directory set new Data to the a json SaveData
+        Debug.Log("game was saved");
+    }
+
+    private List<ChestSaveData> GetChestsState()
+    {
+        List<ChestSaveData> chestState = new List<ChestSaveData>();
+
+        foreach (Chest chest in chests)
+        {
+            ChestSaveData chestSaveData = new ChestSaveData()
+            {
+                ChestID = chest.ChestID,
+                isOpened = chest.IsOpened
+            };
+            chestState.Add(chestSaveData);
+        }
+
+        return chestState;
     }
 
     public void LoadGame()
@@ -43,15 +78,51 @@ public class SaveController : MonoBehaviour
         if (File.Exists(saveLocation))
         {
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
-            // reverse of save is done to load from save file to game
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerposition;
+            string currentScene = SceneManager.GetActiveScene().name;
 
-            inventoryController.SetInvItem(saveData.inventorySaveData); //loads the save inventory
-            
+            // Only load position if in the same scene
+            if (saveData.sceneName == currentScene)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    player.transform.position = saveData.playerposition;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Saved position is from different scene. Using default position.");
+            }
+
+            inventoryController.SetInvItem(saveData.inventorySaveData);
+            hotBarController.SetHotbarItem(saveData.hotBarSaveData);
+
+            //LoadChestState
+            LoadChestStates(saveData.chestSaveData);
         }
         else
         {
-            SaveGame(); //ensures as game starts up you have an initial save point
+            SaveGame();
+            inventoryController.SetInvItem( new List<InventorySaveData>());
+            hotBarController.SetHotbarItem(new List<InventorySaveData>());
+        }
+    }
+
+    public void LoadInitial()
+    {
+        //Loads initial file 
+    }
+
+    void LoadChestStates(List<ChestSaveData> chestStates)
+    {
+        foreach (Chest chest in chests)
+        {
+            ChestSaveData chestSaveData = chestStates.FirstOrDefault(c => c.ChestID == chest.ChestID);
+
+            if (chestSaveData != null)
+            {
+                chest.SetOpened(chestSaveData.isOpened);
+            }
         }
     }
 }

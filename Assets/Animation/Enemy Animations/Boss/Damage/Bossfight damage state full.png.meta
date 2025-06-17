@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: cecd077569d1b6e4f9df5c3ea452ee04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3622468070526033828
+    second: Bossfight damage state full_0
+  - first:
+      213: -7512155983886214000
+    second: Bossfight damage state full_1
+  - first:
+      213: -6011888146662371092
+    second: Bossfight damage state full_2
+  - first:
+      213: -2158410849313377307
+    second: Bossfight damage state full_3
+  - first:
+      213: -4221828303085443076
+    second: Bossfight damage state full_4
+  - first:
+      213: -875944251916029758
+    second: Bossfight damage state full_5
+  - first:
+      213: -7209707217562941027
+    second: Bossfight damage state full_6
+  - first:
+      213: 8361795636944495120
+    second: Bossfight damage state full_7
+  - first:
+      213: 7436249916753078016
+    second: Bossfight damage state full_8
+  - first:
+      213: -462777214968305765
+    second: Bossfight damage state full_9
+  - first:
+      213: -3626868134614857672
+    second: Bossfight damage state full_10
+  - first:
+      213: 5028596240799674738
+    second: Bossfight damage state full_11
+  - first:
+      213: -2512055979595620242
+    second: Bossfight damage state full_12
+  - first:
+      213: -6749333987389293021
+    second: Bossfight damage state full_13
+  - first:
+      213: -469456418782439725
+    second: Bossfight damage state full_14
+  - first:
+      213: -4607855797837558756
+    second: Bossfight damage state full_15
+  - first:
+      213: 749592254417416041
+    second: Bossfight damage state full_16
+  - first:
+      213: 4733760927542418264
+    second: Bossfight damage state full_17
+  - first:
+      213: 7278667377578133687
+    second: Bossfight damage state full_18
+  - first:
+      213: 4737083552887191092
+    second: Bossfight damage state full_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bossfight damage state full_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af16e97487954230800000000000000
+      internalID: 3622468070526033828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c132b0fe57fb790800000000000000
+      internalID: -7512155983886214000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0decc359b719ca0800000000000000
+      internalID: -6011888146662371092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 64
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3b35fa4c8cb02e0800000000000000
+      internalID: -2158410849313377307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_4
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 59
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7e6ebc68d0965c0800000000000000
+      internalID: -4221828303085443076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_5
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0ff75085508d3f0800000000000000
+      internalID: -875944251916029758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_6
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99479afb79f1fb90800000000000000
+      internalID: -7209707217562941027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_7
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012ec7044d01b0470800000000000000
+      internalID: 8361795636944495120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_8
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007681d76edd23760800000000000000
+      internalID: 7436249916753078016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_9
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 0
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b976bab2392e399f0800000000000000
+      internalID: -462777214968305765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_10
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 0
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8380915c5a6caadc0800000000000000
+      internalID: -3626868134614857672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_11
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 271babb63a929c540800000000000000
+      internalID: 5028596240799674738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_12
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60ae406562632dd0800000000000000
+      internalID: -2512055979595620242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_13
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32eb03b7f7c8552a0800000000000000
+      internalID: -6749333987389293021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_14
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d612f8dfd72c79f0800000000000000
+      internalID: -469456418782439725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_15
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c0ba9b09b9d00c0800000000000000
+      internalID: -4607855797837558756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_16
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f2fe21f26176a00800000000000000
+      internalID: 749592254417416041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_17
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b1ac9ab72b1b140800000000000000
+      internalID: 4733760927542418264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_18
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8c4c67a65030560800000000000000
+      internalID: 7278667377578133687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bossfight damage state full_19
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 0
+        width: 55
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436bf29a4608db140800000000000000
+      internalID: 4737083552887191092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bossfight damage state full_0: 3622468070526033828
+      Bossfight damage state full_1: -7512155983886214000
+      Bossfight damage state full_10: -3626868134614857672
+      Bossfight damage state full_11: 5028596240799674738
+      Bossfight damage state full_12: -2512055979595620242
+      Bossfight damage state full_13: -6749333987389293021
+      Bossfight damage state full_14: -469456418782439725
+      Bossfight damage state full_15: -4607855797837558756
+      Bossfight damage state full_16: 749592254417416041
+      Bossfight damage state full_17: 4733760927542418264
+      Bossfight damage state full_18: 7278667377578133687
+      Bossfight damage state full_19: 4737083552887191092
+      Bossfight damage state full_2: -6011888146662371092
+      Bossfight damage state full_3: -2158410849313377307
+      Bossfight damage state full_4: -4221828303085443076
+      Bossfight damage state full_5: -875944251916029758
+      Bossfight damage state full_6: -7209707217562941027
+      Bossfight damage state full_7: 8361795636944495120
+      Bossfight damage state full_8: 7436249916753078016
+      Bossfight damage state full_9: -462777214968305765
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
