@@ -71,6 +71,7 @@ public class Items : MonoBehaviour
         if (ItemPickUI.Instance != null)
         {
             ItemPickUI.Instance.ShowItemPickUp(Name, itemIcon);
+            SoundEffectManager.Play("Gem");
         }
     }
 }
